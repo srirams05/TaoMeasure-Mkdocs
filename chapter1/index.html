@@ -1,0 +1,2861 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://your-username.github.io/Prob-Mkdocs/chapter1/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../chapter2/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Sets/Measures - Tao Measure Theory</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jordan-measure" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tao Measure Theory" class="md-header__button md-logo" aria-label="Tao Measure Theory" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tao Measure Theory
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sets/Measures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="lightblue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/srirams05/TaoMeasure-Mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sets/Measures
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../chapter2/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  More Stuff
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tao Measure Theory" class="md-nav__button md-logo" aria-label="Tao Measure Theory" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Tao Measure Theory
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/srirams05/TaoMeasure-Mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Sets/Measures
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sets/Measures
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jordan-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jordan Measure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intuition-of-counting-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intuition of counting argument
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementary-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elementary sets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#darboux-and-riemann-integral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Darboux and Riemann Integral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#riemann-and-darboux-in-rd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Riemann and Darboux in \(R^d\)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lebesgue-outer-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lebesgue Outer measure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lebesgue Outer measure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare-jordan-and-lebesgue-outer-measures-on-countable-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compare Jordan and Lebesgue outer measures on countable sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lebesgue-measurability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lebesgue measurability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-lebesgue-outer-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties of Lebesgue Outer measure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varepsilon2n-trick" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\varepsilon/2^n\) trick
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lebesgue-outer-measure-of-an-elementary-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Lebesgue outer measure of an elementary set
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Lebesgue outer measure of an elementary set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#making-the-boxes-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making the boxes open
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disjoint-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disjoint boxes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed-dyadic-cubes-in-rd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closed Dyadic cubes in \(R^d\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    More Stuff
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h2 id="jordan-measure">Jordan Measure<a class="headerlink" href="#jordan-measure" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(I\)</span> be an interval of the real line. The length of <span class="arithmatex">\(I\)</span> given by <span class="arithmatex">\(|I|\)</span> can be recovered by the limiting formula
+$$
+|I| = \lim_{N \to \infty} \frac{1}{N} \#(I \cap \frac{1}{N} Z)
+$$
+where: <span class="arithmatex">\(\frac{1}{N} Z := \{\frac{n}{N}: n \in Z\}\)</span>, <span class="arithmatex">\(Z\)</span> is the set of integers and <span class="arithmatex">\(\#(A)\)</span> denotes the cardinality of the finite set <span class="arithmatex">\(A\)</span>.</p>
+<p>Prove this statement.</p>
+<p><strong>Answer</strong> </p>
+<p>Below is a standard proof that for a (bounded) interval <span class="arithmatex">\(I \subset \mathbb{R}\)</span>, its length <span class="arithmatex">\(\lvert I\rvert\)</span> can be recovered by counting how many points of the form <span class="arithmatex">\(\tfrac{n}{N}\)</span> (with <span class="arithmatex">\(n \in \mathbb{Z}\)</span>) lie in <span class="arithmatex">\(I\)</span> and then dividing by <span class="arithmatex">\(N\)</span>.  Indeed, one often writes:  </p>
+<div class="arithmatex">\[  
+\lvert I\rvert  
+\;=\;  
+\lim_{N \to \infty}   
+\frac{1}{N}\,\#\bigl(I \cap \tfrac{1}{N}\mathbb{Z}\bigr),  
+\]</div>
+<p>which is a well-known way to recover the length (Lebesgue measure) of <span class="arithmatex">\(I\)</span>. Below is a step-by-step proof for the case of a closed and bounded interval <span class="arithmatex">\(I = [a,b]\)</span>. One can adapt the reasoning to open, half-open, or other intervals with minor modifications.  </p>
+<p>1 <strong>Setup and notation</strong>  </p>
+<p>• Let <span class="arithmatex">\(I = [a,b]\)</span> be a (closed) bounded interval in <span class="arithmatex">\(\mathbb{R}\)</span>.  <br />
+• For each positive integer <span class="arithmatex">\(N\)</span>, define </p>
+<div class="arithmatex">\[  
+A_N \;=\; I \cap \tfrac{1}{N}\mathbb{Z}  
+\;=\;  
+\bigl\{ \tfrac{n}{N} : n\in \mathbb{Z}, \;\tfrac{n}{N}\in [a,b] \bigr\}.  
+\]</div>
+<p>• Let <span class="arithmatex">\(\#A_N\)</span> denote the number of elements in <span class="arithmatex">\(A_N\)</span>. Since <span class="arithmatex">\(\tfrac{n}{N}\in [a,b]\)</span> forces <span class="arithmatex">\(n\)</span> to be in a finite range, <span class="arithmatex">\(\#A_N\)</span> is a finite integer.    </p>
+<p>We want to show  </p>
+<div class="arithmatex">\[  
+\lvert I\rvert \;=\; b-a  
+\;=\;  
+\lim_{N\to \infty} \frac{1}{N}\,\#(A_N).  
+\]</div>
+<p>2 <strong>Counting the number of multiples in the interval</strong>  </p>
+<p>Observe that  </p>
+<div class="arithmatex">\[  
+A_N  
+\;=\;  
+\left\{ \tfrac{n}{N} : n \in \mathbb{Z}, \; a \,\le\, \tfrac{n}{N} \,\le\, b \right\}.  
+\]</div>
+<p>This means  </p>
+<div class="arithmatex">\[  
+a \;\le\; \tfrac{n}{N} \;\le\; b  
+\quad\Longleftrightarrow\quad  
+aN \;\le\; n \;\le\; bN.  
+\]</div>
+<p>Hence the integers <span class="arithmatex">\(n\)</span> that belong to <span class="arithmatex">\(A_N\)</span> must satisfy  </p>
+<div class="arithmatex">\[  
+n \;\in\; \bigl\{ \lceil aN \rceil, \; \lceil aN \rceil + 1,   
+\ldots, \lfloor bN \rfloor-1,\; \lfloor bN \rfloor \bigr\}.  
+\]</div>
+<p>Therefore,  </p>
+<div class="arithmatex">\[  
+\#A_N  
+\;=\;  
+\lfloor bN \rfloor \;-\; \lceil aN \rceil \;+\; 1.  
+\]</div>
+<p>(The “<span class="arithmatex">\(+1\)</span>” accounts for including both endpoints in the count of integers.)  </p>
+<p>3 <strong>Bounding <span class="arithmatex">\(\#A_N\)</span> from above and below</strong>  </p>
+<p>We know that for any real number <span class="arithmatex">\(x\)</span>, </p>
+<div class="arithmatex">\[  
+x-1 &lt; \lfloor x \rfloor \;\le\; x,  
+\quad  
+x \le \lceil x \rceil &lt; x + 1.  
+\]</div>
+<p>Applying these to <span class="arithmatex">\(\lfloor bN\rfloor\)</span> and <span class="arithmatex">\(\lceil aN\rceil\)</span>:  </p>
+<ol>
+<li><span class="arithmatex">\(\lfloor bN \rfloor \;\ge\; bN - 1.\)</span>    </li>
+<li><span class="arithmatex">\(\lceil aN \rceil \;\le\; aN + 1.\)</span>  </li>
+</ol>
+<p>Thus  </p>
+<div class="arithmatex">\[  
+\#A_N  
+\;=\;  
+\lfloor bN \rfloor - \lceil aN \rceil + 1  
+\;\ge\;  
+\bigl(bN - 1\bigr) - \bigl(aN + 1\bigr) + 1  
+\;=\;  
+(b-a)\,N \;-\; 1.  
+\]</div>
+<p>Similarly,  </p>
+<div class="arithmatex">\[  
+\#A_N  
+\;=\;  
+\lfloor bN \rfloor - \lceil aN \rceil + 1  
+\;\le\;  
+\lfloor bN\rfloor - \bigl(aN\bigr) + 1  
+\;\le\;  
+(bN) - (aN) + 1  
+\;=\;  
+(b-a)\,N + 1.  
+$$  
+Hence  
+$$  
+(b-a)\,N - 1  
+\;\le\;  
+\#A_N  
+\;\le\;  
+(b-a)\,N + 1.  
+\]</div>
+<p>4 <strong>Dividing by <span class="arithmatex">\(N\)</span> and taking the limit</strong>  </p>
+<p>Divide the above chain of inequalities by <span class="arithmatex">\(N&gt;0\)</span>:  </p>
+<div class="arithmatex">\[  
+(b-a)  
+\;-\;  
+\frac{1}{N}  
+\;\;\le\;\;  
+\frac{\#A_N}{N}  
+\;\;\le\;\;  
+(b-a)  
+\;+\;  
+\frac{1}{N}.  
+\]</div>
+<p>As <span class="arithmatex">\(N \to \infty\)</span>, both of the bounds  </p>
+<div class="arithmatex">\[  
+(b-a)\;-\;\frac{1}{N}  
+\quad\text{and}\quad  
+(b-a)\;+\;\frac{1}{N}  
+\]</div>
+<p>converge to <span class="arithmatex">\((b-a)\)</span>. By the squeeze theorem, we conclude  </p>
+<div class="arithmatex">\[  
+\lim_{N\to\infty}  
+\frac{\#(A_N)}{N}  
+\;=\;  
+b-a  
+\;=\;  
+\lvert I\rvert.  
+\]</div>
+<p>In other words,  </p>
+<div class="arithmatex">\[  
+\lvert I\rvert  
+\;=\;  
+\lim_{N\to \infty}  
+\frac{1}{N}\;\#\bigl(I \,\cap\, \tfrac{1}{N}\mathbb{Z}\bigr).  
+\]</div>
+<p>5 <strong>Remarks on variants of the statement</strong>  </p>
+<p>• If one uses the union <span class="arithmatex">\(I \cup \tfrac{1}{N}\mathbb{Z}\)</span>, this set is typically infinite, so <span class="arithmatex">\(\#\bigl(I \cup \tfrac{1}{N}\mathbb{Z}\bigr) = \infty\)</span>. The usual statement is indeed about the intersection <span class="arithmatex">\(I \cap \tfrac{1}{N}\mathbb{Z}\)</span>.  <br />
+• If <span class="arithmatex">\(I\)</span> is not bounded or not closed, one can refine the above argument by approximating <span class="arithmatex">\(I\)</span> by bounded closed intervals or handling endpoints carefully. The limit argument remains essentially the same and the length is still recovered.  <br />
+• This formula is a discrete analog of the idea behind Riemann integration: counting how many equally-spaced points fall into <span class="arithmatex">\(I\)</span> is akin to a Riemann sum for the indicator function of <span class="arithmatex">\(I\)</span>.    </p>
+<p>Thus the key takeaway is:  </p>
+<div class="arithmatex">\[  
+\boxed{  
+\text{For a bounded interval }I = [a,b],\quad  
+\lim_{N\to \infty}  
+\dfrac{1}{N}\,\#\Bigl(I \cap \tfrac{1}{N}\mathbb{Z}\Bigr)  
+\;=\;  
+b - a  
+\;=\;  
+\lvert I\rvert.  
+}  
+\]</div>
+<h2 id="intuition-of-counting-argument">Intuition of counting argument<a class="headerlink" href="#intuition-of-counting-argument" title="Permanent link">&para;</a></h2>
+<p><strong><em>I am having trouble on the intuition of this result. We seem to be equating the cardinality of a set with the length of an interval which does not seem to make sense. By measuring the cardinality are we measuring the number of equal length sub intervals in <span class="arithmatex">\(I\)</span>? Provide an intuitive explanation.</em></strong></p>
+<p>Here is one intuitive way to think about the identity  </p>
+<div class="arithmatex">\[  
+|I| \;=\; \lim_{N\to\infty} \frac{1}{N}\, \# \Bigl(I \cap \tfrac{1}{N}\mathbb{Z}\Bigr).  
+\]</div>
+<p>1) Think of sampling points in I.  <br />
+   – Consider the set <span class="arithmatex">\(\tfrac{1}{N}\mathbb{Z}=\{\tfrac{n}{N}: n\in \mathbb{Z}\}\)</span>. These points “chop up” the real line into little increments of length <span class="arithmatex">\(\tfrac{1}{N}\)</span>.  <br />
+   – The expression <span class="arithmatex">\(\#(I \cap \tfrac{1}{N}\mathbb{Z})\)</span> is simply the number of these chopped-up points that end up falling inside the interval <span class="arithmatex">\(I\)</span>.    </p>
+<p>2) Why divide by <span class="arithmatex">\(N\)</span>?  <br />
+   – Since each “chop” is of width <span class="arithmatex">\(\tfrac{1}{N}\)</span>, if you want to approximate the length of <span class="arithmatex">\(I\)</span> by the number of chops, you must multiply (or effectively “weight”) the count by that chop-size <span class="arithmatex">\(\tfrac{1}{N}\)</span>.  <br />
+   – Equivalently, dividing the count by <span class="arithmatex">\(N\)</span> is the same as multiplying it by <span class="arithmatex">\(\tfrac{1}{N}\)</span>. Hence</p>
+<p>$$<br />
+       \frac{1}{N}\, \# \bigl(I \cap \tfrac{1}{N}\mathbb{Z}\bigr)\;=\;<br />
+       \bigl(\tfrac{1}{N}\bigr)\times <br />
+       \bigl(\text{number of points of spacing } \tfrac{1}{N}\text{ in }I\bigr).<br />
+     $$  </p>
+<p>3) Relation to a “ruler” analogy.  <br />
+   – Imagine laying down a “ruler” marked only at the fractions <span class="arithmatex">\(\tfrac{0}{N}, \tfrac{1}{N}, \tfrac{2}{N}, \dots\)</span>.  <br />
+   – Counting how many marks of that ruler land in <span class="arithmatex">\(I\)</span> and then multiplying by <span class="arithmatex">\(\tfrac{1}{N}\)</span> is analogous to measuring <span class="arithmatex">\(I\)</span> using only these coarse marks.    </p>
+<p>4) Why do we need a limit as <span class="arithmatex">\(N\to\infty\)</span>?  <br />
+   – For small <span class="arithmatex">\(N\)</span>, this coarse measurement might glancingly miss a bit of <span class="arithmatex">\(I\)</span> near the edges or skip small gaps. But as <span class="arithmatex">\(N\)</span> becomes larger, the marks become denser and the count becomes a better and better approximation of the actual length.  <br />
+   – In the limit <span class="arithmatex">\(N \to \infty\)</span>, the quantity  <br />
+<span class="arithmatex">\(\tfrac{1}{N}\, \# \bigl(I \cap \tfrac{1}{N}\mathbb{Z}\bigr)\)</span>  <br />
+     converges to the exact length of <span class="arithmatex">\(I\)</span>.    </p>
+<p>Thus, we are not literally equating “number of points” with “length”: rather, we count how many evenly spaced points of spacing <span class="arithmatex">\(\tfrac{1}{N}\)</span> fit in <span class="arithmatex">\(I\)</span>, and then multiply that count by the spacing <span class="arithmatex">\(\tfrac{1}{N}\)</span>. That product approximates the length of <span class="arithmatex">\(I\)</span>. As the spacing <span class="arithmatex">\(\tfrac{1}{N}\)</span> goes to <span class="arithmatex">\(0\)</span> (i.e., <span class="arithmatex">\(N \to \infty\)</span>), this approximation converges to the true length of <span class="arithmatex">\(I\)</span>.</p>
+<h2 id="elementary-sets">Elementary sets<a class="headerlink" href="#elementary-sets" title="Permanent link">&para;</a></h2>
+<p>Given an interval <span class="arithmatex">\(I\)</span>, define a box <span class="arithmatex">\(B = I_1 \times I_2 \times \cdots, \times I_d\)</span>. <span class="arithmatex">\(B \in R^d\)</span>
+<span class="arithmatex">\(|I| = b-a\)</span> when <span class="arithmatex">\(I = [a b], \; (a b), \; [a b), \; (a b]\)</span>. Similarly, 
+<span class="arithmatex">\(\text{vol}(B) = |I_1| \times |I_2| \times \cdots \times |I_d|\)</span></p>
+<p>Define an elementary set <span class="arithmatex">\(E\)</span> to be the finite, disjoint union of boxes <span class="arithmatex">\(B\)</span> as defined above.</p>
+<p>the measure of <span class="arithmatex">\(E\)</span> is given by <span class="arithmatex">\(m(E)\)</span> is the sum of the volumes of the boxes of the disjoint partition.</p>
+<p>Now consdier a general, bounded set <span class="arithmatex">\(S\)</span>. Define the concept of Jordan measure of <span class="arithmatex">\(S\)</span> using the measure of elementary sets.</p>
+<p><strong>Answer</strong></p>
+<p>Below is one common way to define the Jordan measure of a bounded set in <span class="arithmatex">\(\mathbb{R}^d\)</span>, using the notion of elementary sets (finite unions of disjoint boxes):  </p>
+<p>1) Elementary sets and their measure<br />
+─────────────────────────────────────────────── </p>
+<ol>
+<li>An (open/closed/half‐open) interval in <span class="arithmatex">\(\mathbb{R}\)</span> has length  <br />
+   $$<br />
+   |I| \;=\; b - a<br />
+   \quad<br />
+   \text{if}<br />
+   \quad<br />
+   I<br />
+   \;=\;<br />
+   [\,a,b\,],\;\,(a,b),\;\,[\,a,b),\;\,(a,b\,].<br />
+   $$  </li>
+<li>A box <span class="arithmatex">\(B\subset \mathbb{R}^d\)</span> is a product of intervals:<br />
+   $$<br />
+   B \;=\; I_1 \,\times\, I_2 \,\times\,\cdots\,\times\, I_d,<br />
+   $$<br />
+   where each <span class="arithmatex">\(I_k\subset \mathbb{R}\)</span> is an interval. The volume of such a box is<br />
+   $$<br />
+   \mathrm{vol}(B)<br />
+   \;=\;<br />
+   |I_1| \,\times\, |I_2| \,\times\,\cdots\times\, |I_d|.<br />
+   $$  </li>
+<li>An elementary set <span class="arithmatex">\(E\subset\mathbb{R}^d\)</span> is a finite union of boxes that are pairwise disjoint:<br />
+   $$<br />
+   E \;=\; B_1 \;\cup\; B_2 \;\cup\; \cdots \;\cup\; B_n,<br />
+   \quad<br />
+   B_i \cap B_j = \varnothing \;\;(i\neq j).<br />
+   $$<br />
+   The measure (or volume) of <span class="arithmatex">\(E\)</span> is defined as the sum of the volumes of its boxes:<br />
+   $$<br />
+   m(E)<br />
+   \;=\;<br />
+   \sum_{i=1}^n \mathrm{vol}(B_i).<br />
+   $$  </li>
+</ol>
+<p>──────────────────────────────────────<br />
+2) Outer and inner approximations by elementary sets  ───────────────────────────────────────<br />
+Let <span class="arithmatex">\(S\subset \mathbb{R}^d\)</span> be a bounded set. We approximate <span class="arithmatex">\(S\)</span> from “above” and “below” by elementary sets:  </p>
+<p>• An elementary set <span class="arithmatex">\(E\)</span> is called an outer approximation of <span class="arithmatex">\(S\)</span> if 
+<span class="arithmatex">\(S \subseteq E\)</span>.  <br />
+• An elementary set <span class="arithmatex">\(F\)</span> is called an inner approximation of <span class="arithmatex">\(S\)</span> if <span class="arithmatex">\(F \subseteq S\)</span>.  </p>
+<p>Define:  <br />
+• The outer (“upper”) measure of <span class="arithmatex">\(S\)</span> by    </p>
+<p>$$<br />
+  m^*(S)<br />
+  \;=\;<br />
+  \inf \bigl \{ \,m(E) \;:\; E \text{ is an elementary set and } S \subseteq E \bigr \}.<br />
+  $$    </p>
+<p>• The inner (“lower”) measure of <span class="arithmatex">\(S\)</span> by   </p>
+<p>$$<br />
+  m_*(S)<br />
+  \;=\;<br />
+  \sup \bigl \{\,m(F) \;:\; F \text{ is an elementary set and } F \subseteq S \bigr \}.<br />
+  $$  </p>
+<p>────────────────────────────────────────────────<br />
+3) Jordan measurability and Jordan measure<br />
+────────────────────────────────────────────────<br />
+We say that a bounded set <span class="arithmatex">\(S\subset\mathbb{R}^d\)</span> is Jordan measurable if the outer and inner measures coincide:  </p>
+<div class="arithmatex">\[  
+m^*(S) \;=\; m_*(S).  
+\]</div>
+<p>In that case, we define the Jordan measure of <span class="arithmatex">\(S\)</span> (also called the Jordan content) to be this common value:  </p>
+<div class="arithmatex">\[  
+m(S)  
+\;=\;  
+m^*(S)  
+\;=\;  
+m_*(S).  
+\]</div>
+<p>Intuitively:  <br />
+• If you can cover <span class="arithmatex">\(S\)</span> by some finite union of boxes (an elementary set) with total volume very close to some number <span class="arithmatex">\(L\)</span>, and also fit inside <span class="arithmatex">\(S\)</span> a disjoint union of boxes with total volume very close to the same number <span class="arithmatex">\(L\)</span>, then that “squeezes” the measure of <span class="arithmatex">\(S\)</span> to exactly <span class="arithmatex">\(L\)</span>.  <br />
+• If no matter how carefully you cover <span class="arithmatex">\(S\)</span> from above and below by elementary sets, there remains a “gap” in the volumes, then <span class="arithmatex">\(S\)</span> is not Jordan measurable.  </p>
+<p>Thus, for a bounded set <span class="arithmatex">\(S\subset \mathbb{R}^d\)</span>, its Jordan measure (if it exists) is the unique value you get by approximating <span class="arithmatex">\(S\)</span> from inside and outside by finite unions of boxes, and letting those approximations converge.</p>
+<hr />
+<p>Let <span class="arithmatex">\(B \in R^d\)</span> be a closed box. Let <span class="arithmatex">\(f: B \to R\)</span> be continuous. 
+The set <span class="arithmatex">\(\{(x, f(x): x \in B\} \in R^{d+1}\)</span> is the graph of <span class="arithmatex">\(f\)</span>. 
+Show that it is Jordan measurable.</p>
+<hr />
+<p>Explanation:  </p>
+<p>We wish to show that if <span class="arithmatex">\(B \subset \mathbb{R}^d\)</span> is a closed box and <span class="arithmatex">\(f : B \to \mathbb{R}\)</span> is a continuous function, then the graph </p>
+<div class="arithmatex">\[  
+G \;=\; \bigl \\{ (x, f(x)) : x \in B \bigr \\}  
+\;\subset\;  
+\mathbb{R}^{d+1}  
+\]</div>
+<p>is Jordan measurable in <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span>.    </p>
+<p>The key idea is that although <span class="arithmatex">\(G\)</span> lives in <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span>, it is “only” <span class="arithmatex">\(d\)</span>-dimensional in nature; as a result it occupies no <span class="arithmatex">\((d+1)\)</span>-dimensional volume, and one can cover it by boxes of arbitrarily small total volume. From the fundamental criterion for Jordan measurability in <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span> (a bounded set is Jordan measurable if and only if its boundary has measure zero), it will follow that <span class="arithmatex">\(G\)</span> has <span class="arithmatex">\((d+1)\)</span>-dimensional Jordan measure zero and hence is Jordan measurable.  </p>
+<p>────────────────────────────────────────────────<br />
+1) <span class="arithmatex">\(G\)</span> is closed and bounded<br />
+────────────────────────────────────────────────<br />
+1. Since <span class="arithmatex">\(B\)</span> is a closed box in <span class="arithmatex">\(\mathbb{R}^d\)</span>, it is compact.  <br />
+2. Since <span class="arithmatex">\(f\)</span> is continuous on the compact set <span class="arithmatex">\(B\)</span>, it is bounded and uniformly continuous on <span class="arithmatex">\(B\)</span>. Hence <span class="arithmatex">\(\{ (x,f(x)) : x \in B\}\)</span> is contained in a closed and bounded region in <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span>.  <br />
+3. The graph <span class="arithmatex">\(G\)</span> is also a closed subset of <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span> (continuity of <span class="arithmatex">\(f\)</span> ensures that).    </p>
+<p>Hence <span class="arithmatex">\(G\subset \mathbb{R}^{d+1}\)</span> is closed and bounded.  </p>
+<p>──────────────────────────────────────────────────<br />
+2) Covering <span class="arithmatex">\(G\)</span> with “thin pillars”<br />
+────────────────────────────────────────────────────<br />
+To show <span class="arithmatex">\(G\)</span> has <span class="arithmatex">\((d+1)\)</span>-dimensional measure zero, we will cover it by sets (boxes in <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span>) whose total volume can be made arbitrarily small.    </p>
+<p>Because <span class="arithmatex">\(f\)</span> is uniformly continuous, given <span class="arithmatex">\(\varepsilon &gt; 0\)</span>, there exists <span class="arithmatex">\(\delta &gt; 0\)</span> such that whenever <span class="arithmatex">\(\|x - y\| &lt; \delta\)</span> in <span class="arithmatex">\(B\)</span>, we have  </p>
+<div class="arithmatex">\[  
+\bigl\vert \,f(x)\;-\;f(y)\bigr \vert &lt; \varepsilon.  
+\]</div>
+<p>Now partition the box <span class="arithmatex">\(B\subset \mathbb{R}^d\)</span> into finitely many smaller boxes <span class="arithmatex">\(B_1, B_2, \dots, B_n\)</span> so that the diameter of each <span class="arithmatex">\(B_i\)</span> is less than <span class="arithmatex">\(\delta\)</span>. Hence, within each <span class="arithmatex">\(B_i\)</span>, the function <span class="arithmatex">\(f\)</span> varies by no more than <span class="arithmatex">\(\varepsilon\)</span>.  </p>
+<p>For each such <span class="arithmatex">\(B_i\)</span>, consider its “vertical extension” or “pillar” in <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span>: </p>
+<div class="arithmatex">\[  
+\widehat{B}_i  
+\;=\;  
+B_i  
+\times  
+\bigl[\,\min_{x\in B_i}f(x),\,\max_{x\in B_i}f(x)\bigr]  
+\;\subset\;  
+\mathbb{R}^{d+1}.  
+\]</div>
+<p>Because the oscillation of <span class="arithmatex">\(f\)</span> on <span class="arithmatex">\(B_i\)</span> is at most <span class="arithmatex">\(\varepsilon\)</span>, we see   </p>
+<div class="arithmatex">\[  
+\bigl[\min_{x\in B_i}f(x),\,\max_{x\in B_i}f(x)\bigr]  
+\]</div>
+<p>is an interval of length at most <span class="arithmatex">\(\varepsilon\)</span>. Thus each <span class="arithmatex">\(\widehat{B}_i\)</span> has volume </p>
+<div class="arithmatex">\[  
+\mathrm{vol}\bigl(\widehat{B}_i\bigr)  
+\;\le\;  
+\mathrm{vol}\bigl(B_i\bigr) \;\times\; \varepsilon.  
+\]</div>
+<p>Since <span class="arithmatex">\(G\cap \bigl(B_i\times\mathbb{R}\bigr)\)</span> is contained in <span class="arithmatex">\(\widehat{B}_i\)</span>, the union of these pillars covers <span class="arithmatex">\(G\)</span>:  </p>
+<div class="arithmatex">\[  
+G  
+\;\subseteq\;  
+\bigcup_{i=1}^n \,\widehat{B}_i.  
+\]</div>
+<p>Hence,  </p>
+<div class="arithmatex">\[  
+\mathrm{vol}  
+\Bigl(\bigcup_{i=1}^n \widehat{B}_i\Bigr)  
+\;\le\;  
+\sum_{i=1}^n \mathrm{vol}\bigl(\widehat{B}_i\bigr)  
+\;\le\;  
+\sum_{i=1}^n \Bigl(\mathrm{vol}(B_i)\times \varepsilon\Bigr)  
+\;=\;  
+\varepsilon  
+\sum_{i=1}^n \mathrm{vol}(B_i).  
+\]</div>
+<p>Since <span class="arithmatex">\(\{B_i\}\)</span> is just a partition of <span class="arithmatex">\(B\)</span>, the sum of the <span class="arithmatex">\(\mathrm{vol}(B_i)\)</span> is <span class="arithmatex">\(\mathrm{vol}(B)\)</span>, a fixed finite number. We can make <span class="arithmatex">\(\varepsilon&gt;0\)</span> arbitrarily small, so: </p>
+<div class="arithmatex">\[  
+\forall \epsilon&gt;0:  
+\quad  
+\exists  
+\Bigl(\text{cover of }G\text{ by boxes of total volume }&lt; \epsilon\Bigr).  
+\]</div>
+<p>This implies <span class="arithmatex">\(G\)</span> has Lebesgue (or Jordan) measure zero in <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span>.  </p>
+<p>───────────────────────────────────────────────────<br />
+3) Conclusion: Jordan measurability<br />
+────────────────────────────────────────────────────<br />
+A bounded subset of <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span> of measure zero is automatically Jordan measurable, because its boundary is contained within itself (a set of measure zero) and thus also has measure zero. Concretely, for Jordan measurability we need that the set is bounded and that for every <span class="arithmatex">\(\varepsilon&gt;0\)</span>, we can find an elementary set that covers <span class="arithmatex">\(G\)</span> with volume <span class="arithmatex">\(&lt; \varepsilon\)</span>, and another elementary set contained in <span class="arithmatex">\(G\)</span> of volume <span class="arithmatex">\(&gt; -\varepsilon\)</span>. But the second is trivial (take the empty set), and the first we saw how to construct.    </p>
+<p>Hence,  </p>
+<div class="arithmatex">\[  
+G  
+\;=\;  
+\bigl\{(x,f(x)): x\in B\bigr\}  
+\]</div>
+<p>is Jordan measurable in <span class="arithmatex">\(\mathbb{R}^{d+1}\)</span>. In fact, its Jordan measure (the <span class="arithmatex">\((d+1)\)</span>-dimensional “volume” of the hypersurface) is <span class="arithmatex">\(0\)</span>.</p>
+<p><strong><em>Let <span class="arithmatex">\(B(x,r) := \{y \in R^d: |y - x| &lt; r \}\)</span> be an open ball centered at <span class="arithmatex">\(x \in R^d\)</span>. Show that it is Jordan measurable.</em></strong></p>
+<p>Explanation:  </p>
+<p>To show that an open ball    </p>
+<div class="arithmatex">\[  
+B(x,r)\;=\;\bigl\{\,y\in\mathbb{R}^d : \lvert y - x\rvert &lt; r\bigr\}  
+\]</div>
+<p>is Jordan measurable using only the notions of Jordan outer and inner measures, we must prove that </p>
+<div class="arithmatex">\[  
+m^*\bigl(B(x,r)\bigr)  
+\;=\;  
+m_*\bigl(B(x,r)\bigr).  
+\]</div>
+<p>Recall:  </p>
+<p>• The Jordan outer measure of <span class="arithmatex">\(S\subset\mathbb{R}^d\)</span> is  </p>
+<p>$$<br />
+  m^*(S)<br />
+  \;=\;<br />
+  \inf<br />
+  \Bigl \{<br />
+    m(E)<br />
+    \;:\;<br />
+    E \text{ is an elementary set and } S \subseteq E<br />
+  \Bigr \}.<br />
+  $$  </p>
+<p>• The Jordan inner measure of <span class="arithmatex">\(S\subset\mathbb{R}^d\)</span> is    </p>
+<p>$$<br />
+  m_*(S)<br />
+  \;=\;<br />
+  \sup<br />
+  \Bigl \{<br />
+    m(F)<br />
+    \;:\;<br />
+    F \text{ is an elementary set and } F \subseteq S<br />
+  \Bigr \}.<br />
+  $$  </p>
+<p>• A set <span class="arithmatex">\(S\)</span> is called Jordan measurable if <span class="arithmatex">\(m^*(S) = m_*(S)\)</span>. In that case, that common value is denoted by <span class="arithmatex">\(m(S)\)</span>.  </p>
+<p>─────────────────────────────────────────<br />
+1) Known volume of a ball<br />
+─────────────────────────────────────────<br />
+From geometry (or integration in spherical coordinates), one knows that the Lebesgue volume of a (closed or open) ball of radius <span class="arithmatex">\(r\)</span> in <span class="arithmatex">\(\mathbb{R}^d\)</span> is  </p>
+<div class="arithmatex">\[  
+\omega_d\, r^d,  
+\]</div>
+<p>where <span class="arithmatex">\(\omega_d\)</span> is the volume of the unit ball in <span class="arithmatex">\(\mathbb{R}^d\)</span>. Our aim is to show </p>
+<div class="arithmatex">\[  
+m^*\bigl(B(x,r)\bigr)  
+=  
+m_*\bigl(B(x,r)\bigr)  
+=  
+\omega_d\,r^d.  
+\]</div>
+<p>─────────────────────────────────────────<br />
+2) Outer measure ≤ <span class="arithmatex">\(\omega_d r^d\)</span> + ε<br />
+───────────────────────────────────────────<br />
+We show that for every <span class="arithmatex">\(\varepsilon &gt; 0\)</span>, there is an elementary set <span class="arithmatex">\(E_\varepsilon \supseteq B(x,r)\)</span> whose total volume is less than <span class="arithmatex">\(\omega_d r^d + \varepsilon\)</span>. Because <span class="arithmatex">\(m^*(B(x,r))\)</span> is the infimum of volumes of such covers, that will imply  </p>
+<div class="arithmatex">\[  
+m^*\bigl(B(x,r)\bigr)  
+\;\le\;  
+\omega_d\,r^d.  
+\]</div>
+<p>Step-by-step idea:  <br />
+1. Enclose the ball <span class="arithmatex">\(B(x,r)\)</span> in a large coordinate-aligned box (for instance, a cube of side <span class="arithmatex">\(2r\)</span> centered at <span class="arithmatex">\(x\)</span>).  <br />
+2. Subdivide that box into a fine grid of little cubes (of side length <span class="arithmatex">\(\delta\)</span>), so that (i) every cube that intersects <span class="arithmatex">\(B(x,r)\)</span> is included in the cover; (ii) the cubes are disjoint in the interior and together form an elementary set.  <br />
+3. As <span class="arithmatex">\(\delta\to 0\)</span>, the total volume of cubes that intersect the ball approaches <span class="arithmatex">\(\omega_d r^d\)</span> from above.  The error near the “boundary shell” of the ball can be made as small as desired by choosing sufficiently fine subdivisions.    </p>
+<p>This shows that for any <span class="arithmatex">\(\varepsilon&gt;0\)</span>, we can find an elementary set <span class="arithmatex">\(E_\varepsilon\)</span> with    </p>
+<div class="arithmatex">\[  
+B(x,r)\;\subseteq\;E_\varepsilon  
+\quad  
+\text{and}  
+\quad  
+m\bigl(E_\varepsilon\bigr)&lt;\omega_d r^d+\varepsilon.  
+\]</div>
+<p>Hence,  </p>
+<div class="arithmatex">\[  
+m^*\bigl(B(x,r)\bigr)\;=\;\inf_{S\supset B(x,r)}\,m(S)\;\le\;\omega_d\,r^d.  
+\]</div>
+<p>────────────────────────────────────────<br />
+3) Inner measure ≥ <span class="arithmatex">\(\omega_d r^d\)</span> - ε<br />
+───────────────────────────────────────────<br />
+We similarly show that for every <span class="arithmatex">\(\varepsilon&gt;0\)</span>, there is an elementary set <span class="arithmatex">\(F_\varepsilon \subseteq B(x,r)\)</span> whose total volume is at least <span class="arithmatex">\(\omega_d r^d - \varepsilon\)</span>. Because <span class="arithmatex">\(m_*(B(x,r))\)</span> is the supremum of volumes of such “inscribed” elementary sets, this implies  </p>
+<div class="arithmatex">\[  
+m_*\bigl(B(x,r)\bigr)  
+\;\ge\;  
+\omega_d\,r^d.  
+\]</div>
+<p>One does almost the same subdivision, but now only keep those small cubes that fit entirely inside <span class="arithmatex">\(B(x,r)\)</span>. Very close to the boundary, you may have small cubes that partially stick out; you discard those. By letting the grid size go to zero, the total volume of cubes that lie wholly inside <span class="arithmatex">\(B(x,r)\)</span> approaches <span class="arithmatex">\(\omega_d r^d\)</span> from below. In symbols, for any <span class="arithmatex">\(\varepsilon&gt;0\)</span>, one can refine the grid so that an inscribed elementary set <span class="arithmatex">\(F_\varepsilon \subset B(x,r)\)</span> has </p>
+<div class="arithmatex">\[  
+m\bigl(F_\varepsilon\bigr)  &gt;  
+\omega_d\,r^d - \varepsilon.  
+\]</div>
+<p>Thus  </p>
+<div class="arithmatex">\[  
+m_*\bigl(B(x,r)\bigr)  
+\;=\;  
+\sup_{F \subset B(x,r)}\,m(F)  
+\;\ge\;  
+\omega_d\,r^d.  
+\]</div>
+<p>──────────────────────────────────<br />
+4) Conclusion: Jordan measurability<br />
+───────────────────────────────────<br />
+Combining these two inequalities,  </p>
+<p>• from above:<br />
+<span class="arithmatex">\(\displaystyle m^*\bigl(B(x,r)\bigr)\;\le\;\omega_d\,r^d,\)</span>  </p>
+<p>• from below:<br />
+<span class="arithmatex">\(\displaystyle m_*\bigl(B(x,r)\bigr)\;\ge\;\omega_d\,r^d,\)</span>  </p>
+<p>forces  </p>
+<div class="arithmatex">\[  
+m^*\bigl(B(x,r)\bigr)  
+\;=\;  
+m_*\bigl(B(x,r)\bigr)  
+\;=\;  
+\omega_d\,r^d.  
+\]</div>
+<p>Hence <span class="arithmatex">\(B(x,r)\)</span> is Jordan measurable, and its Jordan measure is exactly the usual volume <span class="arithmatex">\(\omega_d\,r^d\)</span>.</p>
+<p><strong><em>Let <span class="arithmatex">\(S \subset R^d\)</span> be a bounded set. Let <span class="arithmatex">\(A, B \subset R^d\)</span> be elementary sets such that <span class="arithmatex">\(A \subset S \subset B\)</span> and <span class="arithmatex">\(m(B \setminus A) \leq \epsilon\)</span> for every <span class="arithmatex">\(\epsilon &gt; 0\)</span>. This is equivalent to Jordan measurability of <span class="arithmatex">\(S\)</span>. Prove this.</em></strong></p>
+<p>Explanation:  </p>
+<p>We wish to show that the following two statements about a bounded set <span class="arithmatex">\(S \subset \mathbb{R}^d\)</span> are equivalent:  </p>
+<p>(1)  <span class="arithmatex">\(S\)</span> is Jordan measurable (i.e., <span class="arithmatex">\(m^*(S) = m_*(S)\)</span>), where </p>
+<div class="arithmatex">\[  
+  m^*(S)  
+     \;=\;  
+     \inf\{m(E): E\supset S,\; E \text{ is elementary}\},   
+     \quad  
+     m_*(S)  
+     \;=\;  
+     \sup\{m(F): F\subset S,\; F \text{ is elementary}\}.
+         \]</div>
+<p>(2)  For every <span class="arithmatex">\(\varepsilon&gt;0\)</span>, there exist elementary sets <span class="arithmatex">\(A,B\subset \mathbb{R}^d\)</span> such that   </p>
+<p>$$<br />
+     A \;\subset\; S \;\subset\; B<br />
+     \quad\text{and}\quad<br />
+     m\bigl(B\setminus A\bigr)\;\le\;\varepsilon.<br />
+             $$  </p>
+<p>Below is a step‐by‐step proof of the equivalence.  </p>
+<p>─────────────────────────────────────<br />
+⇒ Direction (Jordan measurability implies the “ε-thin sandwich” property)<br />
+─────────────────────────────────────  </p>
+<p>Assume <span class="arithmatex">\(S\)</span> is Jordan measurable, so <span class="arithmatex">\(m^*(S) = m_*(S)\)</span>. Let <span class="arithmatex">\(\varepsilon &gt; 0\)</span>. We will construct elementary sets <span class="arithmatex">\(A\subset S \subset B\)</span> such that <span class="arithmatex">\(m(B \setminus A) &lt; \varepsilon\)</span>.  </p>
+<p>Step 1. Approximate <span class="arithmatex">\(S\)</span> from below.  <br />
+Since <span class="arithmatex">\(m_*(S) = \sup\{ m(F) : F\subset S,\;F\text{ elementary}\}\)</span>, there is an elementary set <span class="arithmatex">\(A\subset S\)</span> so that    </p>
+<div class="arithmatex">\[  
+m(A)  
+\;&gt;\;  
+m_*(S) - \tfrac{\varepsilon}{2}.  
+\]</div>
+<p>Step 2. Approximate <span class="arithmatex">\(S\)</span> from above.  <br />
+Since <span class="arithmatex">\(m^*(S) = \inf\{ m(G) : G\supset S,\;G\text{ elementary}\}\)</span>, there is an elementary set <span class="arithmatex">\(G\supset S\)</span> so that   </p>
+<div class="arithmatex">\[  
+m(G)  
+\;&lt;\;  
+m^*(S) + \tfrac{\varepsilon}{2}.  
+\]</div>
+<p>Step 3. Ensure <span class="arithmatex">\(A \subset G\)</span>.  <br />
+Usually one needs a small refinement step: replace <span class="arithmatex">\(G\)</span> by an elementary set <span class="arithmatex">\(B\)</span> such that <span class="arithmatex">\(A\subset B\subset G\)</span> (if necessary, we can split boxes of <span class="arithmatex">\(G\)</span> to include those from <span class="arithmatex">\(A\)</span>, so that <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(A\)</span> fit together nicely). This does not increase the measure, so </p>
+<div class="arithmatex">\[  
+m(B)\;\le\;m(G)  
+\;&lt;\;m^*(S)+\tfrac{\varepsilon}{2}.  
+\]</div>
+<p>Hence we have  </p>
+<div class="arithmatex">\[  
+A \;\subset\; S \;\subset\; B,  
+\]</div>
+<p>with <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> elemental.  </p>
+<p>Step 4. Estimate <span class="arithmatex">\(m(B\setminus A)\)</span>.  <br />
+Since <span class="arithmatex">\(B\setminus A\subset B\)</span>, we have </p>
+<div class="arithmatex">\[  
+m\bigl(B\setminus A\bigr)  
+\;\le\;  
+m(B) \;-\; m(A)  
+\;\le\;  
+\bigl(m^*(S) + \tfrac{\varepsilon}{2}\bigr)  
+\;-\;  
+\bigl(m_*(S) - \tfrac{\varepsilon}{2}\bigr)  
+\;=\;  
+m^*(S) - m_*(S) + \varepsilon.  
+\]</div>
+<p>But for a Jordan measurable set, <span class="arithmatex">\(m^*(S) - m_*(S)=0\)</span>. Therefore </p>
+<div class="arithmatex">\[  
+m\bigl(B\setminus A\bigr)  
+\;\le\;  
+\varepsilon.  
+\]</div>
+<p>This shows that for every <span class="arithmatex">\(\varepsilon&gt;0\)</span>, we found <span class="arithmatex">\(A,B\)</span> elementary with <span class="arithmatex">\(A\subset S\subset B\)</span> and <span class="arithmatex">\(m(B\setminus A)\le\varepsilon\)</span>.   </p>
+<p>───────────────────────────────────<br />
+⇐ Direction (“ε-thin sandwich” property implies Jordan measurability)<br />
+───────────────────────────────────  </p>
+<p>Conversely, suppose that for each <span class="arithmatex">\(\varepsilon &gt; 0\)</span>, there are elementary sets   </p>
+<div class="arithmatex">\[  
+A_\varepsilon \;\subset\; S \;\subset\; B_\varepsilon  
+\quad  
+\text{with}  
+\quad  
+m\bigl(B_\varepsilon\setminus A_\varepsilon\bigr)\;\le\;\varepsilon.  
+\]</div>
+<p>We want to conclude <span class="arithmatex">\(S\)</span> is Jordan measurable, i.e. <span class="arithmatex">\(m^*(S) = m_*(S)\)</span>.  </p>
+<p>Step 1. Relation to inner and outer measures.  <br />
+By definition:  </p>
+<div class="arithmatex">\[  
+m_*(S)  
+\;=\;  
+\sup\{\,m(F):F \subset S,\;F\text{ is elementary}\}  
+\quad\text{and}\quad  
+m^*(S)  
+\;=\;  
+\inf\{\,m(G):G \supset S,\;G\text{ is elementary}\}.  
+\]</div>
+<p>Since <span class="arithmatex">\(A_\varepsilon \subset S\subset B_\varepsilon\)</span>, we have  </p>
+<div class="arithmatex">\[  
+m_*(S)  
+\;\ge\;  
+m\bigl(A_\varepsilon\bigr)  
+\quad\text{and}\quad  
+m^*(S)  
+\;\le\;  
+m\bigl(B_\varepsilon\bigr).  
+\]</div>
+<p>Hence  </p>
+<div class="arithmatex">\[  
+m^*(S) \;-\; m_*(S)  
+\;\le\;  
+m\bigl(B_\varepsilon\bigr)  
+\;-\;  
+m\bigl(A_\varepsilon\bigr).  
+\]</div>
+<p>Step 2. Relate <span class="arithmatex">\(m(B_\varepsilon) - m(A_\varepsilon)\)</span> to <span class="arithmatex">\(m(B_\varepsilon\setminus A_\varepsilon)\)</span>.  <br />
+In general for an elementary set <span class="arithmatex">\(A_\varepsilon\subset B_\varepsilon\)</span>, we have  </p>
+<div class="arithmatex">\[  
+m\bigl(B_\varepsilon\bigr)  
+\;-\;  
+m\bigl(A_\varepsilon\bigr)  
+\;\ge\;  
+m\bigl(B_\varepsilon\setminus A_\varepsilon\bigr).  
+\]</div>
+<p>(This inequality becomes an equality if both are unions of disjoint boxes and <span class="arithmatex">\(A_\varepsilon\subset B_\varepsilon\)</span> in a “compatible” way, but at least the “<span class="arithmatex">\(\ge\)</span>” always holds.)  </p>
+<p>From our assumption,  </p>
+<div class="arithmatex">\[  
+m\bigl(B_\varepsilon\setminus A_\varepsilon\bigr)  
+\;\le\;  
+\varepsilon.  
+\]</div>
+<p>Thus,  </p>
+<div class="arithmatex">\[  
+m^*(S)\;-\;m_*(S)  
+\;\le\;  
+m\bigl(B_\varepsilon\bigr)\;-\;m\bigl(A_\varepsilon\bigr)  
+\;\le\;  
+m\bigl(B_\varepsilon\setminus A_\varepsilon\bigr)  
+\;\le\;  
+\varepsilon.  
+\]</div>
+<p>Step 3. Conclude <span class="arithmatex">\(m^*(S) = m_*(S)\)</span>.  <br />
+Because <span class="arithmatex">\(\varepsilon&gt;0\)</span> was arbitrary, the above inequality implies</p>
+<div class="arithmatex">\[  
+m^*(S)\;-\;m_*(S)\;=\;0,  
+\]</div>
+<p>which is precisely the definition that <span class="arithmatex">\(S\)</span> is Jordan measurable.  </p>
+<p>──────────────────────────────────────<br />
+Conclusion<br />
+──────────────────────────────────────  </p>
+<p>The two statements are therefore equivalent:  <br />
+• “For every <span class="arithmatex">\(\varepsilon&gt;0\)</span>, there are elementary sets <span class="arithmatex">\(A_\varepsilon \subset S\subset B_\varepsilon\)</span> with <span class="arithmatex">\(m(B_\varepsilon \setminus A_\varepsilon)\le \varepsilon\)</span>.”  <br />
+• “<span class="arithmatex">\(S\)</span> is Jordan measurable, i.e. <span class="arithmatex">\(m^*(S) = m_*(S)\)</span>.”    </p>
+<p>Hence the proof is complete.</p>
+<p><strong><em>Let <span class="arithmatex">\(E \subset R^d\)</span> be a bounded set. and <span class="arithmatex">\(F \subset R^d\)</span> be an elementary set.</em></strong>
+<strong><em>Show that <span class="arithmatex">\(m^*(E) = m^*(E \cap F) + m^*(E\setminus F)\)</span> where <span class="arithmatex">\(m^*(\cdot)\)</span> is the Jordan outer measure.</em></strong></p>
+<p>Below is a “direct‐from‐definitions” proof of  </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\mu^*\bigl(E \cap F\bigr)  
+\;+\;  
+\mu^*\bigl(E \setminus F\bigr)  
+\]</div>
+<p>for any bounded set <span class="arithmatex">\(E\subset\mathbb{R}^d\)</span> and any elementary set <span class="arithmatex">\(F\subset\mathbb{R}^d\)</span>.  <br />
+Here, <span class="arithmatex">\(\mu^*(\,\cdot\,)\)</span> is the Jordan outer measure, defined by </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\inf\!\Bigl\{\,\mu(G):G\supset E,\;G\text{ is elementary}\Bigr\},  
+\]</div>
+<p>and <span class="arithmatex">\(\mu(\,\cdot\,)\)</span> is the usual “volume” of an elementary set (finite union of boxes).  We will avoid appealing to any “general outer‐measure subadditivity theorem,” using instead only the geometric additivity properties of the volume of elementary sets.  </p>
+<p>─────────────────────────────────────────────────<br />
+1) Terminology: “Elementary Set” and its Volume  </p>
+<p>• An elementary set in <span class="arithmatex">\(\mathbb{R}^d\)</span> is a finite union of boxes, each box being a Cartesian product of closed intervals.  <br />
+• The volume <span class="arithmatex">\(\mu(G)\)</span> of an elementary set <span class="arithmatex">\(G\)</span> is computed by summing the volumes of finitely many pairwise disjoint boxes that cover <span class="arithmatex">\(G\)</span>.  One shows directly that if <span class="arithmatex">\(G_1,G_2\)</span> are elementary, then    </p>
+<p>$$<br />
+  \mu\bigl(G_1\cup G_2\bigr)<br />
+  \;\le\;<br />
+  \mu(G_1) \;+\; \mu(G_2),<br />
+  $$  </p>
+<p>simply by combining boxes and (if necessary) subdividing them into disjoint pieces.  </p>
+<p>───────────────────────────────────────<br />
+2) Desired Equality  </p>
+<p>We want to prove that if <span class="arithmatex">\(E\subset\mathbb{R}^d\)</span> is bounded and <span class="arithmatex">\(F\subset\mathbb{R}^d\)</span> is elementary, then the two disjoint sets <span class="arithmatex">\(E\cap F\)</span> and <span class="arithmatex">\(E\setminus F\)</span> satisfy    </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\mu^*\bigl(E \cap F\bigr)  
+\;+\;  
+\mu^*\bigl(E \setminus F\bigr).  
+\]</div>
+<p>Note that <span class="arithmatex">\(E = \bigl(E\cap F\bigr)\cup \bigl(E\setminus F\bigr)\)</span> is a disjoint union.  </p>
+<p>We split the proof into two inequalities:  </p>
+<p>─────────────────────────────────────────────────<br />
+3) First Inequality:    </p>
+<div class="arithmatex">\[
+\mu^*(E) ≤ \mu^*(E ∩ F) + μ*(E \setminus F).  
+\]</div>
+<p>(a) Cover each piece separately.  <br />
+• Let <span class="arithmatex">\(\varepsilon &gt; 0\)</span>.  <br />
+• By definition of <span class="arithmatex">\(\mu^*(E\cap F)\)</span>, there is an elementary set <span class="arithmatex">\(G_1\supset E\cap F\)</span> with    </p>
+<p>$$<br />
+  \mu(G_1)<br />
+  \;&lt;\;<br />
+  \mu^*(E\cap F)<br />
+  \;+\;<br />
+  \tfrac{\varepsilon}{2}.<br />
+  $$    </p>
+<p>• Similarly, there is an elementary set <span class="arithmatex">\(G_2\supset E\setminus F\)</span> with  </p>
+<p>$$<br />
+  \mu(G_2)<br />
+  \;&lt;\;<br />
+  \mu^*(E \setminus F)<br />
+  \;+\;<br />
+  \tfrac{\varepsilon}{2}.<br />
+  $$  </p>
+<p>(b) Combine the covers.  <br />
+• Note that <span class="arithmatex">\(E = (E\cap F)\cup(E\setminus F) \subset G_1\cup G_2\)</span>.  <br />
+• Set <span class="arithmatex">\(H=G_1\cup G_2\)</span>.  Since the union of two elementary sets is again elementary, <span class="arithmatex">\(H\)</span> is an elementary set containing <span class="arithmatex">\(E\)</span>.  By definition of outer measure,  </p>
+<p>$$<br />
+  \mu^*(E)<br />
+  \;\le\;<br />
+  \mu(H).<br />
+  $$  </p>
+<p>(c) Relate μ(H) to μ(G1) and μ(G2).  <br />
+• Because <span class="arithmatex">\(G_1\)</span> and <span class="arithmatex">\(G_2\)</span> are each finite unions of boxes, one shows directly    </p>
+<p>$$<br />
+  \mu\bigl(G_1 \cup G_2\bigr)<br />
+  \;\le\;<br />
+  \mu(G_1)<br />
+  \;+\;<br />
+  \mu(G_2).<br />
+  $$    </p>
+<p>(This follows from decomposing the union into disjoint boxes, or, more simply, from the fact that elementary‐set “volume” satisfies finite subadditivity.)  </p>
+<p>(d) Putting it together.  <br />
+ Consequently,  </p>
+<div class="arithmatex">\[  
+  \mu^*(E)  \; \le \;  \mu(H)  =  
+  \mu\bigl(G_1 \cup G_2\bigr)  
+  \;\le\;  
+  \mu(G_1)  
+  +  
+  \mu(G_2)  
+  \;&lt;\;  
+  \Bigl(\mu^*(E\cap F) + \tfrac{\varepsilon}{2}\Bigr)  
+  +  
+  \Bigl(\mu^*(E\setminus F) + \tfrac{\varepsilon}{2}\Bigr).  
+\]</div>
+<p>Hence,  </p>
+<div class="arithmatex">\[  
+  \mu^*(E)  
+  \;&lt;\;  
+  \mu^*(E\cap F) \;+\; \mu^*(E\setminus F) \;+\; \varepsilon.  
+\]</div>
+<p>• Letting <span class="arithmatex">\(\varepsilon\to 0\)</span>, we obtain  </p>
+<div class="arithmatex">\[  
+  \mu^*(E)  
+  \;\le\;  
+  \mu^*\bigl(E \cap F\bigr)  
+  \;+\;  
+  \mu^*\bigl(E \setminus F\bigr).  
+\]</div>
+<p>─────────────────────────────────────────────<br />
+4) Second Inequality:  <br />
+μ<em>(E) ≥ μ</em>(E ∩ F) + μ*(E \setminus F).  </p>
+<p>(a) Cover <span class="arithmatex">\(E\)</span> as a whole.  <br />
+• Let <span class="arithmatex">\(\varepsilon &gt; 0\)</span>.  By definition of <span class="arithmatex">\(\mu^*(E)\)</span>, there is an elementary <span class="arithmatex">\(G\supset E\)</span> with  </p>
+<div class="arithmatex">\[  
+  \mu(G)  
+  \;&lt;\;  
+  \mu^*(E) + \varepsilon.  
+\]</div>
+<p>(b) Enclose each piece inside G.  <br />
+• Clearly, <span class="arithmatex">\(E\cap F \;\subset\; G\cap F\)</span> and <span class="arithmatex">\(E\setminus F\;\subset\; G\setminus F.\)</span>  <br />
+• Then by monotonicity of outer‐measure cover,    </p>
+<div class="arithmatex">\[  
+  \mu^*\bigl(E\cap F\bigr)  
+  \;\le\;  
+  \mu\bigl(G\cap F\bigr),  
+  \quad  
+  \mu^*\bigl(E\setminus F\bigr)  
+  \;\le\;  
+  \mu\bigl(G\setminus F\bigr).  
+\]</div>
+<p>(c) Additivity on disjoint parts</p>
+<p>Observe that <span class="arithmatex">\(G\cap F\)</span> and <span class="arithmatex">\(G\setminus F\)</span> are disjoint elementary sets whose union is <span class="arithmatex">\(G\)</span>.  Therefore    </p>
+<div class="arithmatex">\[  
+  \mu(G)  =  
+  \mu\bigl(G\cap F\bigr)  
+  +  
+  \mu\bigl(G\setminus F\bigr).  
+\]</div>
+<p>(d) Conclude.  <br />
+• Summing the two inequalities in (b) and using the above partition of <span class="arithmatex">\(G\)</span>:  </p>
+<div class="arithmatex">\[  
+  \mu^*\bigl(E\cap F\bigr)  +  \mu^*\bigl(E\setminus F\bigr)  
+  \;\le\;  
+  \mu\bigl(G\cap F\bigr)  +  
+  \mu\bigl(G\setminus F\bigr)  =  
+  \mu(G)  
+  \;&lt;\;  
+  \mu^*(E) + \varepsilon.  
+\]</div>
+<p>• Letting <span class="arithmatex">\(\varepsilon \to 0\)</span> yields  </p>
+<div class="arithmatex">\[  
+  \mu^*\bigl(E\cap F\bigr)  
+  +  
+  \mu^*\bigl(E\setminus F\bigr)  
+  \;\le\;  
+  \mu^*(E).  
+\]</div>
+<p>────────────────────────────────────────<br />
+5) Combine Both Inequalities  </p>
+<p>From steps (3) and (4), we have  </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;\le\;  
+\mu^*\bigl(E \cap F\bigr)  
+\;+\;  
+\mu^*\bigl(E \setminus F\bigr)  
+\quad\text{and}\quad  
+\mu^*\bigl(E \cap F\bigr)  
+\;+\;  
+\mu^*\bigl(E \setminus F\bigr)  
+\;\le\;  
+\mu^*(E).  
+\]</div>
+<p>Hence   </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\mu^*\bigl(E \cap F\bigr)  
+\;+\;  
+\mu^*\bigl(E \setminus F\bigr),  
+\]</div>
+<p>and the proof is complete—without ever invoking a “general subadditivity property of outer measures.” Instead, we used only:  </p>
+<p>• The definition of <span class="arithmatex">\(\mu^*(E)\)</span> as an infimum of <span class="arithmatex">\(\mu(G)\)</span> over elementary covers <span class="arithmatex">\(G\)</span>.  <br />
+• The fact that the measure <span class="arithmatex">\(\mu(\,\cdot\,)\)</span> of an elementary set is finite‐additive over disjoint unions and is ≤‐additive (i.e.\ <span class="arithmatex">\(\mu(G_1\cup G_2)\le \mu(G_1)+\mu(G_2)\)</span>) for two elementary sets <span class="arithmatex">\(G_1,G_2\)</span>.    </p>
+<p>────────────────────────────────────<br />
+Summary:  </p>
+<p>For any bounded set <span class="arithmatex">\(E\)</span> in <span class="arithmatex">\(\mathbb{R}^d\)</span> and any elementary set <span class="arithmatex">\(F\)</span>, the Jordan outer measure satisfies    </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\mu^*\bigl(E \cap F\bigr)  
+\;+\;  
+\mu^*\bigl(E \setminus F\bigr).  
+\]</div>
+<p>Both directions of the proof follow directly from the definition of <span class="arithmatex">\(\mu^*\)</span> and the basic geometry of finite unions of boxes (i.e.\ elementary sets). This does not require invoking the usual “outer‐measure subadditivity theorem,” but only the simpler statement that  <br />
+<span class="arithmatex">\(\mu(G_1 \cup G_2)\le \mu(G_1)+\mu(G_2)\)</span>  <br />
+for elementary <span class="arithmatex">\(G_1,G_2\)</span>.</p>
+<h1 id="darboux-and-riemann-integral">Darboux and Riemann Integral<a class="headerlink" href="#darboux-and-riemann-integral" title="Permanent link">&para;</a></h1>
+<h3 id="piecewise-constant-integral">Piecewise constant Integral<a class="headerlink" href="#piecewise-constant-integral" title="Permanent link">&para;</a></h3>
+<p>Let <span class="arithmatex">\(f: [a \; \; b] \to R\)</span> be a bounded, piecewise constant (p.c.) function on a finite partition <span class="arithmatex">\(I_1, \cdots, I_n\)</span> of <span class="arithmatex">\([a \; \; b]\)</span>. Let <span class="arithmatex">\(c_i\)</span> be the value of the function on the interval <span class="arithmatex">\(I_i\)</span>. Then, the sum <span class="arithmatex">\(\sum_i c_i |I_i|\)</span> is defined to be the real number denoted as <span class="arithmatex">\(\text{p.c.} \int_a^b f(x) dx\)</span> and we will refer to it as the piecewise constant (p.c.) integral.</p>
+<p>Prove the following properties:
++ Linearity
++ Monotonicity
++ any other relevant property</p>
+<hr />
+<p>$$<br />
+\textbf{Setup:}<br />
+$$<br />
+Let <span class="arithmatex">\([a,b]\subset \mathbb{R}\)</span> be a closed and bounded interval.  Suppose we have a finite partition<br />
+$$<br />
+P:\quad a = x_0 &lt; x_1 &lt; x_2 &lt; \cdots &lt; x_{n-1} &lt; x_n = b,<br />
+$$<br />
+and define the subintervals<br />
+$$<br />
+I_k \;=\; [\,x_{k-1},\,x_k\,],\quad k=1,\dots,n.<br />
+$$<br />
+A function <span class="arithmatex">\(f:[a,b]\to \mathbb{R}\)</span> is called piecewise constant on <span class="arithmatex">\(P\)</span> (or just “p.c. on <span class="arithmatex">\([a,b]\)</span>” if the partition is understood) if there exist constants <span class="arithmatex">\(c_k\in \mathbb{R}\)</span> such that<br />
+$$<br />
+f(x) \;=\; c_k<br />
+\quad\text{for all }x\in (x_{k-1},\, x_k),<br />
+\quad k=1,\dots,n.<br />
+$$<br />
+(We do not care about the values of <span class="arithmatex">\(f\)</span> at the partition endpoints.)  </p>
+<p>The “piecewise constant (p.c.) integral” of <span class="arithmatex">\(f\)</span> over <span class="arithmatex">\([a,b]\)</span> is defined by<br />
+$$<br />
+\mathrm{p.c.}\int_a^b f(x)\,dx<br />
+\;:=\;<br />
+\sum_{k=1}^{n}<br />
+c_k \,\bigl|\,I_k\bigr|<br />
+\;=\;<br />
+\sum_{k=1}^n c_k \,\bigl(x_k - x_{k-1}\bigr).<br />
+$$  </p>
+<p>──────────────────────────────────────<br />
+1) Linearity<br />
+──────────────────────────────────────  </p>
+<p>$$<br />
+\textbf{Claim: }<br />
+\quad<br />
+\mathrm{p.c.}\int_a^b \bigl(\alpha f(x) + \beta g(x)\bigr)\,dx<br />
+\;=\;<br />
+\alpha\,\mathrm{p.c.}\int_a^b f(x)\,dx \;+\;\beta\,\mathrm{p.c.}\int_a^b g(x)\,dx,<br />
+$$<br />
+for any real scalars <span class="arithmatex">\(\alpha,\beta\)</span> and piecewise constant functions <span class="arithmatex">\(f,g\)</span>.  </p>
+<p>────────────────────────────────────<br />
+<span class="arithmatex">\(\bullet\)</span> $\textit{Proof idea.}  $</p>
+<p>Without loss of generality, refine the partition (if necessary) so that both <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> are piecewise constant on the same partition <span class="arithmatex">\(P\)</span>. That is, there exist constants <span class="arithmatex">\(c_k,d_k\in\mathbb{R}\)</span> such that<br />
+$$<br />
+f(x) = c_k,\quad g(x)=d_k<br />
+\quad\text{for }x\in (x_{k-1},x_k),<br />
+\quad k=1,\dots,n.<br />
+$$  </p>
+<p>For <span class="arithmatex">\(h(x) := \alpha f(x)+\beta g(x)\)</span>, we have <span class="arithmatex">\(h(x)=\alpha c_k+\beta d_k\)</span> when <span class="arithmatex">\(x\in (x_{k-1},x_k)\)</span>. Then by definition:<br />
+$$<br />
+\mathrm{p.c.}\int_a^b h(x)\,dx<br />
+\;=\;<br />
+\sum_{k=1}^n \bigl(\alpha c_k + \beta d_k\bigr)\,\bigl(x_k - x_{k-1}\bigr).<br />
+$$<br />
+Meanwhile,<br />
+$$<br />
+\alpha\,\mathrm{p.c.}\int_a^b f(x)\,dx<br />
+\;+\;\beta\,\mathrm{p.c.}\int_a^b g(x)\,dx<br />
+\;=\;<br />
+\alpha\sum_{k=1}^n c_k\,|I_k|<br />
+\;+\;<br />
+\beta\sum_{k=1}^n d_k\,|I_k|.<br />
+$$<br />
+Factoring out <span class="arithmatex">\(\sum_{k=1}^n (x_k-x_{k-1})\)</span>, these are exactly the same sum.  Thus<br />
+$$<br />
+\mathrm{p.c.}\int_a^b \bigl(\alpha f + \beta g\bigr)<br />
+\;=\;<br />
+\alpha\,\mathrm{p.c.}\int_a^b f \;+\;\beta\,\mathrm{p.c.}\int_a^b g.<br />
+$$  </p>
+<p>Hence linearity holds.  </p>
+<p>──────────────────────────────────────<br />
+2) Monotonicity<br />
+───────────────────────────────────────  </p>
+<div class="arithmatex">\[  
+\textbf{Claim: }  
+\quad  
+\text{If }f(x)\le g(x)\text{ for all }x\in [a,b],  
+\text{ then }  
+\mathrm{p.c.}\int_a^b f(x)\,dx  
+\;\le\;  
+\mathrm{p.c.}\int_a^b g(x)\,dx.  
+\]</div>
+<p>────────────────────────────────<br />
+<span class="arithmatex">\(\bullet\)</span> $\textit{Proof idea.}  $</p>
+<p>Again, we use a common partition <span class="arithmatex">\(P\)</span>.  Suppose on each interval <span class="arithmatex">\((x_{k-1},x_k)\)</span>, <span class="arithmatex">\(f(x)=c_k\le d_k=g(x)\)</span>. Then<br />
+$$<br />
+\mathrm{p.c.}\int_a^b f(x)\,dx<br />
+\,=\,<br />
+\sum_{k=1}^n c_k\,\bigl(x_k-x_{k-1}\bigr),<br />
+\quad<br />
+\mathrm{p.c.}\int_a^b g(x)\,dx<br />
+\,=\,<br />
+\sum_{k=1}^n d_k\,\bigl(x_k-x_{k-1}\bigr).<br />
+$$<br />
+Because <span class="arithmatex">\(c_k\le d_k\)</span> for each <span class="arithmatex">\(k\)</span> and <span class="arithmatex">\(\bigl(x_k-x_{k-1}\bigr)\ge0\)</span>, each summand of the first sum is at most the corresponding summand of the second sum. Hence<br />
+$$<br />
+\sum_{k=1}^n c_k\,\bigl(x_k-x_{k-1}\bigr)<br />
+\;\le\;<br />
+\sum_{k=1}^n d_k\,\bigl(x_k-x_{k-1}\bigr).<br />
+$$<br />
+That is,<br />
+<span class="arithmatex">\(\mathrm{p.c.}\int_a^b f \;\le\;\mathrm{p.c.}\int_a^b g.\)</span>  </p>
+<p>──────────────────────────────<br />
+3) Additional Relevant Properties<br />
+──────────────────────────────  </p>
+<p>Here are a few other natural properties of the piecewise constant integral:  </p>
+<p>————————————————————————————<br />
+(a) Positivity:<br />
+If <span class="arithmatex">\(f(x)\ge 0\)</span> on <span class="arithmatex">\([a,b]\)</span>, then<br />
+$$<br />
+\mathrm{p.c.}\int_a^b f(x)\,dx \;\ge\; 0.<br />
+$$<br />
+Indeed, if each constant value <span class="arithmatex">\(c_k\ge0\)</span>, then each term <span class="arithmatex">\(c_k\,|I_k|\ge0\)</span>, so their sum is nonnegative.  </p>
+<p>————————————————————————————<br />
+(b) Additivity (or “interval additivity”):<br />
+If <span class="arithmatex">\(c\in(a,b)\)</span>, then<br />
+$$<br />
+\mathrm{p.c.}\int_a^b f(x)\,dx<br />
+\;=\;<br />
+\mathrm{p.c.}\int_a^c f(x)\,dx<br />
+\;+\;<br />
+\mathrm{p.c.}\int_c^b f(x)\,dx.<br />
+$$<br />
+Proof sketch: If one has a partition of <span class="arithmatex">\([a,b]\)</span>, simply split it at the point <span class="arithmatex">\(c\)</span>.  Then the sum of the intervals from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(c\)</span> plus the sum from <span class="arithmatex">\(c\)</span> to <span class="arithmatex">\(b\)</span> exactly reproduces the sum from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span>.  </p>
+<p>————————————————————————————<br />
+(c) Refinement invariance:<br />
+If <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(Q\)</span> are two finite partitions of <span class="arithmatex">\([a,b]\)</span> such that <span class="arithmatex">\(f\)</span> is piecewise constant with respect to both (i.e.\ constant on each subinterval of both partitions), then the p.c. integral yields the same sum.  <br />
+In other words, if we refine the partition <span class="arithmatex">\(P\)</span> to get a finer partition <span class="arithmatex">\(Q\)</span>, the computed sums are identical.  <br />
+(This follows directly from the definition, since the function takes the same constant value over all sub-subintervals.)  </p>
+<p>────────────────────────────────<br />
+<span class="arithmatex">\(\textbf{Summary:}\)</span><br />
+1. <span class="arithmatex">\(\mathrm{p.c.}\int\)</span> is linear.  <br />
+2. If <span class="arithmatex">\(f\le g\)</span>, then <span class="arithmatex">\(\mathrm{p.c.}\int f \le \mathrm{p.c.}\int g\)</span> (monotonicity).  <br />
+3. <span class="arithmatex">\(\mathrm{p.c.}\int\)</span> is positive, additive over adjacent intervals, and independent of any subdivision refinements—properties mirroring those of the usual Riemann (and Lebesgue) integrals, but here proven more simply due to the piecewise constant setup.</p>
+<h3 id="upper-lower-darboux-integral">Upper, Lower Darboux integral<a class="headerlink" href="#upper-lower-darboux-integral" title="Permanent link">&para;</a></h3>
+<p>Below is a step‐by‐step explanation of how to define the upper and lower Darboux integrals for a bounded function on <span class="arithmatex">\([a,b]\)</span>, and how these definitions lead to the Darboux (Riemann–Darboux) integral.  </p>
+<p>──────────────────────────────────<br />
+1) Setup: Bounded Functions on a Closed Interval<br />
+──────────────────────────────────  </p>
+<p>Let <span class="arithmatex">\(f\colon [a,b]\to \mathbb{R}\)</span> be a bounded function. Being bounded means there is some <span class="arithmatex">\(M&gt;0\)</span> such that <span class="arithmatex">\(\lvert f(x)\rvert \le M\)</span> for all <span class="arithmatex">\(x\in [a,b]\)</span>. We wish to define the integral of <span class="arithmatex">\(f\)</span> over <span class="arithmatex">\([a,b]\)</span> in the sense of Darboux.  </p>
+<p>────────────────────────────────────<br />
+2) Partitions of [a,b]<br />
+─────────────────────────────────────  </p>
+<p>A finite partition <span class="arithmatex">\(P\)</span> of the interval <span class="arithmatex">\([a,b]\)</span> is a sequence of points<br />
+$$<br />
+P:\quad a = x_0 &lt; x_1 &lt; x_2 &lt; \cdots &lt; x_{n-1} &lt; x_n = b.<br />
+$$<br />
+The subintervals determined by <span class="arithmatex">\(P\)</span> are<br />
+$$<br />
+[x_{k-1},\,x_k],<br />
+\quad k=1,2,\ldots,n.<br />
+$$<br />
+We will write <span class="arithmatex">\(\Delta_k = x_k - x_{k-1}\)</span> for the length of the <span class="arithmatex">\(k\)</span>-th subinterval.  </p>
+<p>───────────────────────────────────────<br />
+3) Upper and Lower Sums<br />
+───────────────────────────────────────  </p>
+<p>For a given partition <span class="arithmatex">\(P\)</span> of <span class="arithmatex">\([a,b]\)</span> and a bounded function <span class="arithmatex">\(f\)</span>, define:  </p>
+<p>• On each subinterval <span class="arithmatex">\(I_k := [x_{k-1},x_k]\)</span>, let<br />
+  $$<br />
+  M_k \;:=\; \sup_{x \in I_k}\,f(x),<br />
+  \quad<br />
+  m_k \;:=\; \inf_{x \in I_k}\,f(x).<br />
+  $$<br />
+  (Because <span class="arithmatex">\(f\)</span> is bounded, each of these suprema and infima is a finite real number.)  </p>
+<p>• The upper Darboux sum of <span class="arithmatex">\(f\)</span> with respect to <span class="arithmatex">\(P\)</span> is<br />
+  $$<br />
+  U(P,f)<br />
+  \;=\;<br />
+  \sum_{k=1}^n M_k\,\Delta_k,<br />
+  \quad\text{where}\quad \Delta_k = x_k \,-\, x_{k-1}.<br />
+  $$<br />
+• The lower Darboux sum of <span class="arithmatex">\(f\)</span> with respect to <span class="arithmatex">\(P\)</span> is<br />
+  $$<br />
+  L(P,f)<br />
+  \;=\;<br />
+  \sum_{k=1}^n m_k\,\Delta_k.<br />
+  $$  </p>
+<p>Geometrically, you can think of <span class="arithmatex">\(U(P,f)\)</span> as the total area of rectangles lying above the graph of <span class="arithmatex">\(f\)</span>, with heights given by the supremum on each interval, while <span class="arithmatex">\(L(P,f)\)</span> is the total area of rectangles lying below the graph, with heights given by the infimum.  </p>
+<p>───────────────────────────────<br />
+4) Upper and Lower Darboux Integrals<br />
+───────────────────────────────  </p>
+<p>To incorporate the idea behind “infimum of upper sums” and “supremum of lower sums,” we define:  </p>
+<p>• The upper Darboux integral:<br />
+  $$<br />
+  \overline{\int_a^b} f<br />
+  \;:=\;<br />
+  \inf_{P} \,U(P,f),<br />
+  $$<br />
+  where the infimum is taken over all finite partitions <span class="arithmatex">\(P\)</span> of <span class="arithmatex">\([a,b]\)</span>.  </p>
+<p>• The lower Darboux integral:<br />
+  $$<br />
+  \underline{\int_a^b} f<br />
+  \;:=\;<br />
+  \sup_{P} \,L(P,f),<br />
+  $$<br />
+  where the supremum is taken over all finite partitions <span class="arithmatex">\(P\)</span> of <span class="arithmatex">\([a,b]\)</span>.  </p>
+<p>Since every <span class="arithmatex">\(L(P,f)\)</span> must be at most every <span class="arithmatex">\(U(Q,f)\)</span> (for any partitions <span class="arithmatex">\(P,Q\)</span>), it follows that<br />
+$$<br />
+\underline{\int_a^b} f<br />
+\;\le\;<br />
+\overline{\int_a^b} f.<br />
+$$  </p>
+<p>────────────────────────────────────<br />
+5) Darboux (Riemann–Darboux) Integrable Functions<br />
+───────────────────────────────────  </p>
+<p>A function <span class="arithmatex">\(f\)</span> is said to be (Darboux) integrable on <span class="arithmatex">\([a,b]\)</span> if and only if the upper and lower Darboux integrals coincide, viz.<br />
+$$<br />
+\underline{\int_a^b} f<br />
+\;=\;<br />
+\overline{\int_a^b} f.<br />
+$$<br />
+When this happens, we define the common value:<br />
+$$<br />
+\int_{a}^b f(x)\,dx<br />
+\;:=\;<br />
+\underline{\int_a^b} f<br />
+\;=\;<br />
+\overline{\int_a^b} f.<br />
+$$<br />
+This quantity <span class="arithmatex">\(\int_{a}^b f(x)\,dx\)</span> is called the (Darboux) integral of <span class="arithmatex">\(f\)</span> over <span class="arithmatex">\([a,b]\)</span>.  </p>
+<p>Thus, the “Darboux integral” of <span class="arithmatex">\(f\)</span> is precisely the real number <span class="arithmatex">\(I\)</span> such that for every <span class="arithmatex">\(\epsilon&gt;0\)</span>, there is a partition <span class="arithmatex">\(P\)</span> of <span class="arithmatex">\([a,b]\)</span> where the upper sum <span class="arithmatex">\(U(P,f)\)</span> and the lower sum <span class="arithmatex">\(L(P,f)\)</span> differ by less than <span class="arithmatex">\(\epsilon\)</span>, i.e.<br />
+$$<br />
+U(P,f)\;-\;L(P,f)<br />
+\;&lt;\;<br />
+\epsilon.<br />
+$$  </p>
+<p>────────────────────────────────<br />
+6) Connection to “Piecewise Constant” Sums<br />
+────────────────────────────────  </p>
+<p>The logic of Darboux sums and the p.c. (piecewise constant) integrals share a similar approach:  </p>
+<p>• In the piecewise constant scenario, one literally takes the function to be constant on each interval, hence the integral is just a sum of “height <span class="arithmatex">\(\times\)</span> width”.  <br />
+• In the Darboux approach, one uses suprema and infima of the function on each subinterval (rather than a single chosen value) and then refines partitions to home in on the actual integral.  </p>
+<p>If a function is integrable in the Darboux sense, then there exist partitions on which the upper and lower sums are arbitrarily close; equivalently, one can approximate <span class="arithmatex">\(f\)</span> arbitrarily well by piecewise constant functions whose integrals match that of <span class="arithmatex">\(f\)</span>.  </p>
+<p>───────────────────────────<br />
+Summary<br />
+───────────────────────────────  </p>
+<p>1) A partition <span class="arithmatex">\(P:\,a=x_0&lt;x_1&lt;\dots&lt;x_n=b\)</span> is used to split <span class="arithmatex">\([a,b]\)</span> into subintervals.  <br />
+2) For a bounded <span class="arithmatex">\(f\)</span>, define:  <br />
+   – <span class="arithmatex">\(M_k = \sup_{x\in[x_{k-1},x_k]} f(x)\)</span>,  <br />
+   – <span class="arithmatex">\(m_k = \inf_{x\in[x_{k-1},x_k]} f(x)\)</span>.  <br />
+   Then  <br />
+   – Upper sum: <span class="arithmatex">\(U(P,f)=\sum_{k=1}^n M_k(x_k-x_{k-1})\)</span>.  <br />
+   – Lower sum: <span class="arithmatex">\(L(P,f)=\sum_{k=1}^n m_k(x_k-x_{k-1})\)</span>.  <br />
+3) The upper (resp.\ lower) Darboux integral is the infimum (resp.\ supremum) of <span class="arithmatex">\(U(P,f)\)</span> (resp.\ <span class="arithmatex">\(L(P,f)\)</span>) over all partitions <span class="arithmatex">\(P\)</span>.  <br />
+4) If these two “extreme” integrals coincide, that common value is taken to be <span class="arithmatex">\(\int_a^b f\)</span>. This is the Darboux integral of <span class="arithmatex">\(f\)</span> over <span class="arithmatex">\([a,b]\)</span>. If they do not coincide, <span class="arithmatex">\(f\)</span> is not (Darboux) integrable.    </p>
+<p>Hence, the Darboux integral is built out of the same conceptual approach as the piecewise constant integral, but allowing suprema and infima to capture “tightest” upper and lower approximations on each interval, yielding a criterion for integrability via the equality of these infimum/supremum sums.</p>
+<h3 id="riemann-integral">Riemann integral<a class="headerlink" href="#riemann-integral" title="Permanent link">&para;</a></h3>
+<p>Now, define Riemann integral of <span class="arithmatex">\(f\)</span> as before, using the ideas of a tagged partition of <span class="arithmatex">\([a \; \; b]\)</span> and Riemann sums.</p>
+<hr />
+<p>Below is a short, step-by-step explanation of how to define the Riemann integral of a bounded function on <span class="arithmatex">\([a,b]\)</span> using tagged partitions and Riemann sums. This builds on the earlier ideas of piecewise-constant integrals and Darboux sums, but now uses “tags” to evaluate <span class="arithmatex">\(f\)</span> at some chosen point in each subinterval.  </p>
+<p>──────────────────────────────────<br />
+1) Bounded Functions<br />
+────────────────────────────────────  </p>
+<p>Let <span class="arithmatex">\(f:[a,b]\to \mathbb{R}\)</span> be bounded. That is, there exists <span class="arithmatex">\(M&gt;0\)</span> with <span class="arithmatex">\(\lvert f(x)\rvert \le M\)</span> for all <span class="arithmatex">\(x \in [a,b]\)</span>.    </p>
+<p>─────────────────────────────────────<br />
+2) Partitions and Tagged Partitions<br />
+────────────────────────────────────  </p>
+<p>A finite partition <span class="arithmatex">\(P\)</span> of <span class="arithmatex">\([a,b]\)</span> is given by  <br />
+$$<br />
+P:\; a = x_0 &lt; x_1 &lt; \dots &lt; x_n = b.<br />
+$$  <br />
+We write the subintervals as  <br />
+$$<br />
+I_k = [x_{k-1}, x_k],\quad k=1,\dots, n.<br />
+$$  </p>
+<p>A tagged partition is a partition <span class="arithmatex">\(P\)</span> together with a choice of a “tag” <span class="arithmatex">\(\tau_k \in I_k\)</span> (often one requires <span class="arithmatex">\(\tau_k \in [x_{k-1}, x_k]\)</span>) for each <span class="arithmatex">\(k\)</span>. Denote this by <span class="arithmatex">\((P,T)\)</span>, where <span class="arithmatex">\(T = \{\tau_1,\dots,\tau_n\}\)</span> with <span class="arithmatex">\(\tau_k \in I_k\)</span>.  </p>
+<p>────────────────────────────────────<br />
+3) Riemann Sums<br />
+─────────────────────────────────────  </p>
+<p>Given a tagged partition <span class="arithmatex">\((P,T)\)</span>, we form the Riemann sum of <span class="arithmatex">\(f\)</span> as follows:  </p>
+<div class="arithmatex">\[  
+S_f\bigl((P,T)\bigr)  
+\;=\;  
+\sum_{k=1}^n f(\tau_k)\,\bigl(x_k - x_{k-1}\bigr).  
+\]</div>
+<p>Here:  <br />
+• <span class="arithmatex">\(\tau_k\)</span> is the chosen tag in the subinterval <span class="arithmatex">\([x_{k-1},x_k]\)</span>.  <br />
+• <span class="arithmatex">\(x_k - x_{k-1}\)</span> is the length of that subinterval.    </p>
+<p>Intuitively, each term <span class="arithmatex">\(f(\tau_k)\,(x_k - x_{k-1})\)</span> represents the area of a rectangle of base <span class="arithmatex">\([x_{k-1}, x_k]\)</span> and height given by the function value at the tag.  </p>
+<p>────────────────────────────────────<br />
+4) Mesh (Norm) of a Partition<br />
+────────────────────────────────────  </p>
+<p>The mesh (or norm) of a partition <span class="arithmatex">\(P\)</span> is the length of the largest subinterval in <span class="arithmatex">\(P\)</span>:    </p>
+<div class="arithmatex">\[  
+\|P\|  
+\;=\;  
+\max\{\,x_k - x_{k-1} \,\colon\, k=1,\dots,n\}.  
+\]</div>
+<p>When we make <span class="arithmatex">\(\|P\|\)</span> very small, it means we are “refining” the partition to get many small subintervals.  </p>
+<p>───────────────────────────────────────<br />
+5) Definition of the Riemann Integral<br />
+────────────────────────────────────────  </p>
+<p>We say <span class="arithmatex">\(f\)</span> is Riemann integrable on <span class="arithmatex">\([a,b]\)</span> if there exists a number <span class="arithmatex">\(L \in \mathbb{R}\)</span> such that for every <span class="arithmatex">\(\varepsilon&gt;0\)</span>, there is a <span class="arithmatex">\(\delta&gt;0\)</span> with the following property:  </p>
+<p>• For any tagged partition <span class="arithmatex">\((P,T)\)</span> of <span class="arithmatex">\([a,b]\)</span> whose mesh <span class="arithmatex">\(\|P\|\)</span> is less than <span class="arithmatex">\(\delta\)</span>, we have  </p>
+<p>$$<br />
+  \Bigl\lvert\, S_f\bigl((P,T)\bigr) \;-\; L\,\Bigr\rvert<br />
+  \;&lt;\;<br />
+  \varepsilon.<br />
+  $$  </p>
+<p>If such an <span class="arithmatex">\(L\)</span> exists, then we say <span class="arithmatex">\(f\)</span> is (Riemann) integrable on <span class="arithmatex">\([a,b]\)</span>, and we write  </p>
+<div class="arithmatex">\[  
+\int_a^b f(x)\,dx  
+\;=\;  
+L.  
+\]</div>
+<p>Equivalently, one says that <span class="arithmatex">\(\int_a^b f(x)\,dx\)</span> is the limit of the Riemann sums <span class="arithmatex">\(S_f((P,T))\)</span> as the mesh of the partition goes to zero.  </p>
+<p>─────────────────────────────────<br />
+6) Why This Matches Darboux and Piecewise Constant Ideas<br />
+─────────────────────────────────  </p>
+<p>• If the function is integrable in the Riemann sense, one can show that the upper and lower Darboux integrals coincide (and vice versa). Hence, the Riemann integral is the same as the Darboux integral.  <br />
+• In many elementary cases (e.g.\ step functions, continuous functions on <span class="arithmatex">\([a,b]\)</span>), one explicitly sees that as partitions get finer, the Riemann sums approach a unique limit and agree with the area under the curve.  <br />
+• The piecewise constant (p.c.) integrals are precisely the special case where each Riemann sum is formed by choosing exactly the constant value of <span class="arithmatex">\(f\)</span> on each subinterval. That leads to the same concept of “area under the graph,” now formalized by taking finer partitions and letting the mesh go to zero.  </p>
+<p>──────────────────────────────<br />
+Summary<br />
+─────────────────────────────────  </p>
+<ol>
+<li>A tagged partition <span class="arithmatex">\((P,T)\)</span> of <span class="arithmatex">\([a,b]\)</span> consists of a partition <span class="arithmatex">\(P\)</span> and a choice of tags <span class="arithmatex">\(\tau_k\)</span> in each subinterval.    </li>
+<li>The Riemann sum is <span class="arithmatex">\(\sum_{k=1}^n f(\tau_k)(x_k-x_{k-1})\)</span>.    </li>
+<li>As the mesh of <span class="arithmatex">\((P,T)\)</span> goes to zero, if all these Riemann sums converge to the same real number <span class="arithmatex">\(L\)</span>, then we say <span class="arithmatex">\(f\)</span> is Riemann integrable and define <span class="arithmatex">\(\int_a^b f=L\)</span>.    </li>
+<li>This Riemann integral is consistent with the Darboux approach and the piecewise constant integrals, tying all viewpoints together.</li>
+</ol>
+<h1 id="riemann-and-darboux-in-rd">Riemann and Darboux in <span class="arithmatex">\(R^d\)</span><a class="headerlink" href="#riemann-and-darboux-in-rd" title="Permanent link">&para;</a></h1>
+<p>Thus far we have dealt with the situation where <span class="arithmatex">\(f: [a \; \; b] \to R\)</span>. When we have the case <span class="arithmatex">\(f: U \to R\)</span> where <span class="arithmatex">\(U \subset R^d\)</span> and <span class="arithmatex">\(U\)</span> is bounded, how to extend the ideas of Darboux and Riemann integrals that we discussed thus far in one dimension.</p>
+<hr />
+<div class="arithmatex">\[  
+\textbf{Extending Darboux and Riemann Integrals from 1D to Higher Dimensions}  
+\]</div>
+<p>When we move from a function <span class="arithmatex">\(f: [a,b] \to \mathbb{R}\)</span> in one dimension to a function <span class="arithmatex">\(f : U \to \mathbb{R}\)</span> with <span class="arithmatex">\(U \subset \mathbb{R}^d\)</span> bounded, the core ideas—subdivision of the domain, infimum/supremum for Darboux sums, and sample‐point (“tagged”) sums for Riemann sums—remain the same. The main difference is that we now partition a region in <span class="arithmatex">\(\mathbb{R}^d\)</span> into small “boxes” (or “subrectangles”) instead of small intervals. Below is a concise overview.  </p>
+<p>──────────────────────────<br />
+1) Setup: A Bounded Domain in ℝᵈ<br />
+──────────────────────────  </p>
+<p>• Let <span class="arithmatex">\(U \subset \mathbb{R}^d\)</span> be bounded. That means there is a large rectangle    </p>
+<p>$$<br />
+  R \;=\; [a_1, b_1]\times [a_2, b_2]\times \cdots \times [a_d, b_d]<br />
+  $$  </p>
+<p>such that <span class="arithmatex">\(U \subset R\)</span>.  <br />
+• Assume <span class="arithmatex">\(f : U \to \mathbb{R}\)</span> is bounded on <span class="arithmatex">\(U\)</span>; that is, there exists <span class="arithmatex">\(M&gt;0\)</span> with <span class="arithmatex">\(\lvert f(x)\rvert \le M\)</span> for all <span class="arithmatex">\(x\in U\)</span>.  </p>
+<p>Often, one extends <span class="arithmatex">\(f\)</span> by zero (or any convenient value) outside <span class="arithmatex">\(U\)</span> so that it is defined on all of <span class="arithmatex">\(R\)</span>, but equals the original <span class="arithmatex">\(f\)</span> on <span class="arithmatex">\(U\)</span>.  In that way, we only need partitions of <span class="arithmatex">\(R\)</span> rather than partitions “just of <span class="arithmatex">\(U\)</span>.”  </p>
+<p>──────────────────────
+1) Partitions into Boxes<br />
+───────────────────────  </p>
+<p>A finite partition <span class="arithmatex">\(P\)</span> of the bounding box <span class="arithmatex">\(R\)</span> is given by choosing finitely many subdivision points in each coordinate direction.  Concretely, one picks  </p>
+<div class="arithmatex">\[  
+a_i \;=\; x_{i,0} &lt; x_{i,1} &lt; \cdots &lt; x_{i,n_i} \;=\; b_i  
+\quad (i=1,\dots, d),  
+\]</div>
+<p>and takes all products</p>
+<div class="arithmatex">\[  
+B_{j_1,j_2,\ldots,j_d}  
+\;=\;  
+[x_{1,j_1-1},x_{1,j_1}]  
+\times  
+[x_{2,j_2-1},x_{2,j_2}]  
+\times \cdots \times  
+[x_{d,j_d-1},x_{d,j_d}],  
+\]</div>
+<p>where <span class="arithmatex">\(1 \le j_i \le n_i\)</span>.  Each such set <span class="arithmatex">\(B\)</span> is a <span class="arithmatex">\(d\)</span>-dimensional “box.”  The union of all these boxes covers <span class="arithmatex">\(R\)</span>, so in particular covers <span class="arithmatex">\(U\subset R\)</span>.  </p>
+<p>────────────────────────────<br />
+3) Extending the Darboux Integral to ℝᵈ<br />
+─────────────────────────────  </p>
+<p>To define “upper” and “lower” sums in higher dimensions, we do essentially what we did in 1D, but on each box <span class="arithmatex">\(B\)</span>:  </p>
+<ol>
+<li>For each box <span class="arithmatex">\(B\)</span> in the partition <span class="arithmatex">\(P\)</span>, consider the portion of <span class="arithmatex">\(B\)</span> that lies in <span class="arithmatex">\(U\)</span>, namely <span class="arithmatex">\(B \cap U\)</span>.    </li>
+<li>Define    </li>
+</ol>
+<p>$$<br />
+   M_B \;=\; \sup_{x \in B \cap U} f(x),<br />
+   \qquad<br />
+   m_B \;=\; \inf_{x \in B \cap U} f(x).<br />
+   $$  </p>
+<p>(If <span class="arithmatex">\(B \cap U\)</span> is empty, one often takes <span class="arithmatex">\(M_B = 0\)</span> and <span class="arithmatex">\(m_B = 0\)</span> or simply omits that box from the sums.)  </p>
+<ol>
+<li>Let <span class="arithmatex">\(\mathrm{vol}(B)\)</span> be the <span class="arithmatex">\(d\)</span>-dimensional volume of the box <span class="arithmatex">\(B\)</span>. Then define the upper and lower Darboux sums:  </li>
+</ol>
+<p>$$<br />
+   U(P,f)<br />
+   \;=\;<br />
+   \sum_{B \in P} M_B \,\mathrm{vol}(B),<br />
+   \quad<br />
+   L(P,f)<br />
+   \;=\;<br />
+   \sum_{B \in P} m_B \,\mathrm{vol}(B).<br />
+   $$  </p>
+<ol>
+<li>As in the 1D case, the upper Darboux integral is  </li>
+</ol>
+<p>$$<br />
+   \overline{\int_U} f<br />
+   \;=\;<br />
+   \inf_P\, U(P,f),<br />
+   $$<br />
+   and the lower Darboux integral is<br />
+   $$<br />
+   \underline{\int_U} f<br />
+   \;=\;<br />
+   \sup_P\, L(P,f),<br />
+   $$  </p>
+<p>with both infimum and supremum taken over all possible partitions of <span class="arithmatex">\(R\)</span>.    </p>
+<ol>
+<li>If these two quantities coincide, we say <span class="arithmatex">\(f\)</span> is Darboux integrable on <span class="arithmatex">\(U\)</span> and define </li>
+</ol>
+<p>$$<br />
+   \int_U f<br />
+   \;=\;<br />
+   \underline{\int_U} f<br />
+   \;=\;<br />
+   \overline{\int_U} f.<br />
+   $$  </p>
+<p>This generalizes the one‐dimensional idea (sums of “suprema × subinterval length” vs. “infima × subinterval length”) to sums of “suprema × box volume” vs. “infima × box volume.”  </p>
+<p>────────────────────────────────<br />
+1) Extending the Riemann Integral via Tagged Partitions<br />
+────────────────────────────────  </p>
+<p>Similarly, for the Riemann integral in <span class="arithmatex">\(\mathbb{R}^d\)</span>, we define a “tagged partition” of <span class="arithmatex">\(R\)</span>:  </p>
+<ol>
+<li>First form a partition <span class="arithmatex">\(P\)</span> of <span class="arithmatex">\(R\)</span> into finitely many boxes <span class="arithmatex">\(B_1,B_2,\dots,B_N\)</span>.    </li>
+<li>In each box <span class="arithmatex">\(B_j\)</span>, choose a “tag” (a sample point) <span class="arithmatex">\(\tau_j \in B_j \cap U\)</span>.    </li>
+<li>The Riemann sum of <span class="arithmatex">\(f\)</span> relative to <span class="arithmatex">\((P,T)\)</span> is  </li>
+</ol>
+<p>$$<br />
+   S_f\bigl((P,T)\bigr)<br />
+   \;=\;<br />
+   \sum_{j=1}^N f(\tau_j)\,\mathrm{vol}(B_j).<br />
+   $$<br />
+   If <span class="arithmatex">\(B_j \cap U = \emptyset\)</span>, one sets that term to 0 or omits it.  </p>
+<ol>
+<li>The mesh (norm) of <span class="arithmatex">\(P\)</span> is the maximum of the side‐lengths of the boxes in <span class="arithmatex">\(P\)</span>. Taking finer and finer partitions shrinks this maximum side‐length to 0.  </li>
+</ol>
+<p>We say <span class="arithmatex">\(f\)</span> is (Riemann) integrable on <span class="arithmatex">\(U\subset \mathbb{R}^d\)</span> if there is a real number <span class="arithmatex">\(L\)</span> such that for every <span class="arithmatex">\(\varepsilon&gt;0\)</span>, one can make the mesh of the partition small enough so that all corresponding Riemann sums stay within <span class="arithmatex">\(\varepsilon\)</span> of <span class="arithmatex">\(L\)</span>. Symbolically:  </p>
+<div class="arithmatex">\[  
+\forall \varepsilon&gt;0,\;\exists\delta&gt;0:  
+\quad  
+\|P\|&lt;\delta  
+\;\Longrightarrow\;  
+\bigl|\,S_f((P,T)) - L\bigr|  
+&lt; \varepsilon.  
+\]</div>
+<p>If this limit <span class="arithmatex">\(L\)</span> exists (independent of the choices of the tags <span class="arithmatex">\(\tau_j\)</span>), then we define </p>
+<div class="arithmatex">\[  
+\int_U f  
+\;=\;  
+L.  
+\]</div>
+<p>─────────────────────────────────<br />
+5) Equivalence of the Two Definitions<br />
+─────────────────────────────────────  </p>
+<p>In one dimension, we know that the Darboux and Riemann definitions coincide. The same holds in <span class="arithmatex">\(\mathbb{R}^d\)</span>: a bounded function <span class="arithmatex">\(f\)</span> on a bounded region <span class="arithmatex">\(U\subset \mathbb{R}^d\)</span> is Darboux integrable if and only if it is Riemann integrable, and in that case the two integrals agree.  </p>
+<p>One often refers to both as the “Riemann–Darboux integral.”  </p>
+<p>──────────────────────────────────<br />
+Summary<br />
+───────────────────────────────────  </p>
+<ol>
+<li>To extend 1D Darboux integrals, we cover <span class="arithmatex">\(U\subset \mathbb{R}^d\)</span> with a grid of small boxes, take infimums and supremums of <span class="arithmatex">\(f\)</span> on each box (restricted to <span class="arithmatex">\(U\)</span>), form lower and upper sums, then let the partition get arbitrarily fine.    </li>
+<li>To extend 1D Riemann integrals, we do exactly what we did in one dimension but in multi‐dimensional boxes: pick a sample (“tag”) in each box to evaluate <span class="arithmatex">\(f\)</span>, multiply by the box’s volume, and sum.  Refining partitions and requiring the sums to converge yields the Riemann integral.    </li>
+<li>Both methods agree, provided <span class="arithmatex">\(f\)</span> is integrable in the sense that the upper and lower sums converge to the same limit (Darboux) or that all Riemann sums converge to the same value (Riemann).    </li>
+</ol>
+<p>Hence, the key 1D ideas—partitioning the domain, taking sup/inf or sample‐point evaluations, and letting the partition mesh go to zero—carry over verbatim, just using boxes and volume in place of intervals and length.</p>
+<h1 id="lebesgue-outer-measure">Lebesgue Outer measure<a class="headerlink" href="#lebesgue-outer-measure" title="Permanent link">&para;</a></h1>
+<p>The Jordan outer measure which we shall now show as <span class="arithmatex">\(\mu^{*J}\)</span> to distinguish from the Lebesgue outer measure <span class="arithmatex">\(\mu^*\)</span> from hereon. For a set <span class="arithmatex">\(E \subset R^d\)</span>, 
+$$
+\mu^{*J} = \inf_{E \supset B, B \; \text{elementary}} \mu^J(B)
+$$</p>
+<p>Equivalently, we can replace the elementary <span class="arithmatex">\(B\)</span> above with a finite union of boxes <span class="arithmatex">\(B_1 \cup \cdots B_n\)</span>. The infimum over the finite partition of boxes of <span class="arithmatex">\(\sum_i \text{vol}(B_i)\)</span>.</p>
+<p>By replacing the finite cover of boxes to a countably infinite cover of boxes, we pass from the Jordan outer measure to the Lebesgue outer measure.</p>
+<p>Is this correct?</p>
+<hr />
+<p>Below is a brief clarification of how the transition from “finite coverings by boxes” to “countably infinite coverings by boxes” leads from Jordan’s notion of outer measure to the Lebesgue outer measure:  </p>
+<p>────────────────────────────────────────────────────────────────────────────<br />
+1) Jordan Outer Measure (Finite Covers)<br />
+────────────────────────────────────────────────────────────────────────────  </p>
+<p>• For a bounded set <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span>, the Jordan outer measure <span class="arithmatex">\(\mu^{*J}(E)\)</span> is defined by </p>
+<p>$$<br />
+  \mu^{*J}(E)<br />
+  \;=\;<br />
+  \inf\Bigl \{<br />
+  \mu^J(B)<br />
+  \,\Big|\,<br />
+  B \supset E, \,B \text{ is an elementary set (finite union of boxes)}<br />
+  \Bigr \}.<br />
+  $$    </p>
+<p>In practice, we usually take <span class="arithmatex">\(B = B_1 \cup \cdots \cup B_n\)</span>, a finite union of boxes whose (Jordan) volume is  <br />
+<span class="arithmatex">\(\mu^J(B) = \sum_{i=1}^n \mathrm{vol}(B_i).\)</span>  </p>
+<p>• Thus, to find <span class="arithmatex">\(\mu^{*J}(E)\)</span>, we look at all possible finite covers of <span class="arithmatex">\(E\)</span> by boxes <span class="arithmatex">\(B_1,\dots,B_n\)</span> and take the infimum of the sum of their volumes.  </p>
+<p>─────────────────────────────────────<br />
+2) Lebesgue Outer Measure (Countable Covers)<br />
+────────────────────────────────────  </p>
+<p>• The Lebesgue outer measure <span class="arithmatex">\(\mu^*(E)\)</span> allows covering <span class="arithmatex">\(E\)</span> by \emph{countably many} boxes:  </p>
+<p>$$<br />
+  \mu^*(E)<br />
+  \;=\;<br />
+  \inf\Bigl\{<br />
+  \sum_{i=1}^{\infty} \mathrm{vol}(I_i)<br />
+  \,\Big|\,<br />
+  E\subset \bigcup_{i=1}^\infty I_i,<br />
+  \ I_i \text{ are boxes}<br />
+  \Bigr\}.<br />
+  $$  </p>
+<p>• Comparing the two:  <br />
+  – Jordan outer measure restricts to <span class="arithmatex">\(\emph{finite}\)</span> covers by boxes.  <br />
+  – Lebesgue outer measure allows <span class="arithmatex">\(\emph{countable}\)</span> covers by boxes, hence is generally “less restrictive” (which in turn can yield a smaller infimum—i.e.\ <span class="arithmatex">\(\mu^*(E)\le\mu^{*J}(E)\)</span> in most situations).  </p>
+<p>─────────────────────────<br />
+3) Is the Statement “By Replacing Finite Covers by Countably Many Covers <br />
+   We Pass from Jordan to Lebesgue Outer Measure” Correct?<br />
+──────────────────────────  </p>
+<p>Yes. In essence, the definition of Jordan outer measure is exactly like that of the Lebesgue outer measure except it limits itself to <span class="arithmatex">\(\emph{finite}\)</span> families of boxes. The Lebesgue outer measure extends this by allowing <span class="arithmatex">\(\emph{countably infinite}\)</span> families of boxes. Concretely:  </p>
+<p>• Jordan outer measure:    </p>
+<p>$$<br />
+  \mu^{*J}(E)<br />
+  \;=\;<br />
+  \inf_{\substack{E \subset \bigcup_{i=1}^n B_i \ n&lt;\infty}} \,<br />
+  \sum_{i=1}^n \mathrm{vol}(B_i).<br />
+  $$  </p>
+<p>• Lebesgue outer measure:  </p>
+<p>$$<br />
+  \mu^*(E)<br />
+  \;=\;<br />
+  \inf_{\substack{E \subset \bigcup_{i=1}^\infty B_i \ \text{countable}}} \,<br />
+  \sum_{i=1}^\infty \mathrm{vol}(B_i).<br />
+  $$  </p>
+<p>Thus, allowing infinite covers strictly generalizes the finite‐cover definition, moving from <span class="arithmatex">\(\mu^{*J}\)</span> to <span class="arithmatex">\(\mu^*\)</span>. Indeed, any set that can be covered by a finite collection can also be covered by the same set written as a countably infinite collection (just pad with empty sets), so   </p>
+<div class="arithmatex">\[  
+\mu^*(E) \;\le\; \mu^{*J}(E).  
+\]</div>
+<p>Hence the statement that “by passing from finite to countably infinite covers, we move from Jordan outer measure to Lebesgue outer measure” is precisely correct.  </p>
+<p>────────────────────────────<br />
+4) Additional Note: Existence vs. Finiteness of the Jordan Measure<br />
+────────────────────────────  </p>
+<p>• Jordan measure (as opposed to Jordan <span class="arithmatex">\(\emph{outer}\)</span> measure) is only defined for a restricted class of sets (“Jordan measurable” sets), basically those whose boundaries have measure zero and are bounded.  <br />
+• Lebesgue measure, on the other hand, is well‐defined (possibly infinite) for \emph{every} subset of <span class="arithmatex">\(\mathbb{R}^d\)</span>.    </p>
+<p>Thus, the finite‐cover versus countably‐cover dichotomy reflects the broader fact that Lebesgue theory is strictly more general than Jordan’s, while coinciding for sets that are nicely “Jordan measurable.”  </p>
+<p>────────────────────────────────────<br />
+Conclusion<br />
+───────────────────────────────────  </p>
+<p>Yes, the succinct statement is correct:  <br />
+“By replacing finite box‐covers with countably infinite box‐covers in the definition, one passes from the Jordan outer measure <span class="arithmatex">\(\mu^{*J}\)</span> to the Lebesgue outer measure <span class="arithmatex">\(\mu^*\)</span>.”</p>
+<h2 id="compare-jordan-and-lebesgue-outer-measures-on-countable-sets">Compare Jordan and Lebesgue outer measures on countable sets<a class="headerlink" href="#compare-jordan-and-lebesgue-outer-measures-on-countable-sets" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(E = \{x_1, x_2, \cdots \} \in R^d\)</span> be a countable set. The Jordan outer measure <span class="arithmatex">\(\mu^{* (J)}(E)\)</span> can be large and in some cases infinite while the Lebesgue outer measure <span class="arithmatex">\(\mu^*(E)\)</span> is zero. Prove this.</p>
+<hr />
+<p>Explanation in steps:  </p>
+<p>────────────────────────────<br />
+1) Setup and Notation<br />
+────────────────────────────  </p>
+<p>Let <span class="arithmatex">\(E = \{x_1, x_2, \dots\}\subset \mathbb{R}^d\)</span> be a countably infinite set. We compare:  </p>
+<p>• The Jordan outer measure <span class="arithmatex">\(\mu^{*(J)}(E)\)</span>, which uses only finite covers by boxes.  <br />
+• The Lebesgue outer measure <span class="arithmatex">\(\mu^*(E)\)</span>, which uses countable covers by boxes.  </p>
+<p>Recall:  </p>
+<ol>
+<li>Jordan outer measure:  </li>
+</ol>
+<p>$$<br />
+   \mu^{*(J)}(E)<br />
+   \;=\;<br />
+   \inf\Bigl\{<br />
+   \sum_{i=1}^n \mathrm{vol}(B_i)<br />
+   \;\Big|\;<br />
+   E\;\subset\; \bigcup_{i=1}^n B_i,\,<br />
+   B_i \text{ are (closed/open) boxes},\,n&lt;\infty<br />
+   \Bigr\}.<br />
+   $$  </p>
+<ol>
+<li>Lebesgue outer measure:  </li>
+</ol>
+<p>$$<br />
+   \mu^*(E)<br />
+   \;=\;<br />
+   \inf\Bigl\{<br />
+   \sum_{i=1}^\infty<br />
+   \mathrm{vol}(B_i)<br />
+   \;\Big|\;<br />
+   E\;\subset\; \bigcup_{i=1}^\infty B_i,\,<br />
+   B_i \text{ are boxes}<br />
+   \Bigr\}.<br />
+   $$  </p>
+<p>Below we prove two statements:  </p>
+<p>(1) <span class="arithmatex">\(\mu^*(E)=0\)</span> for every countable set <span class="arithmatex">\(E\)</span>.  <br />
+(2) <span class="arithmatex">\(\mu^{*(J)}(E)\)</span> can be arbitrarily large (or even infinite), depending on how <span class="arithmatex">\(E\)</span> is “spread out,” in particular if <span class="arithmatex">\(E\)</span> has limit points or is dense in some region.  </p>
+<p>──────────────────────────────<br />
+1) Proof That Lebesgue Outer Measure of a Countable Set Is Zero<br />
+───────────────────────────────  </p>
+<p>To show <span class="arithmatex">\(\mu^*(E)=0\)</span> for any countable <span class="arithmatex">\(E\subset \mathbb{R}^d\)</span>:  </p>
+<p>• Enumerate the points of <span class="arithmatex">\(E\)</span> as <span class="arithmatex">\(x_1, x_2,\dots\)</span>.  <br />
+• For each <span class="arithmatex">\(i=1,2,\dots\)</span>, choose a little box <span class="arithmatex">\(B_i\)</span> around <span class="arithmatex">\(x_i\)</span> of volume at most <span class="arithmatex">\(\tfrac{\varepsilon}{2^i}\)</span>.    </p>
+<p>Then <span class="arithmatex">\(E\subset \bigcup_{i=1}^\infty B_i\)</span> and the total volume is</p>
+<div class="arithmatex">\[  
+\sum_{i=1}^\infty  
+\mathrm{vol}(B_i)  
+\;\le\;  
+\sum_{i=1}^\infty \frac{\varepsilon}{2^i}  
+\;=\;  
+\varepsilon.  
+\]</div>
+<p>Since <span class="arithmatex">\(\varepsilon&gt;0\)</span> was arbitrary, the infimum of such sums is <span class="arithmatex">\(0\)</span>. Thus  </p>
+<div class="arithmatex">\[  
+\mu^*(E) \;=\; 0.  
+\]</div>
+<p>In other words, any countable set has Lebesgue outer measure <span class="arithmatex">\(0\)</span>.  </p>
+<p>───────────────────────────────<br />
+3) Example Where the Jordan Outer Measure Is “Large” or Infinite<br />
+──────────────────────────────  </p>
+<p>While the Lebesgue outer measure of a countable set in <span class="arithmatex">\(\mathbb{R}^d\)</span> is always zero, the Jordan outer measure can fail to be small (or even finite) if one insists on \emph{finite covers}. A standard illustration is:  </p>
+<p>• Let <span class="arithmatex">\(E=[0,1]\cap \mathbb{Q}\)</span> be the set of rational points in the unit interval in <span class="arithmatex">\(\mathbb{R}\)</span>.  <br />
+• It is a countable set, so <span class="arithmatex">\(\mu^*(E)=0\)</span>.    </p>
+<p>However, to cover \emph{all} rational points in <span class="arithmatex">\([0,1]\)</span> with a \emph{finite} union of intervals, one is effectively forced to cover \emph{every} subinterval of <span class="arithmatex">\([0,1]\)</span>. Indeed, if you leave out any subinterval, that subinterval contains a rational point not covered—a contradiction. Thus, the only successful finite cover of all rationals in <span class="arithmatex">\([0,1]\)</span> necessarily covers <span class="arithmatex">\([0,1]\)</span> entirely, giving:  </p>
+<div class="arithmatex">\[  
+\mu^{*(J)}(E)  
+\;=\;  
+\mu^{*(J)}\bigl([0,1]\cap\mathbb{Q}\bigr)  
+\;=\;  
+\mathrm{vol}\bigl([0,1]\bigr)  
+\;=\;  
+1.  
+\]</div>
+<p>Hence, for this countable set <span class="arithmatex">\(\mu^{*(J)}(E)=1\)</span>, contrasting with <span class="arithmatex">\(\mu^*(E)=0\)</span>.  </p>
+<p>More generally, any countable set <span class="arithmatex">\(E\)</span> that is dense in some region <span class="arithmatex">\(\Omega\subset \mathbb{R}^d\)</span> forces any finite family of boxes covering <span class="arithmatex">\(E\)</span> to cover all of <span class="arithmatex">\(\Omega\)</span>. Because <span class="arithmatex">\(\mathrm{vol}(\Omega)\)</span> might be positive (or unbounded), <span class="arithmatex">\(\mu^{*(J)}(E)\)</span> can be as large as <span class="arithmatex">\(\mathrm{vol}(\Omega)\)</span> or even infinite.  </p>
+<p>──────────────────────────────<br />
+4) Summary<br />
+──────────────────────────────  </p>
+<ol>
+<li>For any countable <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span>, its Lebesgue outer measure is always zero: <span class="arithmatex">\(\mu^*(E)=0\)</span>.    </li>
+<li>The Jordan outer measure <span class="arithmatex">\(\mu^{*(J)}(E)\)</span>, which only allows \emph{finite} covers by boxes, can be positive or even infinite for some countable sets (e.g.\ dense sets within a region).  <br />
+   – A classic example: the rationals in <span class="arithmatex">\([0,1]\)</span>. They have <span class="arithmatex">\(\mu^*\bigl(\mathbb{Q}\cap[0,1]\bigr)=0\)</span> but <span class="arithmatex">\(\mu^{*(J)}\bigl(\mathbb{Q}\cap[0,1]\bigr)=1\)</span>.    </li>
+</ol>
+<p>This illustrates the fundamental difference between these two outer measures and why the Jordan measure, in general, applies only to “nice” (Jordan measurable) sets, whereas Lebesgue measure extends to all sets in a more refined manner.</p>
+<h2 id="lebesgue-measurability">Lebesgue measurability<a class="headerlink" href="#lebesgue-measurability" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(E \subset R^d\)</span>. Let <span class="arithmatex">\(\mu^*(E)\)</span> be the outer measure of <span class="arithmatex">\(E\)</span>. Let <span class="arithmatex">\(U \subset R^d\)</span> be an open set such that for any <span class="arithmatex">\(\varepsilon &gt; 0\)</span>, there is an open set <span class="arithmatex">\(U \subset R^d\)</span> such that <span class="arithmatex">\(\mu^*(U \setminus E) \leq \varepsilon\)</span>. Then <span class="arithmatex">\(E\)</span> is said to be Lebesgue measurable. </p>
+<p>This can be used as a definition of Lebesgue measurability. This construction avoids using the Caratheodory criterion. What do you think?</p>
+<hr />
+<p>First, let us restate the proposed definition in a more standard way:  </p>
+<p>Definition (Via Approximation by Open Sets).  <br />
+A set <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span> is called Lebesgue measurable if, for every <span class="arithmatex">\(\varepsilon &gt; 0\)</span>, there exists an open set <span class="arithmatex">\(U \subset \mathbb{R}^d\)</span> such that  </p>
+<div class="arithmatex">\[  
+E \;\subset\; U  
+\quad\text{and}\quad  
+\mu^*\bigl(U \setminus E\bigr) \;\le\; \varepsilon,  
+\]</div>
+<p>where <span class="arithmatex">\(\mu^*(\cdot)\)</span> denotes the Lebesgue outer measure.  </p>
+<p>Below is a step-by-step outline explaining why this indeed provides a valid definition of Lebesgue measurability, and how it relates to the usual Carathéodory criterion.  </p>
+<hr />
+<p>1) Carathéodory's Criterion (Classical Definition)  </p>
+<p>Usually, one introduces the outer measure <span class="arithmatex">\(\mu^*(\cdot)\)</span> on all subsets of <span class="arithmatex">\(\mathbb{R}^d\)</span> via coverings by countable collections of boxes (or open sets). Then, one defines:  </p>
+<p>Carathéodory's Criterion.  <br />
+A set <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span> is Lebesgue measurable if and only if, for every set <span class="arithmatex">\(A \subset \mathbb{R}^d\)</span>,  </p>
+<div class="arithmatex">\[  
+\mu^*(A)   
+\;=\;   
+\mu^*\bigl(A \cap E\bigr) \;+\; \mu^*\bigl(A \cap E^c\bigr).  
+\]</div>
+<p>It can be shown that sets satisfying this criterion form a <span class="arithmatex">\(\sigma\)</span>-algebra, and the restriction of <span class="arithmatex">\(\mu^*\)</span> to these sets is indeed the Lebesgue measure.  </p>
+<hr />
+<p>2) Equivalence with Approximation by Open Sets  </p>
+<p>An equivalent way to say that <span class="arithmatex">\(E\)</span> is Lebesgue measurable is:  </p>
+<p>For every <span class="arithmatex">\(\varepsilon &gt; 0\)</span>, one can find an open set <span class="arithmatex">\(U \supset E\)</span> whose “difference” from <span class="arithmatex">\(E\)</span> has arbitrarily small outer measure, i.e.,  </p>
+<p>$$<br />
+  \mu^*\bigl(U \setminus E\bigr) \;\le\; \varepsilon.<br />
+  $$  </p>
+<p>Intuitively, this means <span class="arithmatex">\(E\)</span> can be “expanded” slightly to an open set <span class="arithmatex">\(U\)</span> without changing its outer measure by more than <span class="arithmatex">\(\varepsilon\)</span>. One then shows that this is equivalent to Carathéodory’s condition. The main steps are:  </p>
+<p>(a) If <span class="arithmatex">\(E\)</span> satisfies Carathéodory’s criterion, one uses the regularity property of Lebesgue measure (or outer measure) to approximate <span class="arithmatex">\(E\)</span> from above by open sets of outer measure arbitrarily close to <span class="arithmatex">\(\mu^*(E)\)</span>. One obtains </p>
+<div class="arithmatex">\[  
+\mu^*\bigl(U \setminus E\bigr)   
+\,=\,   
+\mu^*(U) \,-\, \mu^*\bigl(U \cap E^c\bigr)   
+\,\approx\,   
+\mu^*(E) \,-\, \mu^*(E)   
+\,=\,   
+0,  
+\]</div>
+<p>for a suitably chosen <span class="arithmatex">\(U\supset E\)</span>. By carefully optimizing these choices, one forces <span class="arithmatex">\(\mu^*((U\setminus E)\)</span> to be less than <span class="arithmatex">\(\varepsilon\)</span>.  </p>
+<p>(b) Conversely, if for every <span class="arithmatex">\(\varepsilon&gt;0\)</span> you can cover <span class="arithmatex">\(E\)</span> by an open set <span class="arithmatex">\(U\)</span> with <span class="arithmatex">\(\mu^*(U\setminus E)\le\varepsilon\)</span>, then one shows by a set-containment argument (plus subadditivity and other properties of <span class="arithmatex">\(\mu^*\)</span>) that Carathéodory’s splitting condition  </p>
+<div class="arithmatex">\[  
+\mu^*(A)   
+\,=\,   
+\mu^*\bigl(A \cap E\bigr) \;+\; \mu^*\bigl(A \cap E^c\bigr)  
+\]</div>
+<p>also holds. Essentially, given a set <span class="arithmatex">\(A\)</span>, one approximates <span class="arithmatex">\(A\cap E\)</span> by <span class="arithmatex">\((A\cap U)\)</span> and notes that the difference in measure can be chosen to be arbitrarily small.  </p>
+<p>Thus, the approximation-by-open-sets condition and the Carathéodory criterion are logically equivalent.  </p>
+<hr />
+<p>1) Practical and Conceptual Advantages  </p>
+<p>Using “approximation by open sets” (together with “approximation by closed sets” from below if needed) is particularly natural once one knows:  </p>
+<p>• The regularity of Lebesgue measure: every Lebesgue measurable set can be approximated from above by open sets and from below by closed sets in terms of measure.  </p>
+<p>• The Borel <span class="arithmatex">\(\sigma\)</span>-algebra and its completion: one can first define Lebesgue measure on all Borel sets (as an extension of the usual notion of volume) and then extend to all subsets of measure-zero modifications of Borel sets. In this viewpoint, saying “<span class="arithmatex">\(E\)</span> is contained in an open set <span class="arithmatex">\(U\)</span> with <span class="arithmatex">\(U\setminus E\)</span> small in outer measure” is a natural statement about how close <span class="arithmatex">\(E\)</span> is to a Borel set (indeed <span class="arithmatex">\(U\)</span> is Borel).  </p>
+<p>Hence, many texts prefer Carathéodory’s definition as the starting axiom for measure extension, while others introduce Lebesgue measure on the Borel sets first and then define a set to be (Lebesgue) measurable if it differs from a Borel set by a set of measure zero. One then proves that these extended measurable sets are exactly those that can be approximated from above by open sets in outer measure.  </p>
+<hr />
+<p>4) Conclusion  </p>
+<p>Yes, one can take “for every <span class="arithmatex">\(\varepsilon&gt;0\)</span>, there is an open set <span class="arithmatex">\(U\supset E\)</span> with <span class="arithmatex">\(\mu^*(U\setminus E)\le \varepsilon\)</span>” as a perfectly valid definition of Lebesgue measurability. It is indeed equivalent to the usual Carathéodory criterion:  </p>
+<p>• The approximation-by-open-sets property ↔ Carathéodory’s splitting condition.  </p>
+<p>This definition avoids directly invoking Carathéodory’s criterion, but in the background, a similar argument is used to show equivalence (by leveraging outer measure properties, subadditivity, and the structure of open/closed sets). Hence, from a purely logical standpoint, it is a sound and commonly known alternative approach to defining Lebesgue measurability.</p>
+<h2 id="properties-of-lebesgue-outer-measure">Properties of Lebesgue Outer measure<a class="headerlink" href="#properties-of-lebesgue-outer-measure" title="Permanent link">&para;</a></h2>
+<p>What are the properties of the Lebesgue outer measure <span class="arithmatex">\(\mu^*(\cdot)\)</span> which is defined using the construction of the infimum of sum of the volumes of a countable cover of boxes?</p>
+<hr />
+<p>Below is a step-by-step overview of the fundamental properties of the Lebesgue outer measure, denoted by <span class="arithmatex">\(\mu^*(\cdot)\)</span>, which is defined by covering a set with countably many boxes (or intervals/rectangles in <span class="arithmatex">\(\mathbb{R}^d\)</span>) and taking the infimum of the total volumes of those boxes.  </p>
+<hr />
+<p>1) Construction of the Lebesgue Outer Measure  </p>
+<p>Let <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span>. We define    </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\inf   
+\left\{  
+\sum_{k=1}^\infty \ell\bigl(I_k\bigr)   
+:\,  
+E \,\subset\, \bigcup_{k=1}^\infty I_k,  
+\ \text{where each } I_k \text{ is a (closed or open) box in } \mathbb{R}^d  
+\right\},  
+\]</div>
+<p>where <span class="arithmatex">\(\ell(I_k)\)</span> denotes the usual <span class="arithmatex">\(d\)</span>-dimensional volume (length, area, etc.) of the box <span class="arithmatex">\(I_k\)</span>.  </p>
+<hr />
+<p>2) Monotonicity  </p>
+<p>The outer measure <span class="arithmatex">\(\mu^*\)</span> is monotonically increasing, meaning:  </p>
+<div class="arithmatex">\[  
+A \,\subset\, B  
+\quad\Longrightarrow\quad  
+\mu^*(A) \;\le\; \mu^*(B).  
+\]</div>
+<p>Reasoning:  <br />
+• If <span class="arithmatex">\(A \subset B\)</span>, then any countable collection of boxes covering <span class="arithmatex">\(B\)</span> also covers <span class="arithmatex">\(A\)</span>.  <br />
+• Therefore, the infimum of sums of volumes needed to cover <span class="arithmatex">\(A\)</span> cannot exceed that needed to cover <span class="arithmatex">\(B\)</span>.    </p>
+<hr />
+<p>3) Countable Subadditivity (or Subadditivity in General)  </p>
+<p>The outer measure <span class="arithmatex">\(\mu^*\)</span> is countably subadditive, meaning:  </p>
+<div class="arithmatex">\[  
+\mu^*\!\Bigl(\bigcup_{k=1}^\infty E_k\Bigr)  
+\;\le\;  
+\sum_{k=1}^\infty \mu^*(E_k).  
+\]</div>
+<p>Reasoning:  <br />
+• Given countably many sets <span class="arithmatex">\(E_k\)</span>, for each <span class="arithmatex">\(k\)</span> choose a cover by boxes <span class="arithmatex">\(\{I_{k,j}\}_{j=1}^\infty\)</span> such that    </p>
+<p>$$<br />
+  E_k \,\subset\, \bigcup_{j=1}^\infty I_{k,j}<br />
+  \quad\text{and}\quad<br />
+  \sum_{j=1}^\infty \ell(I_{k,j})<br />
+  \;&lt;\;<br />
+  \mu^*(E_k) + \frac{\varepsilon}{2^k},<br />
+  $$  </p>
+<p>for some small <span class="arithmatex">\(\varepsilon&gt;0\)</span>.  <br />
+• Then    </p>
+<p>$$<br />
+  \bigcup_{k=1}^\infty E_k<br />
+  \;\subset\;<br />
+  \bigcup_{k=1}^\infty\bigcup_{j=1}^\infty I_{k,j},<br />
+  $$  </p>
+<p>and the total volume of that cover is </p>
+<div class="arithmatex">\[  
+  \sum_{k=1}^\infty \sum_{j=1}^\infty \ell(I_{k,j})  
+  \;\le\;  
+  \sum_{k=1}^\infty  
+  \Bigl (  
+     \mu^*(E_k) + \tfrac{\varepsilon}{2^k}  
+  \Bigr )  
+  \;=\;  
+  \varepsilon + \sum_{k=1}^\infty \mu^*(E_k).  
+  \]</div>
+<p>• Taking the infimum over all such choices and letting <span class="arithmatex">\(\varepsilon\to 0\)</span> implies the result.  </p>
+<hr />
+<p>4) Translation Invariance  </p>
+<p>For any <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span> and any <span class="arithmatex">\(x \in \mathbb{R}^d\)</span>, define    </p>
+<div class="arithmatex">\[  
+E + x   
+\;=\;   
+\{\,y + x \,:\, y \in E \}.  
+\]</div>
+<p>Then,  </p>
+<div class="arithmatex">\[  
+\mu^*(E + x)  
+\;=\;  
+\mu^*(E).  
+\]</div>
+<p>Reasoning:  <br />
+• Translating a cover of <span class="arithmatex">\(E\)</span> by <span class="arithmatex">\(x\)</span> gives a cover of <span class="arithmatex">\(E + x\)</span> with the same total volume, and vice versa.  <br />
+• Hence the infimum of volumes that cover <span class="arithmatex">\(E\)</span> is the same as that for <span class="arithmatex">\(E+x\)</span>.  </p>
+<hr />
+<p>5) Consistency with Volume on Boxes  </p>
+<p>By definition, if <span class="arithmatex">\(I\)</span> is a box in <span class="arithmatex">\(\mathbb{R}^d\)</span> with sides of lengths <span class="arithmatex">\(a_1, a_2, \dots, a_d\)</span>, then  </p>
+<div class="arithmatex">\[  
+\mu^*(I)   
+\;=\;  
+\ell(I)  
+\;=\;  
+a_1 \times a_2 \times \cdots \times a_d,  
+\]</div>
+<p>i.e., the outer measure agrees with the usual notion of the volume of a box.  </p>
+<hr />
+<p>6) Non-Negativity and Null Set for the Empty Set  </p>
+<p>• Non-negativity:  <br />
+<span class="arithmatex">\(\displaystyle \mu^*(E) \;\ge\; 0\)</span> for all <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span>.    </p>
+<p>• Measure of the empty set:  <br />
+<span class="arithmatex">\(\displaystyle \mu^*(\varnothing) = 0\)</span>.    </p>
+<p>These follow directly from the definition, as covering <span class="arithmatex">\(\varnothing\)</span> requires no boxes.  </p>
+<hr />
+<p>7) Additional Remarks on Completeness and Extension  </p>
+<p>• Once one identifies the collection of Lebesgue measurable sets via Carathéodory’s criterion (or the open-set-approximation criterion), one restricts <span class="arithmatex">\(\mu^*\)</span> to that <span class="arithmatex">\(\sigma\)</span>-algebra.  <br />
+• This yields a complete measure space: any subset of a <span class="arithmatex">\(\mu^*\)</span>-null set (i.e., a set of outer measure zero) is also measurable and has measure zero.  </p>
+<hr />
+<p>Summary of Key Properties  </p>
+<p>1) Monotonicity: If <span class="arithmatex">\(A \subset B\)</span>, then <span class="arithmatex">\(\mu^*(A) \le \mu^*(B)\)</span>.  <br />
+2) Countable Subadditivity: <span class="arithmatex">\(\mu^*\bigl(\bigcup_{k=1}^\infty E_k\bigr) \le \sum_{k=1}^\infty \mu^*(E_k)\)</span>.  <br />
+3) Translation Invariance: <span class="arithmatex">\(\mu^*(E + x) = \mu^*(E)\)</span> for all <span class="arithmatex">\(x \in \mathbb{R}^d\)</span>.  <br />
+4) Agreement with Volume: For any box <span class="arithmatex">\(I\)</span>, <span class="arithmatex">\(\mu^*(I)\)</span> equals the usual volume of <span class="arithmatex">\(I\)</span>.  <br />
+5) Non-negativity and <span class="arithmatex">\(\mu^*(\varnothing)=0\)</span>.    </p>
+<p>These properties are the backbone for constructing and studying Lebesgue measure on <span class="arithmatex">\(\mathbb{R}^d\)</span>.</p>
+<h2 id="varepsilon2n-trick"><span class="arithmatex">\(\varepsilon/2^n\)</span> trick<a class="headerlink" href="#varepsilon2n-trick" title="Permanent link">&para;</a></h2>
+<p><strong><em>What is the <span class="arithmatex">\(\varepsilon / 2^n\)</span> trick in the context of proving results regarding Lebesgue measures.  It comes up when the set in question is covered by boxes in <span class="arithmatex">\(R^d\)</span></em></strong></p>
+<p>In proofs involving Lebesgue measure (or outer measure) in 
+<span class="arithmatex">\(\mathbb{R}^d\)</span>, one often wants to cover a given set <span class="arithmatex">\(E\)</span> by a collection of boxes (rectangles) whose total volume can be made arbitrarily small (or arbitrarily close to some target number). The “<span class="arithmatex">\(\varepsilon/2^n\)</span> trick” (also sometimes called the “halving trick”) is a systematic way to achieve this in countably many steps, so that the total “error” or total “excess volume” remains below a chosen <span class="arithmatex">\(\varepsilon\)</span>. Below is an outline of how and why it works.  </p>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+1) The usual difficulty and the core idea<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  </p>
+<p>● Difficulty:  <br />
+  Suppose you want a single cover of <span class="arithmatex">\(E\)</span> by finitely or countably many boxes whose total volume is no more than (say) <span class="arithmatex">\(\mu^*(E) + \varepsilon\)</span>. However, the process of covering <span class="arithmatex">\(E\)</span> might naturally happen in multiple stages (e.g., successively covering “leftover” parts of <span class="arithmatex">\(E\)</span> that were missed by earlier steps).    </p>
+<p>● Core Idea (“Halving” the <span class="arithmatex">\(\varepsilon\)</span> each time):  <br />
+  Rather than trying to ensure at each intermediate step that the error is smaller than the same <span class="arithmatex">\(\varepsilon\)</span>, we allow ourselves smaller and smaller fractions of <span class="arithmatex">\(\varepsilon\)</span>, specifically <span class="arithmatex">\(\frac{\varepsilon}{2}, \frac{\varepsilon}{4}, \frac{\varepsilon}{8},\dots\)</span>. In the end, the sum of all these fractions is still at most <span class="arithmatex">\(\varepsilon\)</span>.  </p>
+<p>Mathematically, if you do something “wrong” (or “use up some measure”) by at most <span class="arithmatex">\(\frac{\varepsilon}{2}\)</span> at the first step, then at most <span class="arithmatex">\(\frac{\varepsilon}{4}\)</span> at the second step, etc., the total over infinitely many steps is<br />
+$$<br />
+\frac{\varepsilon}{2} \;+\; \frac{\varepsilon}{4} \;+\; \frac{\varepsilon}{8} \;+\; \dots <br />
+\;=\; \varepsilon.<br />
+$$<br />
+Hence, you never exceed your overall error budget <span class="arithmatex">\(\varepsilon\)</span>.  </p>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+2) A common scenario in measure theory<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  </p>
+<p>A prototypical place the <span class="arithmatex">\(\varepsilon/2^n\)</span> trick appears is in showing that the Lebesgue outer measure <span class="arithmatex">\(\mu^*(E)\)</span> can be approximated arbitrarily closely by covers of <span class="arithmatex">\(E\)</span> by boxes in <span class="arithmatex">\(\mathbb{R}^d\)</span>. For instance:  </p>
+<p>◾ You know that    </p>
+<div class="arithmatex">\[  
+\mu^*(E) \;=\; \inf\Bigl\{\,\sum_{i} \mathrm{vol}(R_i) \;\colon\; E\subseteq\bigcup_i R_i,\ R_i\text{ are boxes}\Bigr\}.  
+\]</div>
+<p>◾ You want to show there is, in fact, a single (finite or countable) cover by boxes whose total volume is $ &lt; \mu^*(E) + \varepsilon$.    </p>
+<p>Because the outer measure is defined via an infimum, you do not automatically have a single cover attains that infimum. Instead, you construct a sequence of near-optimal covers, each stage improving the total volume by at most <span class="arithmatex">\(\varepsilon/2^n\)</span>. Summing up all these small improvements gives you one final cover whose total volume is within <span class="arithmatex">\(\varepsilon\)</span> of the infimum.  </p>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+3) Typical step-by-step application<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  </p>
+<p>Here is how one often applies the <span class="arithmatex">\(\varepsilon/2^n\)</span> strategy in detail:  </p>
+<ol>
+<li>
+<p>Start with your desired total “error budget” <span class="arithmatex">\(\varepsilon&gt;0\)</span>.    </p>
+</li>
+<li>
+<p>Because <span class="arithmatex">\(\mu^*(E)\)</span> is an infimum over covers, for the first stage (say <span class="arithmatex">\(n=1\)</span>), you can find a countable (or finite) collection of boxes <span class="arithmatex">\(\{R_i^{(1)}\}\)</span> covering <span class="arithmatex">\(E\)</span> such that<br />
+   $$<br />
+   \sum_i \mathrm{vol}\bigl(R_i^{(1)}\bigr)<br />
+   \;\le\; <br />
+   \mu^*(E)\;+\;\frac{\varepsilon}{2}.<br />
+   $$  </p>
+</li>
+<li>
+<p>Now, maybe you still want to refine something about this cover further—e.g., remove redundant boxes, or handle boundary issues, or cover only leftover uncovered parts of <span class="arithmatex">\(E\)</span>. You allow yourself an additional <span class="arithmatex">\(\tfrac{\varepsilon}{4}\)</span> “volume budget” to fix those issues. Concretely, you produce a second collection of boxes <span class="arithmatex">\(\{R_i^{(2)}\}\)</span> such that<br />
+   $$<br />
+   \sum_i \mathrm{vol}\bigl(R_i^{(2)}\bigr) <br />
+   \;\le\;<br />
+   \bigl[\mu^*(E) + \tfrac{\varepsilon}{2}\bigr]\;+\;\tfrac{\varepsilon}{4}.<br />
+   $$  </p>
+</li>
+<li>
+<p>If you repeat such a procedure at the <span class="arithmatex">\(n\)</span>-th step, you might have a new cover <span class="arithmatex">\(\{R_i^{(n)}\}\)</span> whose total volume is<br />
+   $$<br />
+   \sum_i \mathrm{vol}\bigl(R_i^{(n)}\bigr)<br />
+   \;\le\;<br />
+   \mu^*(E)<br />
+   \;+\;<br />
+   \frac{\varepsilon}{2} + \frac{\varepsilon}{4} + \cdots + \frac{\varepsilon}{2^n}.<br />
+   $$  </p>
+</li>
+<li>
+<p>Since<br />
+   $$<br />
+   \frac{\varepsilon}{2} \;+\; \frac{\varepsilon}{4} \;+\;\cdots \;+\;\frac{\varepsilon}{2^n}<br />
+   \;=\;<br />
+   \varepsilon\Bigl(1-\frac{1}{2^n}\Bigr)<br />
+   \;\to\;<br />
+   \varepsilon <br />
+   \quad<br />
+   \text{as }n\to\infty,<br />
+   $$<br />
+   in the limit, you end up with a cover with total volume at most <span class="arithmatex">\(\mu^*(E) + \varepsilon\)</span>.    </p>
+</li>
+<li>
+<p>You can then combine all those boxes from your final stage (or union them if needed), so that the total volume is still within <span class="arithmatex">\(\varepsilon\)</span> of the infimum <span class="arithmatex">\(\mu^*(E)\)</span>.    </p>
+</li>
+</ol>
+<p>Thus, the “<span class="arithmatex">\(\varepsilon\)</span>-error” is “spread across” infinitely many small improvements, each of size <span class="arithmatex">\(\frac{\varepsilon}{2^n}\)</span>. The sum of those infinitely many small pieces is bounded by <span class="arithmatex">\(\varepsilon\)</span>.   </p>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+4) Why it is so ubiquitous<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  </p>
+<p>• Countable additivity / subadditivity in measure theory:  <br />
+  Because measure is countably subadditive, having a “small error” on infinitely many steps doesn’t necessarily blow up the total error. The geometric series <span class="arithmatex">\(\sum \frac{\varepsilon}{2^n}\)</span> remains finite.    </p>
+<p>• Flexible approximations:  <br />
+  Many standard proofs (e.g., constructing outer approximations, Fubini–Tonelli arguments, or showing that open sets are unions of cubes with arbitrarily small leftover measure, etc.) proceed by gradually refining covers or partitions. At each refinement step, the overhead volume can be forced below <span class="arithmatex">\(\varepsilon/2^n\)</span>.    </p>
+<p>• Ensuring a single final cover (rather than infinitely many partial covers):  <br />
+  After each step, you keep the boxes you want, discard or adjust the ones you do not, and accept only an extra <span class="arithmatex">\(\frac{\varepsilon}{2^n}\)</span> of volume “waste.” In the end, you collect all the final boxes into one big cover. The total measure overhead from all steps is bounded by <span class="arithmatex">\(\varepsilon\)</span>.    </p>
+<p>In short, the <span class="arithmatex">\(\varepsilon/2^n\)</span> trick is a staple in measure theory because it handles the infinite process of refining covers in such a way that the total volume overhead is controlled by a convergent geometric series.  </p>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br />
+5) Summary<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  </p>
+<p>The “<span class="arithmatex">\(\varepsilon/2^n\)</span> trick” is simply the systematic practice of splitting your allowable error <span class="arithmatex">\(\varepsilon\)</span> into a geometric sequence of smaller portions—<span class="arithmatex">\(\tfrac{\varepsilon}{2}, \tfrac{\varepsilon}{4}, \tfrac{\varepsilon}{8},\dots\)</span>. When covering a set <span class="arithmatex">\(E\)</span> by a sequence of (hopefully better and better) covers, each refinement can “use up” only <span class="arithmatex">\(\tfrac{\varepsilon}{2^n}\)</span> of extra volume. Summing these yields a total error below <span class="arithmatex">\(\varepsilon\)</span>. Thus, by the final stage (or a union of all stages), you obtain a single cover whose volume is within <span class="arithmatex">\(\varepsilon\)</span> of the optimal possible measure. This elegantly resolves infinite-step constructions in measure theory while keeping track of the total cost in a finite way.</p>
+<h1 id="the-lebesgue-outer-measure-of-an-elementary-set">The Lebesgue outer measure of an elementary set<a class="headerlink" href="#the-lebesgue-outer-measure-of-an-elementary-set" title="Permanent link">&para;</a></h1>
+<hr />
+<p>Let <span class="arithmatex">\(E \subset of R^d\)</span> be a bounded, elementary set. An elementary set is one which is a finite or countably finite union of "boxes" in <span class="arithmatex">\(R^d\)</span>. We can define the elementary measure <span class="arithmatex">\(\mu(E)\)</span>, the Jordan outer measure <span class="arithmatex">\(\mu^{*,(J)}\)</span>  and the Lebesgue outer measure <span class="arithmatex">\(\mu^*(E)\)</span> in the standard manner. We note that in this case, <span class="arithmatex">\(\mu(E) = \mu^{*,(J)}\)</span>.</p>
+<p>We need to prove that <span class="arithmatex">\(\mu^* (E) = \mu(E)\)</span>. </p>
+<p>First we note that We have to prove two inequalities:</p>
+<div class="arithmatex">\[ 
+\mu^* (E) \leq \mu(E) \qquad \mu(E) \leq \mu^* (E)
+\]</div>
+<p>The first inequality follows easily since the Lebesgue outer measure follows from a countable cover of boxes while the Jordan outer measure is from a finite cover. With the freedom afforded by the countable cover, the inequality follows.</p>
+<p>To prove the second inequality, we will use the Heine Borel theorem - for a bounded set such as <span class="arithmatex">\(E\)</span>, every open cover will have a finite subcover. The boxes we choose to cover <span class="arithmatex">\(E\)</span> can be made open using the <span class="arithmatex">\(\varepsilon/2^n\)</span> trick. The volume of the  subcover on which <span class="arithmatex">\(\mu(E)\)</span> is based will be <span class="arithmatex">\(\leq\)</span>  the volume of the conuntable cover of <span class="arithmatex">\(E\)</span> on which <span class="arithmatex">\(\mu^*(E)\)</span> is based.</p>
+<p>Fill in details to make this proof rigorous.</p>
+<hr />
+<p>Below is a step‐by‐step proof that, for a bounded elementary set <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span>, its Lebesgue outer measure <span class="arithmatex">\(\mu^*(E)\)</span> equals its elementary (or Jordan) measure <span class="arithmatex">\(\mu(E)\)</span>. The argument hinges on two inequalities:  </p>
+<div class="arithmatex">\[  
+\mu^* (E) \;\le\; \mu(E)  
+\quad\text{and}\quad  
+\mu(E) \;\le\; \mu^* (E).  
+\]</div>
+<p>We prove each in turn.  </p>
+<p>1 <strong>Proof that <span class="arithmatex">\(\mu^*(E) \leq \mu(E)\)</span></strong> </p>
+<p>By definition,  </p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\displaystyle \mu^*(E) = \inf \Big\{ \sum_{k=1}^{\infty} \mathrm{vol}(B_k) \;\Big|\; E \subset \bigcup_{k=1}^{\infty} B_k,\, B_k\text{ are boxes} \Big\}\)</span>.  </p>
+</li>
+<li>
+<p><span class="arithmatex">\(\displaystyle \mu(E) = \inf \Big\{ \sum_{j=1}^n \mathrm{vol}(C_j) \;\Big|\; E \subset \bigcup_{j=1}^n C_j,\, C_j\text{ are boxes (finite cover)} \Big\}.\)</span>  </p>
+</li>
+</ul>
+<p>Because <span class="arithmatex">\(\mu(E)\)</span> is defined via finite covers and <span class="arithmatex">\(\mu^*(E)\)</span> via countable covers, each finite cover of <span class="arithmatex">\(E\)</span> by boxes is, in particular, also a countable cover (just add infinitely many empty boxes if one wishes). Hence any candidate sum of volumes that appears in the definition of <span class="arithmatex">\(\mu(E)\)</span> is also a candidate for <span class="arithmatex">\(\mu^*(E)\)</span>. Taking the infimum over all finite covers in <span class="arithmatex">\(\mu(E)\)</span> and the infimum over all countable covers in <span class="arithmatex">\(\mu^*(E)\)</span> yields:  </p>
+<div class="arithmatex">\[  
+\mu^* (E)\;\le\;\mu(E).  
+\]</div>
+<p>2 <strong>Proof that <span class="arithmatex">\(\mu(E) \leq \mu^*(E)\)</span></strong>  </p>
+<p>For each <span class="arithmatex">\(\varepsilon &gt; 0\)</span>, let  </p>
+<div class="arithmatex">\[  
+\sum_{k=1}^{\infty} \mathrm{vol}(B_k) \;&lt;\; \mu^*(E) + \varepsilon  
+\]</div>
+<p>be a covering of <span class="arithmatex">\(E\)</span> by countably many boxes <span class="arithmatex">\(\{B_k\}_{k=1}^\infty\)</span>. Thus  </p>
+<div class="arithmatex">\[  
+E \;\subset\; \bigcup_{k=1}^{\infty} B_k.  
+\]</div>
+<p>Since <span class="arithmatex">\(E\)</span> is given to be bounded, we can use the Heine–Borel Theorem, which states that every open cover of a bounded (and closed) set in <span class="arithmatex">\(\mathbb{R}^d\)</span> has a finite subcover. To apply it rigorously here, one often inflates each box <span class="arithmatex">\(B_k\)</span> slightly to ensure they are open sets (for instance, replace each closed interval factor <span class="arithmatex">\([a,b]\)</span> in a box by an open interval <span class="arithmatex">\((a-\delta,b+\delta)\)</span>, adjusting <span class="arithmatex">\(\delta\)</span> to be arbitrarily small). In any case, we obtain an open cover of <span class="arithmatex">\(E\)</span>. By Heine–Borel, there exists a finite subcollection <span class="arithmatex">\(\{B_{k_1}, B_{k_2}, \ldots, B_{k_m}\}\)</span> such that </p>
+<div class="arithmatex">\[  
+E \;\subset\; \bigcup_{\ell=1}^m B_{k_\ell}.  
+\]</div>
+<p>Now, observe that the volume of the finite subcover cannot exceed the total volume of the original countable cover. Hence </p>
+<div class="arithmatex">\[  
+\sum_{\ell=1}^m \mathrm{vol}\bigl(B_{k_\ell}\bigr) \;\le\; \sum_{k=1}^{\infty} \mathrm{vol}(B_k)  
+\;&lt;\; \mu^*(E) + \varepsilon.  
+\]</div>
+<p>Since <span class="arithmatex">\(E\subset \bigcup_{\ell=1}^m B_{k_\ell}\)</span> is a finite cover of <span class="arithmatex">\(E\)</span>, by the very definition of the elementary (Jordan) measure, we have  </p>
+<div class="arithmatex">\[  
+\mu(E)  
+\;\le\;  
+\sum_{\ell=1}^m \mathrm{vol}\bigl(B_{k_\ell}\bigr)  
+\;\le\;  
+\mu^*(E) + \varepsilon.  
+\]</div>
+<p>Because <span class="arithmatex">\(\varepsilon&gt;0\)</span> was arbitrary, letting <span class="arithmatex">\(\varepsilon \to 0\)</span> yields </p>
+<div class="arithmatex">\[  
+\mu(E) \;\le\; \mu^*(E).  
+\]</div>
+<p><strong>Conclusion</strong> </p>
+<p>Combining both inequalities,  </p>
+<div class="arithmatex">\[  
+\mu^*(E) \;\le\; \mu(E)  
+\quad\text{and}\quad  
+\mu(E) \;\le\; \mu^*(E),  
+\]</div>
+<p>we conclude that</p>
+<div class="arithmatex">\[  
+\mu^*(E) \;=\; \mu(E).  
+\]</div>
+<p>Thus, for a bounded elementary set <span class="arithmatex">\(E\subset \mathbb{R}^d\)</span>, its Lebesgue outer measure and its elementary (Jordan) measure coincide.</p>
+<h2 id="making-the-boxes-open">Making the boxes open<a class="headerlink" href="#making-the-boxes-open" title="Permanent link">&para;</a></h2>
+<p>Below is a more detailed explanation of how to inflate each box in a controlled way so that we still stay within a volume bound of <span class="arithmatex">\(\mu^*(E) + \varepsilon\)</span>. This clarification fills in the gap needed prior to applying Heine–Borel in the proof.   </p>
+<p>1) Setup: A countable cover by boxes  </p>
+<p>Fix <span class="arithmatex">\(\varepsilon &gt; 0\)</span>. By the definition of the Lebesgue outer measure <span class="arithmatex">\(\mu^*(E)\)</span>, there is a countable collection of boxes <span class="arithmatex">\(\{B_k\}_{k=1}^{\infty}\)</span> such that  </p>
+<div class="arithmatex">\[  
+E \;\subset\; \bigcup_{k=1}^{\infty} B_k  
+\quad\text{and}\quad  
+\sum_{k=1}^{\infty} \mathrm{vol} \bigl(B_k\bigr) \;&lt;\;\mu^*(E)\;+\;\frac{\varepsilon}{2}.  
+\]</div>
+<p>We wish to modify each <span class="arithmatex">\(B_k\)</span> slightly into an open box <span class="arithmatex">\(\widetilde{B}_k\)</span> so that <span class="arithmatex">\(\sum_{k=1}^{\infty} \mathrm{vol}(\widetilde{B}_k)\)</span> remains bounded by <span class="arithmatex">\(\mu^*(E) + \varepsilon\)</span>.  </p>
+<p>2) Inflating each box in a controlled manner  </p>
+<p>Each <span class="arithmatex">\(B_k\)</span> is typically a product of intervals. For simplicity, assume  </p>
+<div class="arithmatex">\[  
+B_k \;=\; [a_{k,1},\,b_{k,1}]\,\times \cdots \times [a_{k,d},\,b_{k,d}]  
+\;\subset\; \mathbb{R}^d.  
+\]</div>
+<p>We now choose <span class="arithmatex">\(\delta_k &gt; 0\)</span> sufficiently small so that the open box</p>
+<div class="arithmatex">\[  
+\widetilde{B}_k  
+\;=\;  
+\bigl(a_{k,1} - \delta_k,\; b_{k,1} + \delta_k\bigr)\,\times \cdots \times   
+\bigl(a_{k,d} - \delta_k,\; b_{k,d} + \delta_k\bigr)  
+\]</div>
+<p>still has volume close to <span class="arithmatex">\(\mathrm{vol}(B_k)\)</span>. Specifically, the volume of <span class="arithmatex">\(\widetilde{B}_k\)</span> is</p>
+<div class="arithmatex">\[  
+\mathrm{vol}\bigl(\widetilde{B}_k\bigr)  
+\;=\;  
+\prod_{i=1}^d \bigl((b_{k,i} - a_{k,i}) + 2\delta_k\bigr).  
+\]</div>
+<p>Since <span class="arithmatex">\(\prod_{i=1}^d (b_{k,i} - a_{k,i}) = \mathrm{vol}(B_k)\)</span>, we 
+can make <span class="arithmatex">\(\delta_k\)</span> so small that  </p>
+<div class="arithmatex">\[  
+\mathrm{vol}\bigl(\widetilde{B}_k\bigr)  
+\;\le\;  
+\mathrm{vol}(B_k) \;+\; \frac{\varepsilon}{2^{k+1}}.  
+\]</div>
+<p>Such a choice is always possible because as <span class="arithmatex">\(\delta_k \to 0\)</span>, <span class="arithmatex">\(\mathrm{vol}(\widetilde{B}_k)\)</span> continuously decreases to <span class="arithmatex">\(\mathrm{vol}(B_k)\)</span>.  </p>
+<p>3) Controlling the total volume of the inflated boxes  </p>
+<p>By defining each <span class="arithmatex">\(\delta_k\)</span> as above, we have for all <span class="arithmatex">\(k\)</span>:  </p>
+<div class="arithmatex">\[  
+\mathrm{vol}\bigl(\widetilde{B}_k\bigr)  
+\;\le\;  
+\mathrm{vol}(B_k) + \frac{\varepsilon}{2^{k+1}}.  
+\]</div>
+<p>Hence  </p>
+<div class="arithmatex">\[  
+\sum_{k=1}^{\infty} \mathrm{vol}\bigl(\widetilde{B}_k\bigr)  
+\;\le\;  
+\sum_{k=1}^{\infty} \left(\mathrm{vol}(B_k) + \frac{\varepsilon}{2^{k+1}}\right)  
+\;=\;  
+\sum_{k=1}^{\infty} \mathrm{vol}(B_k)  
+\;+\;  
+\sum_{k=1}^{\infty} \frac{\varepsilon}{2^{k+1}}.  
+\]</div>
+<p>Since <br />
+<span class="arithmatex">\(\sum_{k=1}^{\infty} \mathrm{vol}(B_k) &lt; \mu^*(E) + \frac{\varepsilon}{2}\)</span> <br />
+by hypothesis, and<br />
+<span class="arithmatex">\(\sum_{k=1}^{\infty} \tfrac{\varepsilon}{2^{k+1}} = \tfrac{\varepsilon}{2}\)</span>,<br />
+we obtain  </p>
+<div class="arithmatex">\[  
+\sum_{k=1}^{\infty} \mathrm{vol}\bigl(\widetilde{B}_k\bigr)  
+\;\le\;  
+\left(\mu^*(E) + \frac{\varepsilon}{2}\right) \;+\; \frac{\varepsilon}{2}  
+\;=\;  
+\mu^*(E) + \varepsilon.  
+\]</div>
+<p>4) Applying Heine–Borel to the open cover  </p>
+<p>Clearly,  </p>
+<div class="arithmatex">\[  
+E  
+\;\subset\;  
+\bigcup_{k=1}^{\infty} B_k  
+\;\subset\;  
+\bigcup_{k=1}^{\infty} \widetilde{B}_k,  
+\]</div>
+<p>and now <span class="arithmatex">\(\{\widetilde{B}_k\}\)</span> is an open cover of <span class="arithmatex">\(E\)</span>. Because <span class="arithmatex">\(E\)</span> is bounded (and we can also assume it is measurable or at least the part to be covered is within a bounded region), the Heine–Borel Theorem implies there is a finite subcover  </p>
+<div class="arithmatex">\[  
+E  
+\;\subset\;  
+\bigcup_{\ell=1}^m \widetilde{B}_{k_\ell}  
+\;\subset\;  
+\bigcup_{k=1}^{\infty} \widetilde{B}_k.  
+\]</div>
+<p>Thus,  </p>
+<div class="arithmatex">\[  
+\sum_{\ell=1}^m \mathrm{vol} \bigl(\widetilde{B}_{k_\ell}\bigr)  
+\;\le\;  
+\sum_{k=1}^{\infty} \mathrm{vol}\bigl(\widetilde{B}_k\bigr)  
+\;\le\;  
+\mu^*(E)\;+\;\varepsilon.  
+\]</div>
+<p>Because <span class="arithmatex">\(\bigl\{\widetilde{B}_{k_\ell}\bigr\}_{\ell=1}^m\)</span> is a finite cover of <span class="arithmatex">\(E\)</span> by boxes (indeed, each <span class="arithmatex">\(\widetilde{B}_{k_\ell}\)</span> is still a box in the sense of having Cartesian product shape, just open intervals instead of closed), this finite subcover is admissible for the definition of the elementary (Jordan) measure <span class="arithmatex">\(\mu(E)\)</span>. Taking the infimum over all such finite covers yields   </p>
+<div class="arithmatex">\[  
+\mu(E)  
+\;\le\;  
+\sum_{\ell=1}^m \mathrm{vol}\bigl(\widetilde{B}_{k_\ell}\bigr)  
+\;\le\;  
+\mu^*(E)\;+\;\varepsilon.  
+\]</div>
+<p>Since <span class="arithmatex">\(\varepsilon &gt; 0\)</span> was arbitrary, letting <span class="arithmatex">\(\varepsilon \to 0\)</span> shows   </p>
+<div class="arithmatex">\[  
+\mu(E) \;\le\; \mu^*(E).  
+\]</div>
+<p>Summary of the inflation step  </p>
+<p>The key point is that by carefully choosing for each box <span class="arithmatex">\(B_k\)</span> a small inflation parameter <span class="arithmatex">\(\delta_k\)</span> so that the volume <span class="arithmatex">\(\mathrm{vol}(\widetilde{B}_k)\)</span> exceeds <span class="arithmatex">\(\mathrm{vol}(B_k)\)</span> by at most <span class="arithmatex">\(\frac{\varepsilon}{2^{k+1}}\)</span>, we ensure   </p>
+<div class="arithmatex">\[  
+\sum_{k=1}^\infty \mathrm{vol}(\widetilde{B}_k)  
+\;\le\;  
+\mu^*(E) + \varepsilon  
+\]</div>
+<p>while still having an open cover of <span class="arithmatex">\(E\)</span>. This allows us to apply Heine–Borel to extract a finite subcover of total volume at most <span class="arithmatex">\(\mu^*(E) + \varepsilon\)</span>.</p>
+<h2 id="disjoint-boxes">Disjoint boxes<a class="headerlink" href="#disjoint-boxes" title="Permanent link">&para;</a></h2>
+<p><strong>Result 1</strong></p>
+<p>Thus far, we have considered elementary sets which are unions of pairwise disjoint boxes. Now, we introduce the notion of <span class="arithmatex">\(\textit{almost disjoint}\)</span> boxes which are boxes whose interiors are disjoint which means that they share boundary. </p>
+<p>For a set of almost disjoint boxes <span class="arithmatex">\(B_i, i = 1, \cdots, n\)</span>, the elementary measure obeys the finite additivity property <span class="arithmatex">\(\mu (B_1 \cup B_2 \cup \cdots \cup B_n) = |B_1| + \cdots + |B_n|\)</span>.</p>
+<p>With this setup, let <span class="arithmatex">\(E\)</span> be a set such that it is a countable union of almost disjoint boxes. That is,</p>
+<div class="arithmatex">\[ 
+E = \bigcup_{i=1}^{\infty} B_i 
+\]</div>
+<p>Then, we have to prove that:</p>
+<div class="arithmatex">\[
+\mu^*(E) = \sum_{i=1}^{\infty} |B_i|
+\]</div>
+<hr />
+<p>Below is a step‐by‐step argument showing why, if a set    </p>
+<div class="arithmatex">\[  
+E \;=\; \bigcup_{i=1}^{\infty} B_i  
+\]</div>
+<p>is written as a countable union of “almost disjoint” boxes <span class="arithmatex">\(B_i\)</span> (i.e., boxes whose interiors are pairwise disjoint), then its Lebesgue outer measure is exactly the sum of the volumes of the <span class="arithmatex">\(B_i\)</span>:    </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\sum_{i=1}^{\infty} |B_i|.  
+\]</div>
+<p>Here, <span class="arithmatex">\(|B_i|\)</span> denotes the usual <span class="arithmatex">\(d\)</span>‐dimensional volume of the box <span class="arithmatex">\(B_i\)</span>.  </p>
+<p>1) Two inequalities to prove  </p>
+<p>We must show   </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;\le\;  
+\sum_{i=1}^{\infty} |B_i|  
+\quad\text{and}\quad  
+\mu^*(E)  
+\;\ge\;  
+\sum_{i=1}^{\infty} |B_i|.  
+\]</div>
+<p>Proving these two inequalities establishes <br />
+<span class="arithmatex">\(\mu^*(E)=\sum_{i=1}^\infty |B_i|\)</span>.  </p>
+<p>2) Showing <br />
+<span class="arithmatex">\(\displaystyle \mu^*(E) \;\le\;\sum_{i=1}^\infty |B_i|\)</span>  </p>
+<p>Recall the definition of Lebesgue outer measure:  </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\inf\Bigl\{  
+\sum_{k=1}^{\infty} \mathrm{vol}(I_k)  
+\;\Big|\;  
+E \subset \bigcup_{k=1}^{\infty} I_k, \,  
+\text{each } I_k \text{ a box}  
+\Bigr\}.  
+\]</div>
+<p>Because <br />
+<span class="arithmatex">\(\displaystyle E = \bigcup_{i=1}^\infty B_i\)</span> <br />
+is itself a countable cover of <span class="arithmatex">\(E\)</span> by boxes,    </p>
+<div class="arithmatex">\[  
+\sum_{i=1}^\infty |B_i|  
+\]</div>
+<p>is automatically one of the (infinitely many) sums inside the “infimum” defining <span class="arithmatex">\(\mu^*(E)\)</span>. Consequently,  </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;\le\;  
+\sum_{i=1}^\infty |B_i|.  
+\]</div>
+<p>3) Showing <br />
+<span class="arithmatex">\(\displaystyle \mu^*(E) \;\ge\;\sum_{i=1}^\infty |B_i|\)</span>  </p>
+<p>This direction is more subtle.  We use the fact that finite unions of almost disjoint boxes are elementary sets, and for those we already know (or can easily prove) that “Jordan measure” <span class="arithmatex">\(=\)</span> “Lebesgue outer measure.”  Concretely:  </p>
+<ol>
+<li>For each <span class="arithmatex">\(n\)</span>, define the finite union  </li>
+</ol>
+<div class="arithmatex">\[  
+E_n  
+\;=\;  
+\bigcup_{i=1}^n \,B_i.  
+\]</div>
+<p>Because <span class="arithmatex">\(B_1,\dots,B_n\)</span> are almost disjoint (their interiors are pairwise disjoint), one can check (or recall) that the “elementary measure” <span class="arithmatex">\(\mu(E_n)\)</span> is exactly the sum of the volumes:  </p>
+<p>$$<br />
+   \mu(E_n) \;=\; \sum_{i=1}^n |B_i|.<br />
+   $$<br />
+   Moreover, “elementary measure” <span class="arithmatex">\(\mu(E_n)\)</span> coincides with the Jordan outer measure <span class="arithmatex">\(\mu^{*,(J)}(E_n)\)</span>, and for these nice finite unions of boxes, we also know  <br />
+<span class="arithmatex">\(\mu^{*,(J)}(E_n) = \mu^*(E_n)\)</span>.    </p>
+<p>Hence  </p>
+<div class="arithmatex">\[  
+   \mu^*(E_n)  
+   \;=\;  
+   \mu(E_n)  
+   \;=\;  
+   \sum_{i=1}^n |B_i|.  
+   \]</div>
+<ol>
+<li>Observe that each <span class="arithmatex">\(E_n\)</span> is contained in <span class="arithmatex">\(E\)</span>.  By the monotonicity of outer measure,    </li>
+</ol>
+<div class="arithmatex">\[  
+   E_n \;\subset\; E  
+   \;\Longrightarrow\;  
+   \mu^*(E_n)\;\le\;\mu^*(E).  
+   \]</div>
+<p>Therefore  </p>
+<div class="arithmatex">\[  
+   \sum_{i=1}^n |B_i|  
+   \;=\;  
+   \mu^*(E_n)  
+   \;\le\;  
+   \mu^*(E).  
+   \]</div>
+<ol>
+<li>Since the above holds for every finite <span class="arithmatex">\(n\)</span>, we let <span class="arithmatex">\(n\to\infty\)</span>.  The partial sums <span class="arithmatex">\(\sum_{i=1}^n |B_i|\)</span> increase to <span class="arithmatex">\(\sum_{i=1}^\infty |B_i|\)</span>.  Hence  </li>
+</ol>
+<div class="arithmatex">\[  
+   \sum_{i=1}^\infty |B_i|  
+   \;\;=\;\;  
+   \lim_{n\to\infty} \,\sum_{i=1}^n |B_i|  
+   \;\;\le\;\;  
+   \mu^*(E).  
+   \]</div>
+<p>Thus we obtain  </p>
+<div class="arithmatex">\[  
+\mu^*(E) \;\ge\;\sum_{i=1}^\infty |B_i|.  
+\]</div>
+<p>4) Conclusion  </p>
+<p>Combining both inequalities,  </p>
+<p>• From the covering definition:<br />
+<span class="arithmatex">\(\displaystyle \mu^*(E)\;\le\;\sum_{i=1}^\infty |B_i|\)</span>.  <br />
+• From the monotonicity and finite‐union argument:<br />
+<span class="arithmatex">\(\displaystyle \mu^*(E)\;\ge\;\sum_{i=1}^\infty |B_i|\)</span>.  </p>
+<p>we conclude  </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\sum_{i=1}^\infty |B_i|.  
+\]</div>
+<p>Hence, whenever <span class="arithmatex">\(E\)</span> is (by definition) a countable union of almost disjoint boxes <span class="arithmatex">\(\{B_i\}\)</span>, its Lebesgue outer measure is exactly the sum of the volumes of those boxes.</p>
+<p><strong>Result 2</strong></p>
+<p>For <span class="arithmatex">\(E \subset R^d\)</span> and bounded, let <span class="arithmatex">\(E\)</span> be the countable union of almost disjoint boxes. In this case, we have </p>
+<div class="arithmatex">\[
+\mu^*(E) = \mu_{*,(J)} (E)
+\]</div>
+<p>the Lebesgue outer measure is equal to the inner Jordan measure. We need to prove this.</p>
+<p>Here are some initial thoughts on the proof.</p>
+<p>Let <span class="arithmatex">\(B_i, i = 1, \cdots, \infty\)</span> be the almost disjoint boxes. We can show that</p>
+<div class="arithmatex">\[
+\mu*(E) = \sum_{i=1}^{\infty} | B_i |
+\]</div>
+<p>where <span class="arithmatex">\(|B_i| = \ell(B_i)\)</span> is the usual <span class="arithmatex">\(d\)</span>-dimensional volume of the box. So, it seems that we have
+to prove two inequalities:</p>
+<div class="arithmatex">\[
+\mu_{*,(J)}(E) \leq \sum_{i=1}^{\infty} | B_i | \qquad \mu_{*,(J)}(E) \geq \sum_{i=1}^{\infty} |B_i|
+\]</div>
+<p>the first inequality rough sketch:  we can choose a finite subset of the given <span class="arithmatex">\(B_i\)</span>. Let <span class="arithmatex">\(N\)</span> be the number of the boxes. We have to choose <span class="arithmatex">\(N\)</span> and we have to take a supremum meaning we have to choose which <span class="arithmatex">\(N\)</span> of the countable boxes <span class="arithmatex">\(B_i\)</span> we choose.</p>
+<p>Foramlize or modify this argument.</p>
+<hr />
+<p>Below is a succinct version of the proof with a simplified indexing in Step 2, removing any extraneous notation.  </p>
+<p>───────────────────────────────<br />
+1) Setting and Definitions<br />
+───────────────────────────────  </p>
+<p>Let <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span> be bounded, and suppose  </p>
+<div class="arithmatex">\[  
+E \;=\; \bigcup_{i=1}^{\infty} B_i,  
+\]</div>
+<p>where each <span class="arithmatex">\(B_i\)</span> is a (Jordan-measurable) box and the <span class="arithmatex">\(B_i\)</span> are “almost disjoint” (their interiors are disjoint, and overlaps can only occur on boundaries of measure zero).  Let <span class="arithmatex">\(\ell(B_i)\)</span> denote the usual <span class="arithmatex">\(d\)</span>-dimensional volume of <span class="arithmatex">\(B_i\)</span>.  </p>
+<p>We wish to show  </p>
+<div class="arithmatex">\[  
+\mu^*(E) \;=\; \mu_{*,(J)}(E),  
+\]</div>
+<p>where <span class="arithmatex">\(\mu^*\)</span> is the Lebesgue outer measure, and  </p>
+<div class="arithmatex">\[  
+\mu_{*,(J)}(E)  
+\;=\;  
+\sup  
+\Bigl\{  
+\sum_{k=1}^{m} \ell(J_k)  
+\;\Bigm|\;  
+J_1,\dots,J_m \subset E,\;\; (J_k \text{ pairwise disjoint boxes})  
+\Bigr\}  
+\]</div>
+<p>is the inner Jordan measure.  In particular, a key step is to prove  </p>
+<div class="arithmatex">\[  
+\mu_{*,(J)}(E)  
+\;\;\le\;\;  
+\sum_{i=1}^{\infty}  
+\ell(B_i).  
+\]</div>
+<p>───────────────────────────<br />
+2) The Inequality  <span class="arithmatex">\(\mu_{*,(J)}(E) \;\le\; \sum_{i=1}^\infty \ell(B_i)\)</span><br />
+─────────────────────────  </p>
+<p>By definition,  </p>
+<div class="arithmatex">\[  
+\mu_{*,(J)}(E)  
+\;=\;  
+\sup  
+\Bigl\{  
+\sum_{k=1}^{m} \ell(J_k)  
+\;\Bigm|\;  
+J_k\subset E,\;  
+(J_k \text{ disjoint}),  
+\;  
+m\in\mathbb{N}  
+\Bigr\}.  
+\]</div>
+<p>Any finite family <span class="arithmatex">\(\{J_1,\dots,J_m\}\)</span> of disjoint boxes is contained in <span class="arithmatex">\(E\)</span>.  In particular, we can also consider finite subcollections taken directly from our given family <span class="arithmatex">\(\{B_i\}\)</span>.  Concretely,  </p>
+<p>• Pick any finite subcollection of the <span class="arithmatex">\(B_i\)</span>; for simplicity, label them   </p>
+<div class="arithmatex">\[  
+B_1,\; B_2,\;\dots,\; B_N  
+\]</div>
+<p>(which is just a finite subset of <span class="arithmatex">\(\{B_i\}_{i=1}^\infty\)</span>).  <br />
+• Because the <span class="arithmatex">\(B_i\)</span> are almost disjoint, we have  </p>
+<div class="arithmatex">\[  
+\sum_{k=1}^N \ell\bigl(B_k\bigr)  
+\;\;\le\;\;  
+\sum_{i=1}^\infty \ell\bigl(B_i\bigr).  
+\]</div>
+<p>• By definition of <span class="arithmatex">\(\mu_{*,(J)}(E)\)</span>, we take the supremum of such finite-sum volumes of disjoint boxes \emph{inside} <span class="arithmatex">\(E\)</span>.  But every finite subcollection from the <span class="arithmatex">\(B_i\)</span> is one of those valid families.  Thus each finite sum is at most <span class="arithmatex">\(\sum_{i=1}^\infty \ell(B_i)\)</span>, and taking the supremum cannot exceed this same infinite sum.  </p>
+<p>Hence  </p>
+<div class="arithmatex">\[  
+\mu_{*,(J)}(E)  
+\;\;\le\;\;  
+\sum_{i=1}^\infty  
+\ell(B_i),  
+\]</div>
+<p>as desired.  </p>
+<p>───────────────────────<br />
+3) Remarks on the Reverse Inequality and Conclusion<br />
+───────────────────────  </p>
+<p>• One similarly shows  </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\sum_{i=1}^{\infty}\ell(B_i).  
+\]</div>
+<p>(Here we use that <span class="arithmatex">\(E\)</span> is covered by the <span class="arithmatex">\(B_i\)</span>, apply subadditivity of <span class="arithmatex">\(\mu^*\)</span>, and argue each <span class="arithmatex">\(B_i\)</span> is Jordan measurable. By approximating each <span class="arithmatex">\(B_i\)</span> from the inside, we obtain that <span class="arithmatex">\(\sum_{i=1}^\infty \ell(B_i)\)</span> can be matched arbitrarily closely by finite disjoint unions inside <span class="arithmatex">\(E\)</span>.)  </p>
+<p>• Combining these, one arrives at   </p>
+<div class="arithmatex">\[  
+\mu^*(E)  
+\;=\;  
+\sum_{i=1}^{\infty}\ell(B_i)  
+\;=\;  
+\mu_{*,(J)}(E),  
+\]</div>
+<p>completing the proof that the Lebesgue outer measure of <span class="arithmatex">\(E\)</span> equals its inner Jordan measure (under the assumption that <span class="arithmatex">\(E\)</span> is covered by countably many almost disjoint Jordan-measurable boxes).</p>
+<h2 id="closed-dyadic-cubes-in-rd">Closed Dyadic cubes in <span class="arithmatex">\(R^d\)</span><a class="headerlink" href="#closed-dyadic-cubes-in-rd" title="Permanent link">&para;</a></h2>
+<p><strong><em>What is the concept of a closed dyadic cube in <span class="arithmatex">\(R^d\)</span>? In particular a cube of side length <span class="arithmatex">\(2^{-n}\)</span> for some non-negative integer <span class="arithmatex">\(n\)</span>.</em></strong></p>
+<p>A closed dyadic cube in <span class="arithmatex">\(\mathbb{R}^d\)</span> is a closed cube whose side length is a negative power of 2, and whose corners lie in the scaled integer lattice. Concretely, for a nonnegative integer <span class="arithmatex">\(n\in \{0,1,2,\dots\}\)</span> and an integer vector   </p>
+<div class="arithmatex">\[  
+k \;=\; (k_1,k_2,\dots,k_d)\in \mathbb{Z}^d,  
+\]</div>
+<p>the corresponding closed dyadic cube of side length <span class="arithmatex">\(2^{-n}\)</span> is given by  </p>
+<div class="arithmatex">\[  
+Q_{n,k}  
+\;=\;  
+\prod_{j=1}^d  
+\biggl[  
+\tfrac{k_j}{2^n},  
+\tfrac{k_j + 1}{2^n}  
+\biggr].  
+\]</div>
+<p>Hence:  </p>
+<p>1) Each coordinate direction has length <span class="arithmatex">\(2^{-n}\)</span>.  <br />
+2) Each coordinate interval is of the form <span class="arithmatex">\(\bigl[\tfrac{k_j}{2^n},\,\tfrac{k_j+1}{2^n}\bigr]\)</span>.  <br />
+3) “Closed” means each interval includes its endpoints, making the product a closed subset of <span class="arithmatex">\(\mathbb{R}^d\)</span>.    </p>
+<p>Such cubes play a significant role in analysis and measure theory (for example, in constructing partitions of <span class="arithmatex">\(\mathbb{R}^d\)</span> and in certain proofs related to Lebesgue integration).</p>
+<hr />
+<p>It appears that this cube <span class="arithmatex">\(Q_{n,k}\)</span> has the following properties:</p>
+<p>1) It covers <span class="arithmatex">\(R^d\)</span>
+2) a mesh of such cubes are almost disjoint.</p>
+<p>Formalize this</p>
+<hr />
+<p>Below is a concise statement and proof of the two key facts about closed dyadic cubes in <span class="arithmatex">\(\mathbb{R}^d\)</span>.  </p>
+<p>─────────────────────────  </p>
+<p>1) Definition of a Closed Dyadic Cube </p>
+<p>────────────────────────</p>
+<p>A (closed) dyadic cube of side length <span class="arithmatex">\(2^{-n}\)</span> (for <span class="arithmatex">\(n \in \{0,1,2,\dots\}\)</span>) is of the form  </p>
+<div class="arithmatex">\[  
+Q_{n,k}  
+\;=\;  
+\prod_{j=1}^d  
+\biggl[  
+\tfrac{k_j}{2^n},  
+\tfrac{k_j + 1}{2^n}  
+\biggr],  
+\]</div>
+<p>where <span class="arithmatex">\(k = (k_1,\dots,k_d)\)</span> is in <span class="arithmatex">\(\mathbb{Z}^d\)</span>.  <br />
+Thus, each edge has length <span class="arithmatex">\(2^{-n}\)</span>, and the coordinates of the corners are integer multiples of <span class="arithmatex">\(2^{-n}\)</span>.  </p>
+<p>──────────────────────────  </p>
+<p>2) Covering <span class="arithmatex">\(\mathbb{R}^d\)</span> with Dyadic Cubes  </p>
+<p>──────────────────────────</p>
+<p>For each fixed <span class="arithmatex">\(n\)</span>, consider all dyadic cubes <span class="arithmatex">\(\{Q_{n,k}\}_{k \in \mathbb{Z}^d}\)</span>. We claim   </p>
+<div class="arithmatex">\[  
+\mathbb{R}^d  
+\;=\;  
+\bigcup_{k \in \mathbb{Z}^d}  
+Q_{n,k}.  
+\]</div>
+<p>• Proof:  <br />
+  Let <span class="arithmatex">\(x \in \mathbb{R}^d\)</span> with coordinates <span class="arithmatex">\(x = (x_1,\dots,x_d)\)</span>. For each coordinate <span class="arithmatex">\(x_j\)</span>, define <span class="arithmatex">\(k_j = \lfloor 2^n x_j \rfloor\)</span>, the greatest integer <span class="arithmatex">\(\le 2^n x_j\)</span>. Then  </p>
+<div class="arithmatex">\[  
+  \frac{k_j}{2^n}  
+  \;\le\;  
+  x_j  
+  \;&lt;\;  
+  \frac{k_j + 1}{2^n}.  
+  \]</div>
+<p>Hence <span class="arithmatex">\(x_j \in \bigl[\tfrac{k_j}{2^n},\,\tfrac{k_j+1}{2^n}\bigr]\)</span> for each <span class="arithmatex">\(j\)</span>. Consequently, <span class="arithmatex">\(x \in Q_{n,k}\)</span> for <span class="arithmatex">\(k = (k_1,\dots,k_d)\)</span>. Since <span class="arithmatex">\(x\)</span> was arbitrary, this shows <br />
+<span class="arithmatex">\(\bigcup_{k \in \mathbb{Z}^d} Q_{n,k} = \mathbb{R}^d.\)</span>  </p>
+<p>─────────────────────────  </p>
+<p>3) Almost Disjointness  </p>
+<p>─────────────────────────</p>
+<p>The cubes <span class="arithmatex">\(Q_{n,k}\)</span> and <span class="arithmatex">\(Q_{n,k'}\)</span> (for a fixed <span class="arithmatex">\(n\)</span>) may intersect along boundaries, but they do not overlap in their interiors. More precisely:  </p>
+<p>• If <span class="arithmatex">\(k \neq k'\)</span>, then   </p>
+<p>$$<br />
+  \mathrm{int}(Q_{n,k}) \;\cap\; \mathrm{int}(Q_{n,k'})<br />
+  \;=\;<br />
+  \varnothing.<br />
+  $$<br />
+Indeed, for the interiors to intersect, we would need each coordinate interval <br />
+<span class="arithmatex">\(\bigl(\tfrac{k_j}{2^n},\tfrac{k_j+1}{2^n}\bigr)\)</span>  <br />
+  to coincide with  <br />
+<span class="arithmatex">\(\bigl(\tfrac{k'_j}{2^n},\tfrac{k'_j+1}{2^n}\bigr)\)</span>  <br />
+  in an open sub-interval. That would require <span class="arithmatex">\(k_j = k'_j\)</span> for all <span class="arithmatex">\(j\)</span>. Hence if <span class="arithmatex">\(k \neq k'\)</span>, the interiors are disjoint. They can only meet on a boundary set, which is a <span class="arithmatex">\(\ell^d\)</span>-measure-zero subset of <span class="arithmatex">\(\mathbb{R}^d\)</span>.  </p>
+<p>Hence, for each <span class="arithmatex">\(n\)</span>, the family <span class="arithmatex">\(\{Q_{n,k}\}_{k \in \mathbb{Z}^d}\)</span> forms a “tiling” (or partition) of <span class="arithmatex">\(\mathbb{R}^d\)</span> up to boundaries of measure zero. In other words:  </p>
+<ol>
+<li>The union of all such <span class="arithmatex">\(Q_{n,k}\)</span> equals <span class="arithmatex">\(\mathbb{R}^d\)</span>.    </li>
+<li>Their interiors are pairwise disjoint.    </li>
+<li>Consequently, any overlap can only happen along lower-dimensional faces (boundaries).  </li>
+</ol>
+<p>This is precisely what is often meant by saying these dyadic cubes form an “almost disjoint” covering of <span class="arithmatex">\(\mathbb{R}^d\)</span>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate", "navigation.top", "content.code.copy", "content.code.annotate", "palette.toggle"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+      
+        <script src="../javascripts/eruda_init.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
