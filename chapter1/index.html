@@ -540,6 +540,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lebesgue-measurability-with-dyadic-cube-tiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lebesgue measurability with dyadic cube tiling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lebesgue-measure-of-open-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lebesgue measure of open set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mue-mu_j" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\mu^*(E) = \mu_{*,(J)}\)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2013,7 +2040,7 @@ Summary<br />
 <p>─────────────────────────────────────<br />
 2) Lebesgue Outer Measure (Countable Covers)<br />
 ────────────────────────────────────  </p>
-<p>• The Lebesgue outer measure <span class="arithmatex">\(\mu^*(E)\)</span> allows covering <span class="arithmatex">\(E\)</span> by \emph{countably many} boxes:  </p>
+<p>• The Lebesgue outer measure <span class="arithmatex">\(\mu^*(E)\)</span> allows covering <span class="arithmatex">\(E\)</span> by <em>countably many</em> boxes:  </p>
 <p>$$<br />
   \mu^*(E)<br />
   \;=\;<br />
@@ -2025,13 +2052,13 @@ Summary<br />
   \Bigr\}.<br />
   $$  </p>
 <p>• Comparing the two:  <br />
-  – Jordan outer measure restricts to <span class="arithmatex">\(\emph{finite}\)</span> covers by boxes.  <br />
-  – Lebesgue outer measure allows <span class="arithmatex">\(\emph{countable}\)</span> covers by boxes, hence is generally “less restrictive” (which in turn can yield a smaller infimum—i.e.\ <span class="arithmatex">\(\mu^*(E)\le\mu^{*J}(E)\)</span> in most situations).  </p>
+  – Jordan outer measure restricts to <span class="arithmatex">\(*finite*\)</span> covers by boxes.  <br />
+  – Lebesgue outer measure allows <span class="arithmatex">\(*countable*\)</span> covers by boxes, hence is generally “less restrictive” (which in turn can yield a smaller infimum—i.e.\ <span class="arithmatex">\(\mu^*(E)\le\mu^{*J}(E)\)</span> in most situations).  </p>
 <p>─────────────────────────<br />
 3) Is the Statement “By Replacing Finite Covers by Countably Many Covers <br />
    We Pass from Jordan to Lebesgue Outer Measure” Correct?<br />
 ──────────────────────────  </p>
-<p>Yes. In essence, the definition of Jordan outer measure is exactly like that of the Lebesgue outer measure except it limits itself to <span class="arithmatex">\(\emph{finite}\)</span> families of boxes. The Lebesgue outer measure extends this by allowing <span class="arithmatex">\(\emph{countably infinite}\)</span> families of boxes. Concretely:  </p>
+<p>Yes. In essence, the definition of Jordan outer measure is exactly like that of the Lebesgue outer measure except it limits itself to <span class="arithmatex">\(*finite*\)</span> families of boxes. The Lebesgue outer measure extends this by allowing <span class="arithmatex">\(*countably infinite*\)</span> families of boxes. Concretely:  </p>
 <p>• Jordan outer measure:    </p>
 <p>$$<br />
   \mu^{*J}(E)<br />
@@ -2054,8 +2081,8 @@ Summary<br />
 <p>────────────────────────────<br />
 4) Additional Note: Existence vs. Finiteness of the Jordan Measure<br />
 ────────────────────────────  </p>
-<p>• Jordan measure (as opposed to Jordan <span class="arithmatex">\(\emph{outer}\)</span> measure) is only defined for a restricted class of sets (“Jordan measurable” sets), basically those whose boundaries have measure zero and are bounded.  <br />
-• Lebesgue measure, on the other hand, is well‐defined (possibly infinite) for \emph{every} subset of <span class="arithmatex">\(\mathbb{R}^d\)</span>.    </p>
+<p>• Jordan measure (as opposed to Jordan <span class="arithmatex">\(*outer*\)</span> measure) is only defined for a restricted class of sets (“Jordan measurable” sets), basically those whose boundaries have measure zero and are bounded.  <br />
+• Lebesgue measure, on the other hand, is well‐defined (possibly infinite) for <em>every</em> subset of <span class="arithmatex">\(\mathbb{R}^d\)</span>.    </p>
 <p>Thus, the finite‐cover versus countably‐cover dichotomy reflects the broader fact that Lebesgue theory is strictly more general than Jordan’s, while coinciding for sets that are nicely “Jordan measurable.”  </p>
 <p>────────────────────────────────────<br />
 Conclusion<br />
@@ -2126,10 +2153,10 @@ Conclusion<br />
 <p>───────────────────────────────<br />
 3) Example Where the Jordan Outer Measure Is “Large” or Infinite<br />
 ──────────────────────────────  </p>
-<p>While the Lebesgue outer measure of a countable set in <span class="arithmatex">\(\mathbb{R}^d\)</span> is always zero, the Jordan outer measure can fail to be small (or even finite) if one insists on \emph{finite covers}. A standard illustration is:  </p>
+<p>While the Lebesgue outer measure of a countable set in <span class="arithmatex">\(\mathbb{R}^d\)</span> is always zero, the Jordan outer measure can fail to be small (or even finite) if one insists on <em>finite covers</em>. A standard illustration is:  </p>
 <p>• Let <span class="arithmatex">\(E=[0,1]\cap \mathbb{Q}\)</span> be the set of rational points in the unit interval in <span class="arithmatex">\(\mathbb{R}\)</span>.  <br />
 • It is a countable set, so <span class="arithmatex">\(\mu^*(E)=0\)</span>.    </p>
-<p>However, to cover \emph{all} rational points in <span class="arithmatex">\([0,1]\)</span> with a \emph{finite} union of intervals, one is effectively forced to cover \emph{every} subinterval of <span class="arithmatex">\([0,1]\)</span>. Indeed, if you leave out any subinterval, that subinterval contains a rational point not covered—a contradiction. Thus, the only successful finite cover of all rationals in <span class="arithmatex">\([0,1]\)</span> necessarily covers <span class="arithmatex">\([0,1]\)</span> entirely, giving:  </p>
+<p>However, to cover <em>all</em> rational points in <span class="arithmatex">\([0,1]\)</span> with a <em>finite</em> union of intervals, one is effectively forced to cover <em>every</em> subinterval of <span class="arithmatex">\([0,1]\)</span>. Indeed, if you leave out any subinterval, that subinterval contains a rational point not covered—a contradiction. Thus, the only successful finite cover of all rationals in <span class="arithmatex">\([0,1]\)</span> necessarily covers <span class="arithmatex">\([0,1]\)</span> entirely, giving:  </p>
 <div class="arithmatex">\[  
 \mu^{*(J)}(E)  
 \;=\;  
@@ -2146,7 +2173,7 @@ Conclusion<br />
 ──────────────────────────────  </p>
 <ol>
 <li>For any countable <span class="arithmatex">\(E \subset \mathbb{R}^d\)</span>, its Lebesgue outer measure is always zero: <span class="arithmatex">\(\mu^*(E)=0\)</span>.    </li>
-<li>The Jordan outer measure <span class="arithmatex">\(\mu^{*(J)}(E)\)</span>, which only allows \emph{finite} covers by boxes, can be positive or even infinite for some countable sets (e.g.\ dense sets within a region).  <br />
+<li>The Jordan outer measure <span class="arithmatex">\(\mu^{*(J)}(E)\)</span>, which only allows <em>finite</em> covers by boxes, can be positive or even infinite for some countable sets (e.g.\ dense sets within a region).  <br />
    – A classic example: the rationals in <span class="arithmatex">\([0,1]\)</span>. They have <span class="arithmatex">\(\mu^*\bigl(\mathbb{Q}\cap[0,1]\bigr)=0\)</span> but <span class="arithmatex">\(\mu^{*(J)}\bigl(\mathbb{Q}\cap[0,1]\bigr)=1\)</span>.    </li>
 </ol>
 <p>This illustrates the fundamental difference between these two outer measures and why the Jordan measure, in general, applies only to “nice” (Jordan measurable) sets, whereas Lebesgue measure extends to all sets in a more refined manner.</p>
@@ -2814,7 +2841,7 @@ B_1,\; B_2,\;\dots,\; B_N
 \;\;\le\;\;  
 \sum_{i=1}^\infty \ell\bigl(B_i\bigr).  
 \]</div>
-<p>• By definition of <span class="arithmatex">\(\mu_{*,(J)}(E)\)</span>, we take the supremum of such finite-sum volumes of disjoint boxes \emph{inside} <span class="arithmatex">\(E\)</span>.  But every finite subcollection from the <span class="arithmatex">\(B_i\)</span> is one of those valid families.  Thus each finite sum is at most <span class="arithmatex">\(\sum_{i=1}^\infty \ell(B_i)\)</span>, and taking the supremum cannot exceed this same infinite sum.  </p>
+<p>• By definition of <span class="arithmatex">\(\mu_{*,(J)}(E)\)</span>, we take the supremum of such finite-sum volumes of disjoint boxes <em>inside</em> <span class="arithmatex">\(E\)</span>.  But every finite subcollection from the <span class="arithmatex">\(B_i\)</span> is one of those valid families.  Thus each finite sum is at most <span class="arithmatex">\(\sum_{i=1}^\infty \ell(B_i)\)</span>, and taking the supremum cannot exceed this same infinite sum.  </p>
 <p>Hence  </p>
 <div class="arithmatex">\[  
 \mu_{*,(J)}(E)  
@@ -2843,91 +2870,378 @@ B_1,\; B_2,\;\dots,\; B_N
 \]</div>
 <p>completing the proof that the Lebesgue outer measure of <span class="arithmatex">\(E\)</span> equals its inner Jordan measure (under the assumption that <span class="arithmatex">\(E\)</span> is covered by countably many almost disjoint Jordan-measurable boxes).</p>
 <h2 id="closed-dyadic-cubes-in-rd">Closed Dyadic cubes in <span class="arithmatex">\(R^d\)</span><a class="headerlink" href="#closed-dyadic-cubes-in-rd" title="Permanent link">&para;</a></h2>
-<p><strong><em>What is the concept of a closed dyadic cube in <span class="arithmatex">\(R^d\)</span>? In particular a cube of side length <span class="arithmatex">\(2^{-n}\)</span> for some non-negative integer <span class="arithmatex">\(n\)</span>.</em></strong></p>
-<p>A closed dyadic cube in <span class="arithmatex">\(\mathbb{R}^d\)</span> is a closed cube whose side length is a negative power of 2, and whose corners lie in the scaled integer lattice. Concretely, for a nonnegative integer <span class="arithmatex">\(n\in \{0,1,2,\dots\}\)</span> and an integer vector   </p>
-<div class="arithmatex">\[  
-k \;=\; (k_1,k_2,\dots,k_d)\in \mathbb{Z}^d,  
+<p>What is the concept of a closed dyadic cube in <span class="arithmatex">\(R^d\)</span>? In particular a cube of side length <span class="arithmatex">\(2^{-n}\)</span> for some non-negative integer <span class="arithmatex">\(n\)</span>.</p>
+<p><strong>Answer</strong></p>
+<p>Closed dyadic cubes are the standard “binary grid’’ blocks in <span class="arithmatex">\(\mathbb {R}^{d}\)</span>.</p>
+<p>Fix an integer <span class="arithmatex">\(n\ge 0\)</span>.<br />
+A (closed) dyadic cube of <em>generation <span class="arithmatex">\(n\)</span></em> (or *side–length <span class="arithmatex">\(2^{-n*\)</span>}) is the Cartesian product of <span class="arithmatex">\(d\)</span> closed “dyadic’’ intervals whose end-points are integer multiples of <span class="arithmatex">\(2^{-\,n}\)</span>:</p>
+<div class="arithmatex">\[
+Q = \prod_{i=1}^{d}
+        \Bigl[\,k_{i}\,2^{-n},\;(k_{i}+1)\,2^{-n}\Bigr],
+\qquad
+k_{1},\dots ,k_{d}\in\mathbb{Z}.
 \]</div>
-<p>the corresponding closed dyadic cube of side length <span class="arithmatex">\(2^{-n}\)</span> is given by  </p>
-<div class="arithmatex">\[  
-Q_{n,k}  
-\;=\;  
-\prod_{j=1}^d  
-\biggl[  
-\tfrac{k_j}{2^n},  
-\tfrac{k_j + 1}{2^n}  
-\biggr].  
-\]</div>
-<p>Hence:  </p>
-<p>1) Each coordinate direction has length <span class="arithmatex">\(2^{-n}\)</span>.  <br />
-2) Each coordinate interval is of the form <span class="arithmatex">\(\bigl[\tfrac{k_j}{2^n},\,\tfrac{k_j+1}{2^n}\bigr]\)</span>.  <br />
-3) “Closed” means each interval includes its endpoints, making the product a closed subset of <span class="arithmatex">\(\mathbb{R}^d\)</span>.    </p>
-<p>Such cubes play a significant role in analysis and measure theory (for example, in constructing partitions of <span class="arithmatex">\(\mathbb{R}^d\)</span> and in certain proofs related to Lebesgue integration).</p>
-<hr />
-<p>It appears that this cube <span class="arithmatex">\(Q_{n,k}\)</span> has the following properties:</p>
-<p>1) It covers <span class="arithmatex">\(R^d\)</span>
-2) a mesh of such cubes are almost disjoint.</p>
-<p>Formalize this</p>
-<hr />
-<p>Below is a concise statement and proof of the two key facts about closed dyadic cubes in <span class="arithmatex">\(\mathbb{R}^d\)</span>.  </p>
-<p>─────────────────────────  </p>
-<p>1) Definition of a Closed Dyadic Cube </p>
-<p>────────────────────────</p>
-<p>A (closed) dyadic cube of side length <span class="arithmatex">\(2^{-n}\)</span> (for <span class="arithmatex">\(n \in \{0,1,2,\dots\}\)</span>) is of the form  </p>
-<div class="arithmatex">\[  
-Q_{n,k}  
-\;=\;  
-\prod_{j=1}^d  
-\biggl[  
-\tfrac{k_j}{2^n},  
-\tfrac{k_j + 1}{2^n}  
-\biggr],  
-\]</div>
-<p>where <span class="arithmatex">\(k = (k_1,\dots,k_d)\)</span> is in <span class="arithmatex">\(\mathbb{Z}^d\)</span>.  <br />
-Thus, each edge has length <span class="arithmatex">\(2^{-n}\)</span>, and the coordinates of the corners are integer multiples of <span class="arithmatex">\(2^{-n}\)</span>.  </p>
-<p>──────────────────────────  </p>
-<p>2) Covering <span class="arithmatex">\(\mathbb{R}^d\)</span> with Dyadic Cubes  </p>
-<p>──────────────────────────</p>
-<p>For each fixed <span class="arithmatex">\(n\)</span>, consider all dyadic cubes <span class="arithmatex">\(\{Q_{n,k}\}_{k \in \mathbb{Z}^d}\)</span>. We claim   </p>
-<div class="arithmatex">\[  
-\mathbb{R}^d  
-\;=\;  
-\bigcup_{k \in \mathbb{Z}^d}  
-Q_{n,k}.  
-\]</div>
-<p>• Proof:  <br />
-  Let <span class="arithmatex">\(x \in \mathbb{R}^d\)</span> with coordinates <span class="arithmatex">\(x = (x_1,\dots,x_d)\)</span>. For each coordinate <span class="arithmatex">\(x_j\)</span>, define <span class="arithmatex">\(k_j = \lfloor 2^n x_j \rfloor\)</span>, the greatest integer <span class="arithmatex">\(\le 2^n x_j\)</span>. Then  </p>
-<div class="arithmatex">\[  
-  \frac{k_j}{2^n}  
-  \;\le\;  
-  x_j  
-  \;&lt;\;  
-  \frac{k_j + 1}{2^n}.  
-  \]</div>
-<p>Hence <span class="arithmatex">\(x_j \in \bigl[\tfrac{k_j}{2^n},\,\tfrac{k_j+1}{2^n}\bigr]\)</span> for each <span class="arithmatex">\(j\)</span>. Consequently, <span class="arithmatex">\(x \in Q_{n,k}\)</span> for <span class="arithmatex">\(k = (k_1,\dots,k_d)\)</span>. Since <span class="arithmatex">\(x\)</span> was arbitrary, this shows <br />
-<span class="arithmatex">\(\bigcup_{k \in \mathbb{Z}^d} Q_{n,k} = \mathbb{R}^d.\)</span>  </p>
-<p>─────────────────────────  </p>
-<p>3) Almost Disjointness  </p>
-<p>─────────────────────────</p>
-<p>The cubes <span class="arithmatex">\(Q_{n,k}\)</span> and <span class="arithmatex">\(Q_{n,k'}\)</span> (for a fixed <span class="arithmatex">\(n\)</span>) may intersect along boundaries, but they do not overlap in their interiors. More precisely:  </p>
-<p>• If <span class="arithmatex">\(k \neq k'\)</span>, then   </p>
-<p>$$<br />
-  \mathrm{int}(Q_{n,k}) \;\cap\; \mathrm{int}(Q_{n,k'})<br />
-  \;=\;<br />
-  \varnothing.<br />
-  $$<br />
-Indeed, for the interiors to intersect, we would need each coordinate interval <br />
-<span class="arithmatex">\(\bigl(\tfrac{k_j}{2^n},\tfrac{k_j+1}{2^n}\bigr)\)</span>  <br />
-  to coincide with  <br />
-<span class="arithmatex">\(\bigl(\tfrac{k'_j}{2^n},\tfrac{k'_j+1}{2^n}\bigr)\)</span>  <br />
-  in an open sub-interval. That would require <span class="arithmatex">\(k_j = k'_j\)</span> for all <span class="arithmatex">\(j\)</span>. Hence if <span class="arithmatex">\(k \neq k'\)</span>, the interiors are disjoint. They can only meet on a boundary set, which is a <span class="arithmatex">\(\ell^d\)</span>-measure-zero subset of <span class="arithmatex">\(\mathbb{R}^d\)</span>.  </p>
-<p>Hence, for each <span class="arithmatex">\(n\)</span>, the family <span class="arithmatex">\(\{Q_{n,k}\}_{k \in \mathbb{Z}^d}\)</span> forms a “tiling” (or partition) of <span class="arithmatex">\(\mathbb{R}^d\)</span> up to boundaries of measure zero. In other words:  </p>
+<p>Properties  </p>
 <ol>
-<li>The union of all such <span class="arithmatex">\(Q_{n,k}\)</span> equals <span class="arithmatex">\(\mathbb{R}^d\)</span>.    </li>
-<li>Their interiors are pairwise disjoint.    </li>
-<li>Consequently, any overlap can only happen along lower-dimensional faces (boundaries).  </li>
+<li>
+<p>Side length<br />
+<span class="arithmatex">\(\displaystyle \operatorname{side}(Q)=2^{-n}\)</span>.</p>
+</li>
+<li>
+<p>Volume (Lebesgue measure)<br />
+<span class="arithmatex">\(\displaystyle |Q|=(2^{-n})^{d}=2^{-nd}\)</span>.</p>
+</li>
+<li>
+<p>Nesting / subdivision<br />
+    Every cube of generation <span class="arithmatex">\(n\)</span> is the disjoint union of
+    <span class="arithmatex">\(2^{d}\)</span> cubes of generation <span class="arithmatex">\(n+1\)</span>; conversely, it is contained in
+    exactly one cube of every generation <span class="arithmatex">\(m&lt;n\)</span>.</p>
+</li>
+<li>
+<p>Tiling<br />
+    The collection</p>
+<div class="arithmatex">\[
+  \mathcal D_{n}
+    \;:=\;
+  \Bigl\{
+     \prod_{i=1}^{d}[k_{i}2^{-n},(k_{i}+1)2^{-n}]
+     : k_{i}\in\mathbb Z
+  \Bigr\}
+\]</div>
+<p>forms a partition (tiling) of <span class="arithmatex">\(\mathbb R^{d}\)</span> into congruent cubes.</p>
+</li>
+<li>
+<p>Half-open and open versions<br />
+    In many measure-theoretic constructions one prefers the half-open
+    variant
+    <span class="arithmatex">\(\prod_{i}[k_{i}2^{-n},(k_{i}+1)2^{-n})\)</span>
+    because these cubes are pairwise disjoint even along their
+    boundaries.<br />
+    The underlying geometric idea, however, is the same.</p>
+</li>
 </ol>
-<p>This is precisely what is often meant by saying these dyadic cubes form an “almost disjoint” covering of <span class="arithmatex">\(\mathbb{R}^d\)</span>.</p>
+<p>Thus, “a closed dyadic cube of side length <span class="arithmatex">\(2^{-n}\)</span>” means precisely a
+set of the form</p>
+<div class="arithmatex">\[
+\boxed{
+   Q=\prod_{i=1}^{d}
+        [k_{i}2^{-n},(k_{i}+1)2^{-n}]
+   \quad(k_{i}\in\mathbb Z).
+}
+\]</div>
+<p>Such cubes play a central role in dyadic decompositions, martingale
+theory, and many proofs in real analysis because they give a
+binary-nested grid that meshes perfectly with Lebesgue measure.</p>
+<h2 id="lebesgue-measurability-with-dyadic-cube-tiling">Lebesgue measurability with dyadic cube tiling<a class="headerlink" href="#lebesgue-measurability-with-dyadic-cube-tiling" title="Permanent link">&para;</a></h2>
+<p>So, if one could partition or tile a bounded set <span class="arithmatex">\(S \in \mathbb{R}^d\)</span> with these dyadic cubes, then <span class="arithmatex">\(S\)</span> is Lebesgue measurable. Is this correct?</p>
+<p><strong>Answer</strong></p>
+<p>Yes—under a natural interpretation of “tile’’ the statement is correct.</p>
+<p>Precise formulation<br />
+Assume <span class="arithmatex">\(S\subset\mathbb R^{d}\)</span> is bounded and that there exists a family<br />
+<span class="arithmatex">\(\{Q_{i}\}_{i\in I}\)</span> of closed dyadic cubes such that</p>
+<ol>
+<li>(Tiling) <span class="arithmatex">\(S=\bigcup_{i\in I}Q_{i}\)</span>;  </li>
+<li>(Almost disjointness) <span class="arithmatex">\(\operatorname{int}(Q_{i})\cap\operatorname{int}(Q_{j})=\varnothing\)</span> for <span class="arithmatex">\(i\ne j\)</span>.</li>
+</ol>
+<p>Then <span class="arithmatex">\(S\)</span> is Lebesgue–measurable and  </p>
+<div class="arithmatex">\[
+\mu(S)=\sum_{i\in I}|Q_{i}|\;(=2^{-nd}\text{ summed over the cubes}).
+\]</div>
+<p>Why this is true</p>
+<p>Step 1.  Only countably many dyadic cubes are involved.<br />
+Fix a large cube <span class="arithmatex">\(C=[-M,M]^{d}\)</span> that contains <span class="arithmatex">\(S\)</span>.
+For each generation <span class="arithmatex">\(n\ge 0\)</span> there are at most<br />
+<span class="arithmatex">\((2M\,2^{\,n}+1)^{d}&lt;\infty\)</span> cubes of side <span class="arithmatex">\(2^{-n}\)</span> inside <span class="arithmatex">\(C\)</span>.
+Hence the set of <em>all</em> dyadic cubes intersecting <span class="arithmatex">\(C\)</span> (and a fortiori those tiling <span class="arithmatex">\(S\)</span>) is a countable union of finite sets—therefore countable.<br />
+So we may relabel</p>
+<div class="arithmatex">\[
+\{Q_{i}\}_{i\in I}=\{Q_{1},Q_{2},Q_{3},\dots\}.
+\]</div>
+<p>Step 2.  Each <span class="arithmatex">\(Q_{k}\)</span> is a Lebesgue–measurable set (it is closed).<br />
+The σ–algebra of Lebesgue–measurable sets is closed under countable unions; hence</p>
+<div class="arithmatex">\[
+S=\bigcup_{k=1}^{\infty}Q_{k}
+\]</div>
+<p>is Lebesgue–measurable.</p>
+<p>Step 3.  Measure of the union.<br />
+Because the interiors of the cubes are pairwise disjoint, the cubes themselves intersect only on sets of measure zero (their boundaries).  Consequently</p>
+<div class="arithmatex">\[
+\mu(S)=\sum_{k=1}^{\infty}\mu(Q_{k})=\sum_{k=1}^{\infty}|Q_{k}|.
+\]</div>
+<p>Thus the ability to partition (tile) a bounded set by dyadic cubes indeed implies that the set is Lebesgue measurable.  (For unbounded sets one needs to check σ–finiteness, but the same idea works in each bounded slice.)</p>
+<p><strong>Clarify with more detail Step1. Fix <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(n =0, 1\)</span>. How many cubes are inside <span class="arithmatex">\(C\)</span>?</strong></p>
+<p><strong>Answer</strong></p>
+<p>Let  </p>
+<div class="arithmatex">\[
+C=[-M,M]^d\qquad(M&gt;0)
+\]</div>
+<p>be the closed cube that contains the bounded set <span class="arithmatex">\(S\)</span>.
+For every integer <span class="arithmatex">\(n\ge 0\)</span> a <em>dyadic cube of generation <span class="arithmatex">\(n\)</span></em>
+has side length <span class="arithmatex">\(2^{-n}\)</span> and the form  </p>
+<div class="arithmatex">\[
+Q=\prod_{i=1}^{d}
+    \bigl[k_{i}2^{-n},\,(k_{i}+1)2^{-n}\bigr],
+\qquad  k_{i}\in\mathbb Z .
+\]</div>
+<p>To find how many such cubes are fully contained in <span class="arithmatex">\(C\)</span> we look at the
+allowable indices <span class="arithmatex">\(k_i\)</span>.</p>
+<hr />
+<p><strong>Range of each <span class="arithmatex">\(k_i\)</span></strong></p>
+<hr />
+<p>The condition <span class="arithmatex">\(Q\subset C\)</span> says</p>
+<div class="arithmatex">\[
+-M\le k_{i}2^{-n}\qquad\text{and}\qquad
+(k_{i}+1)2^{-n}\le M
+\quad\;(i=1,\dots ,d).
+\]</div>
+<p>Multiply by <span class="arithmatex">\(2^{\,n}\)</span>:</p>
+<div class="arithmatex">\[
+-\,M\,2^{\,n}\le k_{i}\le M\,2^{\,n}-1 .
+\]</div>
+<p>Thus each <span class="arithmatex">\(k_i\)</span> can take the integer values</p>
+<div class="arithmatex">\[
+k_{i}\in\Bigl\{-\lfloor M2^{\,n}\rfloor,\;
+               -\lfloor M2^{\,n}\rfloor+1,\;
+               \dots,\;
+               \lceil M2^{\,n}\rceil-1\Bigr\}.
+\]</div>
+<hr />
+<p><strong>Number of possibilities</strong></p>
+<hr />
+<p>The number of allowed integers for a single coordinate <span class="arithmatex">\(k_i\)</span> is no
+more than  </p>
+<div class="arithmatex">\[
+\lfloor M2^{\,n}\rfloor+\lceil M2^{\,n}\rceil
+\;\le\;
+2M2^{\,n}+1 .
+\]</div>
+<p>Because each of the <span class="arithmatex">\(d\)</span> coordinates can be chosen independently, the
+<em>total</em> number of generation-<span class="arithmatex">\(n\)</span> dyadic cubes inside <span class="arithmatex">\(C\)</span> is at
+most  </p>
+<div class="arithmatex">\[
+\bigl(2M\,2^{\,n}+1\bigr)^{d}&lt;\infty .
+\]</div>
+<hr />
+<p><strong>Concrete examples</strong></p>
+<hr />
+<p>•  <span class="arithmatex">\(n=0\)</span> (side length <span class="arithmatex">\(1\)</span>).<br />
+   At most <span class="arithmatex">\((2M+1)^{d}\)</span> such cubes lie in <span class="arithmatex">\(C\)</span>.</p>
+<p>•  <span class="arithmatex">\(n=1\)</span> (side length <span class="arithmatex">\(1/2\)</span>).<br />
+   At most <span class="arithmatex">\((4M+1)^{d}\)</span> such cubes lie in <span class="arithmatex">\(C\)</span>.</p>
+<hr />
+<p><strong>Why this proves countability</strong></p>
+<hr />
+<p>For each fixed <span class="arithmatex">\(n\)</span> the set of generation-<span class="arithmatex">\(n\)</span> cubes inside <span class="arithmatex">\(C\)</span> is
+finite.  The collection of <em>all</em> dyadic cubes in <span class="arithmatex">\(C\)</span> is therefore
+a countable union of finite sets (one finite set for each <span class="arithmatex">\(n=0,1,2,\dots\)</span>),
+hence countable.  Consequently any tiling of the bounded set <span class="arithmatex">\(S\subset
+C\)</span> by dyadic cubes involves only countably many cubes, as asserted in
+Step 1.</p>
+<h2 id="lebesgue-measure-of-open-set">Lebesgue measure of open set<a class="headerlink" href="#lebesgue-measure-of-open-set" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(E \in \mathbb{R}^d\)</span> be open. Using the concept of closed dyadic cubes, show that the <span class="arithmatex">\(E\)</span> is the countable union of closed dyadic cubes and we can therefore write the Lebesgue outer measure of <span class="arithmatex">\(E\)</span> in terms of the volume of these cubes.</p>
+<p><strong>Answer</strong></p>
+<p>Notation and basic facts</p>
+<p>•  A (closed) dyadic cube of generation <span class="arithmatex">\(n\in\mathbb{N}_0\)</span> is a set  </p>
+<div class="arithmatex">\[
+Q=\prod_{j=1}^{d}\bigl[k_{j}2^{-n},(k_{j}+1)2^{-n}\bigr],
+\qquad k_{j}\in\mathbb{Z}.
+\]</div>
+<p>Its side length is <span class="arithmatex">\(2^{-n}\)</span> and its volume is<br />
+<span class="arithmatex">\(|Q|=(2^{-n})^{d}=2^{-nd}\)</span>.</p>
+<p>•  For fixed <span class="arithmatex">\(n\)</span> and a fixed bounded cube <span class="arithmatex">\(C=[-M,M]^{d}\)</span> there are at
+most <span class="arithmatex">\((2M\,2^{\,n}+1)^{d}&lt;\infty\)</span> generation–<span class="arithmatex">\(n\)</span> dyadic cubes
+contained in <span class="arithmatex">\(C\)</span>; hence the <em>whole</em> family of dyadic cubes in
+<span class="arithmatex">\(\mathbb{R}^{d}\)</span> is countable (a countable union of those finite
+sets).</p>
+<p>The goal<br />
+If <span class="arithmatex">\(E\subset\mathbb{R}^{d}\)</span> is open we shall<br />
+(i)  write <span class="arithmatex">\(E\)</span> as a <em>countable</em> union of closed dyadic cubes with
+pairwise disjoint interiors, and<br />
+(ii) express the (outer) Lebesgue measure of <span class="arithmatex">\(E\)</span> as the sum of the
+volumes of those cubes.</p>
+<p>Step 1 – every point of <span class="arithmatex">\(E\)</span> sits in some dyadic cube contained in <span class="arithmatex">\(E\)</span></p>
+<p>Let <span class="arithmatex">\(x\in E\)</span>.  Because <span class="arithmatex">\(E\)</span> is open, pick <span class="arithmatex">\(r&gt;0\)</span> such that the open
+ball <span class="arithmatex">\(B(x,r)\subset E\)</span>.
+Choose <span class="arithmatex">\(n\)</span> large enough so that <span class="arithmatex">\(\sqrt{d}\,2^{-n}&lt;r\)</span>.
+Define integers <span class="arithmatex">\(k_{j}=\lfloor 2^{n}x_{j}\rfloor\)</span> <span class="arithmatex">\((j=1,\dots,d)\)</span> and
+let  </p>
+<div class="arithmatex">\[
+Q(x)=\prod_{j=1}^{d}[k_{j}2^{-n},(k_{j}+1)2^{-n}].
+\]</div>
+<p>The diameter of <span class="arithmatex">\(Q(x)\)</span> is <span class="arithmatex">\(\sqrt{d}\,2^{-n}&lt;r\)</span>, hence
+<span class="arithmatex">\(Q(x)\subset B(x,r)\subset E\)</span>.<br />
+Consequently</p>
+<div class="arithmatex">\[
+E=\bigcup_{\;Q\subset E,\;Q\text{ dyadic}}Q.
+\tag{1}
+\]</div>
+<p>The union on the right is taken over a
+<em>countable</em> collection, because the whole dyadic grid is
+countable.  Relabel those cubes as <span class="arithmatex">\(\{Q_{i}\}_{i\ge1}\)</span>.</p>
+<p>Step 2 – choose maximal (hence disjoint–interior) cubes</p>
+<p>Two closed dyadic cubes are either disjoint in their interiors or one is
+contained in the other.
+From the family <span class="arithmatex">\(\{Q_{i}\}_{i\ge1}\)</span> choose the maximal members with
+respect to inclusion:</p>
+<div class="arithmatex">\[
+\mathcal{M}:=\bigl\{\,Q_{i}:\;
+          Q_{i}\subset E,\;
+          \nexists\;Q_{j}\subset E\text{ with }Q_{i}\subsetneq Q_{j}\bigr\}.
+\]</div>
+<p>•  Maximal cubes have pairwise disjoint interiors;<br />
+   if their interiors met, one cube would lie inside the other, violating
+   maximality.</p>
+<p>•  Every point <span class="arithmatex">\(x\in E\)</span> belongs to a cube in <span class="arithmatex">\(\mathcal{M}\)</span>:<br />
+   indeed <span class="arithmatex">\(x\)</span> lies in some dyadic cube <span class="arithmatex">\(Q\subset E\)</span>; enlarging <span class="arithmatex">\(Q\)</span>
+   step by step (still staying inside <span class="arithmatex">\(E\)</span>) must stop after finitely
+   many steps, producing a maximal cube that still contains <span class="arithmatex">\(x\)</span>.</p>
+<p>Therefore</p>
+<div class="arithmatex">\[
+E=\bigcup_{Q\in\mathcal{M}}Q
+\quad\text{with}\quad
+\operatorname{int}(Q)\cap\operatorname{int}(Q')=\varnothing
+\ (Q\ne Q').
+\tag{2}
+\]</div>
+<p>Because <span class="arithmatex">\(\mathcal{M}\)</span> is a subset of the countable set of <em>all</em>
+dyadic cubes, it is itself countable; write
+<span class="arithmatex">\(\mathcal{M}=\{Q_{1},Q_{2},\dots\}\)</span>.</p>
+<p>Step 3 – measure of the union</p>
+<p>The boundaries of the cubes have Lebesgue measure <span class="arithmatex">\(0\)</span>, so the sets
+<span class="arithmatex">\(Q_{i}\)</span> intersect only on measure–zero sets.  Hence finite additivity
+extends to countable additivity:</p>
+<div class="arithmatex">\[
+\mu(E)=\sum_{i=1}^{\infty}\mu(Q_{i})=\sum_{i=1}^{\infty}|Q_{i}|.
+\tag{3}
+\]</div>
+<p>(Since <span class="arithmatex">\(E\)</span> is open, <span class="arithmatex">\(\mu(E)=\mu^{*}(E)\)</span>; thus the equality holds for
+the outer measure as well.)</p>
+<p>Conclusion  </p>
+<p>Every open set <span class="arithmatex">\(E\subset\mathbb{R}^{d}\)</span> can be written as a countable
+union of closed dyadic cubes with disjoint interiors, and its Lebesgue
+outer measure is</p>
+<div class="arithmatex">\[
+\boxed{\;
+   \mu^{*}(E)=\sum_{i=1}^{\infty}|Q_{i}|
+ \;}
+\]</div>
+<p>where <span class="arithmatex">\(\{Q_{i}\}\)</span> is the family of maximal dyadic cubes contained in
+<span class="arithmatex">\(E\)</span>.</p>
+<h2 id="mue-mu_j"><span class="arithmatex">\(\mu^*(E) = \mu_{*,(J)}\)</span><a class="headerlink" href="#mue-mu_j" title="Permanent link">&para;</a></h2>
+<p>In this case of an open set <span class="arithmatex">\(E \in \mathbb{R}^d\)</span>, is <span class="arithmatex">\(\mu^*(E) = \mu_{*,(J)}(E)\)</span>? Since we have just shown that <span class="arithmatex">\(E\)</span> can be written as the countable union of closed dyadic cubes with disjoint interiors, we should be able to use this property. Provide the details.</p>
+<p><strong>Answer</strong></p>
+<p>Let  </p>
+<div class="arithmatex">\[
+E\subset \mathbb{R}^{d}\quad\text{be open}.
+\]</div>
+<p>In the previous result we constructed a countable family of closed
+dyadic cubes with pairwise–disjoint interiors </p>
+<div class="arithmatex">\[
+\{Q_{i}\}_{i\ge 1},\qquad 
+E=\bigcup_{i=1}^{\infty}Q_{i},\qquad  
+|Q_{i}|=(2^{-n_{i}})^{d}
+\]</div>
+<p>and proved</p>
+<div class="arithmatex">\[
+\mu^{*}(E)=\sum_{i=1}^{\infty}|Q_{i}|.
+\tag{1}
+\]</div>
+<p>We now compare this to the <em>Jordan inner measure</em>  </p>
+<div class="arithmatex">\[
+\mu_{*,(J)}(E):=\sup\Bigl\{\mu(F):F\subset E,\;F\text{ elementary}\Bigr\},
+\]</div>
+<p>(“elementary’’ = finite union of pairwise–disjoint rectangles).</p>
+<p>For simplicity we first treat the bounded case; the unbounded case is
+handled afterwards by approximation.</p>
+<hr />
+<ol>
+<li>Bounded open set</li>
+</ol>
+<hr />
+<p>Assume <span class="arithmatex">\(E\)</span> is bounded, hence the series in (1) is finite (or at least
+convergent).<br />
+Set, for every <span class="arithmatex">\(N\in\mathbb{N}\)</span>,</p>
+<div class="arithmatex">\[
+F_{N}:=\bigcup_{i=1}^{N}Q_{i}.
+\]</div>
+<p>•  <span class="arithmatex">\(F_{N}\subset E\)</span> and <span class="arithmatex">\(F_{N}\)</span> is elementary (finite union of
+boxes).<br />
+•  Its (Jordan) measure is</p>
+<div class="arithmatex">\[
+\mu(F_{N})=\sum_{i=1}^{N}|Q_{i}|.
+\]</div>
+<p>Because the interiors of the <span class="arithmatex">\(Q_i\)</span> are disjoint the sequence
+<span class="arithmatex">\(\mu(F_{N})\)</span> is increasing and</p>
+<div class="arithmatex">\[
+\lim_{N\to\infty}\mu(F_{N})=
+\sum_{i=1}^{\infty}|Q_{i}|=\mu^{*}(E).
+\tag{2}
+\]</div>
+<p>Taking the supremum over <span class="arithmatex">\(\{\mu(F_{N})\}\)</span> yields</p>
+<div class="arithmatex">\[
+\mu_{*,(J)}(E)\;\ge\;
+\sup_{N}\mu(F_{N})
+=\mu^{*}(E).
+\tag{3}
+\]</div>
+<p>The reverse inequality is immediate:</p>
+<p>[
+\mu_{<em>,(J)}(E)\le \mu^{</em>,(J)}(E)\le\mu^{*}(E),
+\tag{4}
+]
+because inner ≤ outer and Jordan outer ≤ Lebesgue outer.  </p>
+<p>Combining (3) and (4) we get</p>
+<div class="arithmatex">\[
+\boxed{\;\mu_{*,(J)}(E)=\mu^{*}(E)\;} .
+\]</div>
+<hr />
+<ol>
+<li>Unbounded open set</li>
+</ol>
+<hr />
+<p>Write <span class="arithmatex">\(E_{m}:=E\cap[-m,m]^{d}\)</span> for <span class="arithmatex">\(m=1,2,\dots\)</span>.
+Each <span class="arithmatex">\(E_{m}\)</span> is bounded and open, so by the bounded case</p>
+<div class="arithmatex">\[
+\mu_{*,(J)}(E_{m})=\mu^{*}(E_{m})\quad(m\ge 1).
+\tag{5}
+\]</div>
+<p>The family <span class="arithmatex">\(\{E_{m}\}\)</span> increases to <span class="arithmatex">\(E\)</span>:</p>
+<div class="arithmatex">\[
+E=\bigcup_{m=1}^{\infty}E_{m},
+\qquad 
+E_{m}\subset E_{m+1}.
+\]</div>
+<p>Both <span class="arithmatex">\(\mu_{*,(J)}\)</span> and <span class="arithmatex">\(\mu^{*}\)</span> are monotone and σ–continuous from
+below; hence</p>
+<div class="arithmatex">\[
+\mu_{*,(J)}(E)=\lim_{m\to\infty}\mu_{*,(J)}(E_{m})
+              =\lim_{m\to\infty}\mu^{*}(E_{m})
+              =\mu^{*}(E).
+\]</div>
+<hr />
+<ol>
+<li>Conclusion</li>
+</ol>
+<hr />
+<p>For <em>every</em> open set <span class="arithmatex">\(E\subset\mathbb{R}^{d}\)</span> we have</p>
+<div class="arithmatex">\[
+\boxed{\;
+     \mu_{*,(J)}(E)=\mu^{*}(E)
+     }.
+\]</div>
+<p>The equality relied crucially on two facts:</p>
+<ol>
+<li>
+<p>Every open set can be written as a countable union of closed dyadic
+    cubes with disjoint interiors.</p>
+</li>
+<li>
+<p>Finite unions of those cubes approximate the whole union in measure,
+    allowing the Jordan inner measure (which uses only <em>finite</em>
+    unions) to reach the same value as the Lebesgue outer measure (which
+    allows <em>countable</em> unions).</p>
+</li>
+</ol>
 
 
 
