@@ -336,6 +336,182 @@ Intuitively:
    
 Thus, for a bounded set $S\subset \mathbb{R}^d$, its Jordan measure (if it exists) is the unique value you get by approximating $S$ from inside and outside by finite unions of boxes, and letting those approximations converge.
 
+## $\varepsilon$ superset
+
+In many of the proofs, you use a result like this. For a Jordan measurable set $S \in R^d$, if $E \supset S$ is an elementary set, then we have that for any $\varepsilon > 0$, 
+
+\[ 
+m(E) < m^{*,J}(S) + \varepsilon
+\]
+
+Why is this true? Explain.
+
+**Answer**
+
+Below is an explanation based on the definition of infimum in the context of outer measures:
+
+──────────────────────────────
+
+1) Jordan outer measure as an infimum
+   
+──────────────────────────────
+
+Recall that the Jordan outer measure of a bounded set \(S\subset\mathbb{R}^d\) is defined by  
+
+\[
+m^{*,J}(S)
+\;=\;
+\inf
+\Bigl\{
+\,m(E)
+\,\Bigm|\;
+E \supset S,\;
+E \text{ is an elementary set}
+\Bigr\}.
+\]
+
+An “elementary set” here means a finite union of pairwise disjoint boxes in \(\mathbb{R}^d\).  
+
+────────────────────────────
+
+2) Property of the infimum
+   
+────────────────────────────
+
+By definition of the infimum, if 
+
+\[
+z \;=\; \inf\{\,x_\alpha : \alpha \in A\}\quad \text{for some set } \{x_\alpha\}_{\alpha\in A},
+\]
+
+then for each \(\varepsilon>0\), there exists an element \(x_{\alpha_0}\) in that set such that  
+
+\[
+x_{\alpha_0} \;<\; z \;+\;\varepsilon.
+\]
+
+In other words, infimum means “greatest lower bound,” and one can always find an element whose value is within any prescribed \(\varepsilon\)-distance above \(z\).
+
+──────────────────────────────
+
+3) Applying this to the outer measure
+ 
+───────────────────────────────
+
+Since
+
+\[
+m^{*,J}(S)
+\;=\;
+\inf
+\Bigl\{
+m(E)
+\;\Bigm|\;
+E \supset S, 
+\;E\text{ is elementary}
+\Bigr\},
+\]
+
+take \(\varepsilon>0\). By the property of the infimum, there must exist at least one elementary set \(E_0\) covering \(S\) such that
+
+\[
+m(E_0)
+\;<\;
+m^{*,J}(S)
+\;+\;
+\varepsilon.
+\]
+
+Hence:
+
+ • “For every \(\varepsilon>0\), we can choose an elementary superset \(E_0\) of \(S\) whose measure is less than \(m^{*,J}(S) + \varepsilon\).”
+
+This is exactly the statement so often used in proofs: one picks an appropriate elementary set that covers \(S\), with total volume arbitrarily close to \(m^{*,J}(S)\).
+
+────────────────────────────
+
+4) Why this is used in proofs
+   
+────────────────────────────
+
+This fact is crucial whenever we want to show that we can approximate \(S\) “from the outside” by an elementary set with measure no more than a small amount above \(m^{*,J}(S)\). Among other things, it allows one to  
+• show sub-additivity properties,  
+• merge or split covers in precise ways,  
+• argue that boundaries can be covered with arbitrarily small volumes, etc.
+
+All these steps rely on the ability to pick “near-optimal” covers of \(S\) whose measure sits just over \(m^{*,J}(S)\) by at most \(\varepsilon\).
+
+
+
+
+
+## $\varepsilon$ subset
+
+It would see that there should be an analogous result when we approximate $S$ “from the inside” by an elementary set and use the supremum property. Is this correct?
+
+**Answer**
+
+Yes, precisely. In fact, the Jordan inner measure of a bounded set \(S\subset\mathbb{R}^d\) is defined by  
+
+\[
+m_{*,J}(S)
+\;=\;
+\sup
+\Bigl\{
+\,m(E)
+\;\Bigm|\;
+E \subset S,\;
+E \text{ is an elementary set}
+\Bigr\}.
+\]
+
+The property of a supremum says:
+
+If 
+
+\[
+L
+\;=\;
+\sup
+\{\,x_\alpha : \alpha \in A\}\quad\text{for some set }\{x_\alpha\}_{\alpha\in A},
+\]
+
+then for each \(\varepsilon>0\), there is an \(x_{\alpha_0}\) in that set such that
+
+\[
+x_{\alpha_0}
+\;>\;
+L
+\;-\;
+\varepsilon.
+\]
+
+Hence, applied to Jordan inner measure, given \(\varepsilon>0\), there must exist an elementary set \(E_0 \subset S\) such that
+
+\[
+m(E_0)
+\;>\;
+m_{*,J}(S)
+\;-\;
+\varepsilon.
+\]
+
+This is the inside‐approximation analogue of the outer‐approximation fact  
+
+\[
+m(E_0)
+\;<\;
+m^{*,J}(S)
+\;+\;
+\varepsilon
+\quad
+\text{for some }
+E_0 \supset S.
+\]
+
+Both properties—the ability to find an “optimal” cover of \(S\) from outside (within any \(\varepsilon>0\) of \(m^{*,J}(S)\)) and to find an “optimal” contained set (within any \(\varepsilon>0\) of \(m_{*,J}(S)\))—are at the heart of how Jordan outer and inner measures are used in proofs.
+
+
 ---------
 Let $B \in R^d$ be a closed box. Let $f: B \to R$ be continuous. 
 The set $\{(x, f(x): x \in B\} \in R^{d+1}$ is the graph of $f$. 
@@ -1631,9 +1807,10 @@ Hence, the key 1D ideas—partitioning the domain, taking sup/inf or sample‐po
 
 
 
-# Lebesgue Outer measure
+## Lebesgue Outer measure
 
 The Jordan outer measure which we shall now show as $\mu^{*J}$ to distinguish from the Lebesgue outer measure $\mu^*$ from hereon. For a set $E \subset R^d$, 
+
 $$
 \mu^{*J} = \inf_{E \supset B, B \; \text{elementary}} \mu^J(B)
 $$
