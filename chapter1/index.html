@@ -417,6 +417,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#varepsilon-superset" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\varepsilon\) superset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#varepsilon-subset" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\varepsilon\) subset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#darboux-and-riemann-integral" class="md-nav__link">
     <span class="md-ellipsis">
       Darboux and Riemann Integral
@@ -432,17 +450,17 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Riemann and Darboux in \(R^d\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#lebesgue-outer-measure" class="md-nav__link">
     <span class="md-ellipsis">
       Lebesgue Outer measure
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Lebesgue Outer measure">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#compare-jordan-and-lebesgue-outer-measures-on-countable-sets" class="md-nav__link">
@@ -834,6 +852,127 @@ m_*(S).
 • If you can cover <span class="arithmatex">\(S\)</span> by some finite union of boxes (an elementary set) with total volume very close to some number <span class="arithmatex">\(L\)</span>, and also fit inside <span class="arithmatex">\(S\)</span> a disjoint union of boxes with total volume very close to the same number <span class="arithmatex">\(L\)</span>, then that “squeezes” the measure of <span class="arithmatex">\(S\)</span> to exactly <span class="arithmatex">\(L\)</span>.  <br />
 • If no matter how carefully you cover <span class="arithmatex">\(S\)</span> from above and below by elementary sets, there remains a “gap” in the volumes, then <span class="arithmatex">\(S\)</span> is not Jordan measurable.  </p>
 <p>Thus, for a bounded set <span class="arithmatex">\(S\subset \mathbb{R}^d\)</span>, its Jordan measure (if it exists) is the unique value you get by approximating <span class="arithmatex">\(S\)</span> from inside and outside by finite unions of boxes, and letting those approximations converge.</p>
+<h2 id="varepsilon-superset"><span class="arithmatex">\(\varepsilon\)</span> superset<a class="headerlink" href="#varepsilon-superset" title="Permanent link">&para;</a></h2>
+<p>In many of the proofs, you use a result like this. For a Jordan measurable set <span class="arithmatex">\(S \in R^d\)</span>, if <span class="arithmatex">\(E \supset S\)</span> is an elementary set, then we have that for any <span class="arithmatex">\(\varepsilon &gt; 0\)</span>, </p>
+<div class="arithmatex">\[ 
+m(E) &lt; m^{*,J}(S) + \varepsilon
+\]</div>
+<p>Why is this true? Explain.</p>
+<p><strong>Answer</strong></p>
+<p>Below is an explanation based on the definition of infimum in the context of outer measures:</p>
+<p>──────────────────────────────</p>
+<p>1) Jordan outer measure as an infimum</p>
+<p>──────────────────────────────</p>
+<p>Recall that the Jordan outer measure of a bounded set <span class="arithmatex">\(S\subset\mathbb{R}^d\)</span> is defined by  </p>
+<div class="arithmatex">\[
+m^{*,J}(S)
+\;=\;
+\inf
+\Bigl\{
+\,m(E)
+\,\Bigm|\;
+E \supset S,\;
+E \text{ is an elementary set}
+\Bigr\}.
+\]</div>
+<p>An “elementary set” here means a finite union of pairwise disjoint boxes in <span class="arithmatex">\(\mathbb{R}^d\)</span>.  </p>
+<p>────────────────────────────</p>
+<p>2) Property of the infimum</p>
+<p>────────────────────────────</p>
+<p>By definition of the infimum, if </p>
+<div class="arithmatex">\[
+z \;=\; \inf\{\,x_\alpha : \alpha \in A\}\quad \text{for some set } \{x_\alpha\}_{\alpha\in A},
+\]</div>
+<p>then for each <span class="arithmatex">\(\varepsilon&gt;0\)</span>, there exists an element <span class="arithmatex">\(x_{\alpha_0}\)</span> in that set such that  </p>
+<div class="arithmatex">\[
+x_{\alpha_0} \;&lt;\; z \;+\;\varepsilon.
+\]</div>
+<p>In other words, infimum means “greatest lower bound,” and one can always find an element whose value is within any prescribed <span class="arithmatex">\(\varepsilon\)</span>-distance above <span class="arithmatex">\(z\)</span>.</p>
+<p>──────────────────────────────</p>
+<p>3) Applying this to the outer measure</p>
+<p>───────────────────────────────</p>
+<p>Since</p>
+<div class="arithmatex">\[
+m^{*,J}(S)
+\;=\;
+\inf
+\Bigl\{
+m(E)
+\;\Bigm|\;
+E \supset S, 
+\;E\text{ is elementary}
+\Bigr\},
+\]</div>
+<p>take <span class="arithmatex">\(\varepsilon&gt;0\)</span>. By the property of the infimum, there must exist at least one elementary set <span class="arithmatex">\(E_0\)</span> covering <span class="arithmatex">\(S\)</span> such that</p>
+<div class="arithmatex">\[
+m(E_0)
+\;&lt;\;
+m^{*,J}(S)
+\;+\;
+\varepsilon.
+\]</div>
+<p>Hence:</p>
+<p>• “For every <span class="arithmatex">\(\varepsilon&gt;0\)</span>, we can choose an elementary superset <span class="arithmatex">\(E_0\)</span> of <span class="arithmatex">\(S\)</span> whose measure is less than <span class="arithmatex">\(m^{*,J}(S) + \varepsilon\)</span>.”</p>
+<p>This is exactly the statement so often used in proofs: one picks an appropriate elementary set that covers <span class="arithmatex">\(S\)</span>, with total volume arbitrarily close to <span class="arithmatex">\(m^{*,J}(S)\)</span>.</p>
+<p>────────────────────────────</p>
+<p>4) Why this is used in proofs</p>
+<p>────────────────────────────</p>
+<p>This fact is crucial whenever we want to show that we can approximate <span class="arithmatex">\(S\)</span> “from the outside” by an elementary set with measure no more than a small amount above <span class="arithmatex">\(m^{*,J}(S)\)</span>. Among other things, it allows one to<br />
+• show sub-additivity properties,<br />
+• merge or split covers in precise ways,<br />
+• argue that boundaries can be covered with arbitrarily small volumes, etc.</p>
+<p>All these steps rely on the ability to pick “near-optimal” covers of <span class="arithmatex">\(S\)</span> whose measure sits just over <span class="arithmatex">\(m^{*,J}(S)\)</span> by at most <span class="arithmatex">\(\varepsilon\)</span>.</p>
+<h2 id="varepsilon-subset"><span class="arithmatex">\(\varepsilon\)</span> subset<a class="headerlink" href="#varepsilon-subset" title="Permanent link">&para;</a></h2>
+<p>It would see that there should be an analogous result when we approximate <span class="arithmatex">\(S\)</span> “from the inside” by an elementary set and use the supremum property. Is this correct?</p>
+<p><strong>Answer</strong></p>
+<p>Yes, precisely. In fact, the Jordan inner measure of a bounded set <span class="arithmatex">\(S\subset\mathbb{R}^d\)</span> is defined by  </p>
+<div class="arithmatex">\[
+m_{*,J}(S)
+\;=\;
+\sup
+\Bigl\{
+\,m(E)
+\;\Bigm|\;
+E \subset S,\;
+E \text{ is an elementary set}
+\Bigr\}.
+\]</div>
+<p>The property of a supremum says:</p>
+<p>If </p>
+<div class="arithmatex">\[
+L
+\;=\;
+\sup
+\{\,x_\alpha : \alpha \in A\}\quad\text{for some set }\{x_\alpha\}_{\alpha\in A},
+\]</div>
+<p>then for each <span class="arithmatex">\(\varepsilon&gt;0\)</span>, there is an <span class="arithmatex">\(x_{\alpha_0}\)</span> in that set such that</p>
+<div class="arithmatex">\[
+x_{\alpha_0}
+\;&gt;\;
+L
+\;-\;
+\varepsilon.
+\]</div>
+<p>Hence, applied to Jordan inner measure, given <span class="arithmatex">\(\varepsilon&gt;0\)</span>, there must exist an elementary set <span class="arithmatex">\(E_0 \subset S\)</span> such that</p>
+<div class="arithmatex">\[
+m(E_0)
+\;&gt;\;
+m_{*,J}(S)
+\;-\;
+\varepsilon.
+\]</div>
+<p>This is the inside‐approximation analogue of the outer‐approximation fact  </p>
+<div class="arithmatex">\[
+m(E_0)
+\;&lt;\;
+m^{*,J}(S)
+\;+\;
+\varepsilon
+\quad
+\text{for some }
+E_0 \supset S.
+\]</div>
+<p>Both properties—the ability to find an “optimal” cover of <span class="arithmatex">\(S\)</span> from outside (within any <span class="arithmatex">\(\varepsilon&gt;0\)</span> of <span class="arithmatex">\(m^{*,J}(S)\)</span>) and to find an “optimal” contained set (within any <span class="arithmatex">\(\varepsilon&gt;0\)</span> of <span class="arithmatex">\(m_{*,J}(S)\)</span>)—are at the heart of how Jordan outer and inner measures are used in proofs.</p>
 <hr />
 <p>Let <span class="arithmatex">\(B \in R^d\)</span> be a closed box. Let <span class="arithmatex">\(f: B \to R\)</span> be continuous. 
 The set <span class="arithmatex">\(\{(x, f(x): x \in B\} \in R^{d+1}\)</span> is the graph of <span class="arithmatex">\(f\)</span>. 
@@ -1845,11 +1984,11 @@ Summary<br />
 <li>Both methods agree, provided <span class="arithmatex">\(f\)</span> is integrable in the sense that the upper and lower sums converge to the same limit (Darboux) or that all Riemann sums converge to the same value (Riemann).    </li>
 </ol>
 <p>Hence, the key 1D ideas—partitioning the domain, taking sup/inf or sample‐point evaluations, and letting the partition mesh go to zero—carry over verbatim, just using boxes and volume in place of intervals and length.</p>
-<h1 id="lebesgue-outer-measure">Lebesgue Outer measure<a class="headerlink" href="#lebesgue-outer-measure" title="Permanent link">&para;</a></h1>
-<p>The Jordan outer measure which we shall now show as <span class="arithmatex">\(\mu^{*J}\)</span> to distinguish from the Lebesgue outer measure <span class="arithmatex">\(\mu^*\)</span> from hereon. For a set <span class="arithmatex">\(E \subset R^d\)</span>, 
-$$
+<h2 id="lebesgue-outer-measure">Lebesgue Outer measure<a class="headerlink" href="#lebesgue-outer-measure" title="Permanent link">&para;</a></h2>
+<p>The Jordan outer measure which we shall now show as <span class="arithmatex">\(\mu^{*J}\)</span> to distinguish from the Lebesgue outer measure <span class="arithmatex">\(\mu^*\)</span> from hereon. For a set <span class="arithmatex">\(E \subset R^d\)</span>, </p>
+<div class="arithmatex">\[
 \mu^{*J} = \inf_{E \supset B, B \; \text{elementary}} \mu^J(B)
-$$</p>
+\]</div>
 <p>Equivalently, we can replace the elementary <span class="arithmatex">\(B\)</span> above with a finite union of boxes <span class="arithmatex">\(B_1 \cup \cdots B_n\)</span>. The infimum over the finite partition of boxes of <span class="arithmatex">\(\sum_i \text{vol}(B_i)\)</span>.</p>
 <p>By replacing the finite cover of boxes to a countably infinite cover of boxes, we pass from the Jordan outer measure to the Lebesgue outer measure.</p>
 <p>Is this correct?</p>
