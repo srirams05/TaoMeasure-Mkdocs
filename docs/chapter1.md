@@ -3327,7 +3327,7 @@ outer measure is
 where \(\{Q_{i}\}\) is the family of maximal dyadic cubes contained in
 \(E\).
 
-## $\mu^*(E) = \mu_{*,(J)}$
+## $\mu^*(E) = \mu_{*,(J)}(E)$
 
 In this case of an open set $E \in \mathbb{R}^d$, is $\mu^*(E) = \mu_{*,(J)}(E)$? Since we have just shown that $E$ can be written as the countable union of closed dyadic cubes with disjoint interiors, we should be able to use this property. Provide the details.
 
@@ -3411,6 +3411,7 @@ The reverse inequality is immediate:
 \mu_{*,(J)}(E)\le \mu^{*,(J)}(E)\le\mu^{*}(E),
 \tag{4}
 \]
+
 because inner ≤ outer and Jordan outer ≤ Lebesgue outer.  
 
 Combining (3) and (4) we get
