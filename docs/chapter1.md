@@ -2991,6 +2991,313 @@ $$
 
 completing the proof that the Lebesgue outer measure of $E$ equals its inner Jordan measure (under the assumption that $E$ is covered by countably many almost disjoint Jordan-measurable boxes).
 
+
+## Redux: Pairwise disjoint and Almost disjoint boxes
+
+Previously, we defined an elementary set as the finite union of pairwise disjoint boxes in $\mathbb{R}^d$. We also define the notion of *almost disjoint* boxes where the interiors are pairwise disjoint but they possibly share a boundary. The difference seems subtle to me. Clarify the differences. Use simple examples if needed.
+
+**Answer**
+
+Let us use the term  
+
+box =  a Cartesian product of one–dimensional intervals  
+    (e.g. in \(\mathbb R^{2}\) a rectangle of the form  
+    \([a_1,b_1]\times[a_2,b_2]\)).
+
+Closed boxes will be used in all examples below.  
+Write \(|B|\) for the usual Euclidean volume of a box \(B\).
+
+Two notions of “disjointness” for a *family* of boxes \(\{B_i\}\):
+
+1. pairwise disjoint  
+ \(B_i\cap B_j=\varnothing\) whenever \(i\neq j\);
+
+2. almost disjoint  
+ \(\operatorname{int}(B_i)\cap\operatorname{int}(B_j)=\varnothing\)  
+ whenever \(i\neq j\).
+
+Because a box is the closure of its interior, “almost disjoint’’ allows
+overlaps that are contained entirely in the \((d{-}1)\)-dimensional
+boundaries of the boxes.
+
+============================================================
+
+Simple one–dimensional pictures
+
+============================================================
+
+• Disjoint intervals  
+
+\[
+[0,1]\quad\text{and}\quad[2,3]
+\]
+
+share no point at all.
+
+• Almost disjoint but *not* disjoint  
+
+\[
+[0,1]\quad\text{and}\quad[1,2].
+\]
+
+The point \(x=1\) belongs to both intervals, yet  
+\((0,1)\cap(1,2)=\varnothing\).
+
+============================================================
+
+Why the distinction matters
+
+============================================================
+
+A.  Definition of an elementary set  
+ Traditionally an elementary set is a *finite* union of
+*pairwise disjoint* boxes.
+The disjointness guarantees
+
+\[
+\mu\!\Bigl(\,\bigcup_{i=1}^{n}B_{i}\Bigr)
+  \;=\;\sum_{i=1}^{n}|B_{i}|
+\tag{1}
+\]
+
+*without having to invoke any measure theory*: the volumes simply
+add because no point is counted twice.
+
+B.  Almost disjoint families  
+ If the boxes overlap only on their boundaries, equation (1) is still
+*true* for both Jordan and Lebesgue measure, because boundaries
+have measure \(0\):
+
+\[
+|B_i\cap B_j|\;=\;0\quad(i\neq j)
+\quad\Longrightarrow\quad
+\Bigl|\bigcup_{i=1}^{n}B_i\Bigr|
+  =\sum_{i=1}^{n}|B_i|.
+\]
+
+However, this statement already uses the measure–zero property of
+boundaries (a result, not a definition).  Hence “pairwise disjoint’’ is
+the safer primitive notion when one *defines* elementary sets.
+
+C.  Practical reason to relax to “almost’’  
+ Closed dyadic cubes tile \(\mathbb R^{d}\) in a way that forces boundary
+contacts: each point on a common face belongs to two adjacent cubes.
+Allowing “almost disjoint” lets us speak of such a tiling while still
+having additivity of volume.
+
+============================================================
+
+Two–dimensional illustration
+
+============================================================
+
+Take in \(\mathbb R^{2}\)
+
+\[
+B_1=[0,1]\times[0,1],\quad
+B_2=[1,2]\times[0,1].
+\]
+
+The squares share the vertical line segment \(\{1\}\times[0,1]\).
+They are almost disjoint but not disjoint.
+Their interiors—open unit squares—are disjoint.
+We still have  
+\(|B_1\cup B_2| = |B_1|+|B_2| = 1+1 =2\)
+because the shared edge has area \(0\).
+
+============================================================
+
+Summary
+
+============================================================
+
+pairwise disjoint  = absolutely no overlap; primary notion in the  
+          definition of an elementary set.  
+
+almost disjoint   = interiors disjoint, boundaries may overlap;  
+          convenient for tilings (e.g. dyadic cubes) and still gives additivity because boundaries have measure \(0\).
+
+The two notions coincide *up to null sets*, but they are not the
+same set–theoretically.
+
+**Suppose we have a set $S = (0.5, \; 2] \in \mathbb{R}$. A pairwise disjoint cover is $[0, \; 1), \; \; [1, \; 3]$. Is this correct? If so, this suggests that there needs to be a mix of open and closed (or half open at least) boxes for a pairwise disjoint cover.**
+
+**Answer**
+
+Yes, the two intervals  
+
+\[
+[0,1)\quad\text{and}\quad[1,3]
+\]
+
+are pairwise disjoint (their intersection is empty) and their union does
+indeed contain  
+
+\[
+S=(0.5,2].
+\]
+
+Why do they have to be chosen with different “open/closed’’ conventions?
+Because if we kept both of them closed at the point \(1\) we would get an
+overlap there:
+
+\[
+[0,1]\cap[1,3]=\{1\}\neq\varnothing .
+\]
+
+A single common convention avoids that problem completely.  
+For instance, if in one dimension we agree always to take the interval
+*closed on the left and open on the right*, then
+
+\[
+[0,1)\quad\text{and}\quad[1,3)
+\]
+
+are automatically disjoint.  
+(The second interval still covers the point \(2\) because \(2<3\).)
+
+Exactly the same trick works in higher dimensions: use half-open
+*boxes*
+
+\[
+B=\prod_{k=1}^{d}[a_k,b_k),
+\]
+
+all closed on the “left’’ faces and open on the “right’’ faces.  
+Any two such boxes either are disjoint or one lies completely to the left
+of the other along some coordinate, so boundary overlaps never occur.
+Hence there is no need to mix different kinds of brackets; one systematic
+choice of half-open boxes is enough to obtain pairwise disjoint covers
+whenever we want them.
+
+
+**Clarify why a finite union of almost disjoint boxes is an elementary set cover. It seems that there are certain points (on the boundary of the boxes) are not in the cover.**
+
+**Answer**
+
+Let  
+
+\[
+\mathscr B=\{B_{1},\dots ,B_{N}\},\qquad 
+B_{i}= \prod_{k=1}^{d}[a_{i,k},b_{i,k}]
+\]
+
+be a *finite* family of closed boxes whose interiors are
+pair-wise disjoint:
+
+\[
+\operatorname{int}(B_{i})\cap\operatorname{int}(B_{j})=\varnothing
+\quad(i\neq j).
+\tag{1}
+\]
+
+Such boxes are usually called *almost disjoint*.
+Two questions often arise.
+
+(A)  Does the union \(\bigcup_{i=1}^{N} B_{i}\) leave “gaps’’ on the
+     common boundary pieces?
+
+(B)  Can this union be regarded as an *elementary* set, whose
+     measure is simply the sum of the volumes of the boxes?
+
+The answers are “No’’ to (A) (no gaps appear) and “Yes’’ to (B).  
+Here are the details.
+
+--------------------------------------------------------------------
+
+1  No uncovered boundary points
+   
+--------------------------------------------------------------------
+
+Because every \(B_{i}\) is *closed*, each of its boundary points is
+itself an element of \(B_{i}\).  
+If two boxes touch along a common face (or edge, or corner), every point
+of that face belongs to *both* boxes, hence certainly to their
+union.  Therefore
+
+\[
+\bigcup_{i=1}^{N}B_{i}
+\text{ contains all boundary pieces; no point is missing.}
+\]
+
+Example in \(\mathbb R\):
+\([0,1]\cup[1,2]=(0,2]\cup\{0,1\}=[0,2]\).  
+The point \(1\) lies in each interval, so the union covers it.
+
+--------------------------------------------------------------------
+
+2    Turning “almost disjoint’’ into “disjoint’’
+   
+--------------------------------------------------------------------
+
+Although the union already covers everything, measure theory sometimes
+demands a family of *pair-wise disjoint* sets so that
+
+\[
+|B_{1}\cup\cdots\cup B_{N}|=\sum_{i=1}^{N}|B_{i}|
+\tag{2}
+\]
+
+holds literally (without invoking “boundary has measure \(0\)’’).
+A standard device is to give every box the same
+half-open convention:
+
+\[
+\tilde B_{i}=\prod_{k=1}^{d}
+                 [a_{i,k},b_{i,k})
+\qquad(i=1,\dots ,N).
+\]
+
+Key facts
+
+•  The half-open boxes \(\tilde B_{i}\) are pair-wise *disjoint*.
+   Any point lies in *at most* one of them because, in the first
+   coordinate where two boxes meet, one of the two half-open intervals
+   uses “\([\,\,,\,)\)” and the other uses “\((\,\,,\,]\)”.
+
+•  They still cover the same set, up to a measure-zero difference:
+
+\[
+\bigcup_{i=1}^{N}\tilde B_{i}
+\;=\;
+\bigl(\bigcup_{i=1}^{N} B_{i}\bigr)\setminus Z,
+\]
+
+where \(Z\) is contained in a union of the shared boundary faces, hence
+\(|Z|=0\).
+
+Therefore the family \(\{\tilde B_{i}\}\) is an *elementary cover*
+in the strict sense (finite, pair-wise disjoint boxes) and satisfies
+
+\[
+\mu\!\Bigl(\,\bigcup_{i=1}^{N}B_{i}\Bigr)
+    =\mu\!\Bigl(\,\bigcup_{i=1}^{N}\tilde B_{i}\Bigr)
+    =\sum_{i=1}^{N}|\tilde B_{i}|
+    =\sum_{i=1}^{N}|B_{i}|.
+\]
+
+(The second equality uses that \(Z\) has measure \(0\); the last equality
+uses that removing an open face does not change a box’s volume.)
+
+--------------------------------------------------------------------
+
+3  Summary
+
+--------------------------------------------------------------------
+
+•  Having only “almost disjoint’’ boxes does *not* leave gaps; every
+   boundary point is automatically covered (because the boxes are
+   closed).
+
+•  When one needs a *genuinely disjoint* family, convert the closed
+   boxes \(B_{i}\) into half-open ones \(\tilde B_{i}\); the union and
+   the total volume remain the same up to sets of measure \(0\).
+
+Hence any finite union of almost-disjoint boxes can be regarded—​for all
+measure-theoretic purposes—​as an elementary set (finite union of
+pair-wise disjoint boxes).
+
+
 ## Closed Dyadic cubes in $R^d$
 
 What is the concept of a closed dyadic cube in $R^d$? In particular a cube of side length $2^{-n}$ for some non-negative integer $n$.
