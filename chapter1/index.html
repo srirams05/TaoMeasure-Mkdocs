@@ -532,6 +532,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#redux-pairwise-disjoint-and-almost-disjoint-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redux: Pairwise disjoint and Almost disjoint boxes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#closed-dyadic-cubes-in-rd" class="md-nav__link">
     <span class="md-ellipsis">
       Closed Dyadic cubes in \(R^d\)
@@ -559,9 +568,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mue-mu_je" class="md-nav__link">
+  <a href="#mue-mu_j" class="md-nav__link">
     <span class="md-ellipsis">
-      \(\mu^*(E) = \mu_{*,(J)}(E)\)
+      \(\mu^*(E) = \mu_{*,(J)}\)
     </span>
   </a>
   
@@ -2869,6 +2878,224 @@ B_1,\; B_2,\;\dots,\; B_N
 \mu_{*,(J)}(E),  
 \]</div>
 <p>completing the proof that the Lebesgue outer measure of <span class="arithmatex">\(E\)</span> equals its inner Jordan measure (under the assumption that <span class="arithmatex">\(E\)</span> is covered by countably many almost disjoint Jordan-measurable boxes).</p>
+<h2 id="redux-pairwise-disjoint-and-almost-disjoint-boxes">Redux: Pairwise disjoint and Almost disjoint boxes<a class="headerlink" href="#redux-pairwise-disjoint-and-almost-disjoint-boxes" title="Permanent link">&para;</a></h2>
+<p>Previously, we defined an elementary set as the finite union of pairwise disjoint boxes in <span class="arithmatex">\(\mathbb{R}^d\)</span>. We also define the notion of <em>almost disjoint</em> boxes where the interiors are pairwise disjoint but they possibly share a boundary. The difference seems subtle to me. Clarify the differences. Use simple examples if needed.</p>
+<p><strong>Answer</strong></p>
+<p>Let us use the term  </p>
+<p>box =  a Cartesian product of one–dimensional intervals<br />
+    (e.g. in <span class="arithmatex">\(\mathbb R^{2}\)</span> a rectangle of the form<br />
+<span class="arithmatex">\([a_1,b_1]\times[a_2,b_2]\)</span>).</p>
+<p>Closed boxes will be used in all examples below.<br />
+Write <span class="arithmatex">\(|B|\)</span> for the usual Euclidean volume of a box <span class="arithmatex">\(B\)</span>.</p>
+<p>Two notions of “disjointness” for a <em>family</em> of boxes <span class="arithmatex">\(\{B_i\}\)</span>:</p>
+<ol>
+<li>
+<p>pairwise disjoint<br />
+<span class="arithmatex">\(B_i\cap B_j=\varnothing\)</span> whenever <span class="arithmatex">\(i\neq j\)</span>;</p>
+</li>
+<li>
+<p>almost disjoint<br />
+<span class="arithmatex">\(\operatorname{int}(B_i)\cap\operatorname{int}(B_j)=\varnothing\)</span><br />
+ whenever <span class="arithmatex">\(i\neq j\)</span>.</p>
+</li>
+</ol>
+<p>Because a box is the closure of its interior, “almost disjoint’’ allows
+overlaps that are contained entirely in the <span class="arithmatex">\((d{-}1)\)</span>-dimensional
+boundaries of the boxes.</p>
+<p>============================================================</p>
+<p>Simple one–dimensional pictures</p>
+<p>============================================================</p>
+<p>• Disjoint intervals  </p>
+<div class="arithmatex">\[
+[0,1]\quad\text{and}\quad[2,3]
+\]</div>
+<p>share no point at all.</p>
+<p>• Almost disjoint but <em>not</em> disjoint  </p>
+<div class="arithmatex">\[
+[0,1]\quad\text{and}\quad[1,2].
+\]</div>
+<p>The point <span class="arithmatex">\(x=1\)</span> belongs to both intervals, yet<br />
+<span class="arithmatex">\((0,1)\cap(1,2)=\varnothing\)</span>.</p>
+<p>============================================================</p>
+<p>Why the distinction matters</p>
+<p>============================================================</p>
+<p>A.  Definition of an elementary set<br />
+ Traditionally an elementary set is a <em>finite</em> union of
+<em>pairwise disjoint</em> boxes.
+The disjointness guarantees</p>
+<div class="arithmatex">\[
+\mu\!\Bigl(\,\bigcup_{i=1}^{n}B_{i}\Bigr)
+  \;=\;\sum_{i=1}^{n}|B_{i}|
+\tag{1}
+\]</div>
+<p><em>without having to invoke any measure theory</em>: the volumes simply
+add because no point is counted twice.</p>
+<p>B.  Almost disjoint families<br />
+ If the boxes overlap only on their boundaries, equation (1) is still
+<em>true</em> for both Jordan and Lebesgue measure, because boundaries
+have measure <span class="arithmatex">\(0\)</span>:</p>
+<div class="arithmatex">\[
+|B_i\cap B_j|\;=\;0\quad(i\neq j)
+\quad\Longrightarrow\quad
+\Bigl|\bigcup_{i=1}^{n}B_i\Bigr|
+  =\sum_{i=1}^{n}|B_i|.
+\]</div>
+<p>However, this statement already uses the measure–zero property of
+boundaries (a result, not a definition).  Hence “pairwise disjoint’’ is
+the safer primitive notion when one <em>defines</em> elementary sets.</p>
+<p>C.  Practical reason to relax to “almost’’<br />
+ Closed dyadic cubes tile <span class="arithmatex">\(\mathbb R^{d}\)</span> in a way that forces boundary
+contacts: each point on a common face belongs to two adjacent cubes.
+Allowing “almost disjoint” lets us speak of such a tiling while still
+having additivity of volume.</p>
+<p>============================================================</p>
+<p>Two–dimensional illustration</p>
+<p>============================================================</p>
+<p>Take in <span class="arithmatex">\(\mathbb R^{2}\)</span></p>
+<div class="arithmatex">\[
+B_1=[0,1]\times[0,1],\quad
+B_2=[1,2]\times[0,1].
+\]</div>
+<p>The squares share the vertical line segment <span class="arithmatex">\(\{1\}\times[0,1]\)</span>.
+They are almost disjoint but not disjoint.
+Their interiors—open unit squares—are disjoint.
+We still have<br />
+<span class="arithmatex">\(|B_1\cup B_2| = |B_1|+|B_2| = 1+1 =2\)</span>
+because the shared edge has area <span class="arithmatex">\(0\)</span>.</p>
+<p>============================================================</p>
+<p>Summary</p>
+<p>============================================================</p>
+<p>pairwise disjoint  = absolutely no overlap; primary notion in the<br />
+          definition of an elementary set.  </p>
+<p>almost disjoint   = interiors disjoint, boundaries may overlap;<br />
+          convenient for tilings (e.g. dyadic cubes) and still gives additivity because boundaries have measure <span class="arithmatex">\(0\)</span>.</p>
+<p>The two notions coincide <em>up to null sets</em>, but they are not the
+same set–theoretically.</p>
+<p><strong>Suppose we have a set <span class="arithmatex">\(S = (0.5, \; 2] \in \mathbb{R}\)</span>. A pairwise disjoint cover is <span class="arithmatex">\([0, \; 1), \; \; [1, \; 3]\)</span>. Is this correct? If so, this suggests that there needs to be a mix of open and closed (or half open at least) boxes for a pairwise disjoint cover.</strong></p>
+<p><strong>Answer</strong></p>
+<p>Yes, the two intervals  </p>
+<div class="arithmatex">\[
+[0,1)\quad\text{and}\quad[1,3]
+\]</div>
+<p>are pairwise disjoint (their intersection is empty) and their union does
+indeed contain  </p>
+<div class="arithmatex">\[
+S=(0.5,2].
+\]</div>
+<p>Why do they have to be chosen with different “open/closed’’ conventions?
+Because if we kept both of them closed at the point <span class="arithmatex">\(1\)</span> we would get an
+overlap there:</p>
+<div class="arithmatex">\[
+[0,1]\cap[1,3]=\{1\}\neq\varnothing .
+\]</div>
+<p>A single common convention avoids that problem completely.<br />
+For instance, if in one dimension we agree always to take the interval
+<em>closed on the left and open on the right</em>, then</p>
+<div class="arithmatex">\[
+[0,1)\quad\text{and}\quad[1,3)
+\]</div>
+<p>are automatically disjoint.<br />
+(The second interval still covers the point <span class="arithmatex">\(2\)</span> because <span class="arithmatex">\(2&lt;3\)</span>.)</p>
+<p>Exactly the same trick works in higher dimensions: use half-open
+<em>boxes</em></p>
+<div class="arithmatex">\[
+B=\prod_{k=1}^{d}[a_k,b_k),
+\]</div>
+<p>all closed on the “left’’ faces and open on the “right’’ faces.<br />
+Any two such boxes either are disjoint or one lies completely to the left
+of the other along some coordinate, so boundary overlaps never occur.
+Hence there is no need to mix different kinds of brackets; one systematic
+choice of half-open boxes is enough to obtain pairwise disjoint covers
+whenever we want them.</p>
+<p><strong>Clarify why a finite union of almost disjoint boxes is an elementary set cover. It seems that there are certain points (on the boundary of the boxes) are not in the cover.</strong></p>
+<p><strong>Answer</strong></p>
+<p>Let  </p>
+<div class="arithmatex">\[
+\mathscr B=\{B_{1},\dots ,B_{N}\},\qquad 
+B_{i}= \prod_{k=1}^{d}[a_{i,k},b_{i,k}]
+\]</div>
+<p>be a <em>finite</em> family of closed boxes whose interiors are
+pair-wise disjoint:</p>
+<div class="arithmatex">\[
+\operatorname{int}(B_{i})\cap\operatorname{int}(B_{j})=\varnothing
+\quad(i\neq j).
+\tag{1}
+\]</div>
+<p>Such boxes are usually called <em>almost disjoint</em>.
+Two questions often arise.</p>
+<p>(A)  Does the union <span class="arithmatex">\(\bigcup_{i=1}^{N} B_{i}\)</span> leave “gaps’’ on the
+     common boundary pieces?</p>
+<p>(B)  Can this union be regarded as an <em>elementary</em> set, whose
+     measure is simply the sum of the volumes of the boxes?</p>
+<p>The answers are “No’’ to (A) (no gaps appear) and “Yes’’ to (B).<br />
+Here are the details.</p>
+<hr />
+<p>1  No uncovered boundary points</p>
+<hr />
+<p>Because every <span class="arithmatex">\(B_{i}\)</span> is <em>closed</em>, each of its boundary points is
+itself an element of <span class="arithmatex">\(B_{i}\)</span>.<br />
+If two boxes touch along a common face (or edge, or corner), every point
+of that face belongs to <em>both</em> boxes, hence certainly to their
+union.  Therefore</p>
+<div class="arithmatex">\[
+\bigcup_{i=1}^{N}B_{i}
+\text{ contains all boundary pieces; no point is missing.}
+\]</div>
+<p>Example in <span class="arithmatex">\(\mathbb R\)</span>:
+<span class="arithmatex">\([0,1]\cup[1,2]=(0,2]\cup\{0,1\}=[0,2]\)</span>.<br />
+The point <span class="arithmatex">\(1\)</span> lies in each interval, so the union covers it.</p>
+<hr />
+<p>2    Turning “almost disjoint’’ into “disjoint’’</p>
+<hr />
+<p>Although the union already covers everything, measure theory sometimes
+demands a family of <em>pair-wise disjoint</em> sets so that</p>
+<div class="arithmatex">\[
+|B_{1}\cup\cdots\cup B_{N}|=\sum_{i=1}^{N}|B_{i}|
+\tag{2}
+\]</div>
+<p>holds literally (without invoking “boundary has measure <span class="arithmatex">\(0\)</span>’’).
+A standard device is to give every box the same
+half-open convention:</p>
+<div class="arithmatex">\[
+\tilde B_{i}=\prod_{k=1}^{d}
+                 [a_{i,k},b_{i,k})
+\qquad(i=1,\dots ,N).
+\]</div>
+<p>Key facts</p>
+<p>•  The half-open boxes <span class="arithmatex">\(\tilde B_{i}\)</span> are pair-wise <em>disjoint</em>.
+   Any point lies in <em>at most</em> one of them because, in the first
+   coordinate where two boxes meet, one of the two half-open intervals
+   uses “<span class="arithmatex">\([\,\,,\,)\)</span>” and the other uses “<span class="arithmatex">\((\,\,,\,]\)</span>”.</p>
+<p>•  They still cover the same set, up to a measure-zero difference:</p>
+<div class="arithmatex">\[
+\bigcup_{i=1}^{N}\tilde B_{i}
+\;=\;
+\bigl(\bigcup_{i=1}^{N} B_{i}\bigr)\setminus Z,
+\]</div>
+<p>where <span class="arithmatex">\(Z\)</span> is contained in a union of the shared boundary faces, hence
+<span class="arithmatex">\(|Z|=0\)</span>.</p>
+<p>Therefore the family <span class="arithmatex">\(\{\tilde B_{i}\}\)</span> is an <em>elementary cover</em>
+in the strict sense (finite, pair-wise disjoint boxes) and satisfies</p>
+<div class="arithmatex">\[
+\mu\!\Bigl(\,\bigcup_{i=1}^{N}B_{i}\Bigr)
+    =\mu\!\Bigl(\,\bigcup_{i=1}^{N}\tilde B_{i}\Bigr)
+    =\sum_{i=1}^{N}|\tilde B_{i}|
+    =\sum_{i=1}^{N}|B_{i}|.
+\]</div>
+<p>(The second equality uses that <span class="arithmatex">\(Z\)</span> has measure <span class="arithmatex">\(0\)</span>; the last equality
+uses that removing an open face does not change a box’s volume.)</p>
+<hr />
+<p>3  Summary</p>
+<hr />
+<p>•  Having only “almost disjoint’’ boxes does <em>not</em> leave gaps; every
+   boundary point is automatically covered (because the boxes are
+   closed).</p>
+<p>•  When one needs a <em>genuinely disjoint</em> family, convert the closed
+   boxes <span class="arithmatex">\(B_{i}\)</span> into half-open ones <span class="arithmatex">\(\tilde B_{i}\)</span>; the union and
+   the total volume remain the same up to sets of measure <span class="arithmatex">\(0\)</span>.</p>
+<p>Hence any finite union of almost-disjoint boxes can be regarded—​for all
+measure-theoretic purposes—​as an elementary set (finite union of
+pair-wise disjoint boxes).</p>
 <h2 id="closed-dyadic-cubes-in-rd">Closed Dyadic cubes in <span class="arithmatex">\(R^d\)</span><a class="headerlink" href="#closed-dyadic-cubes-in-rd" title="Permanent link">&para;</a></h2>
 <p>What is the concept of a closed dyadic cube in <span class="arithmatex">\(R^d\)</span>? In particular a cube of side length <span class="arithmatex">\(2^{-n}\)</span> for some non-negative integer <span class="arithmatex">\(n\)</span>.</p>
 <p><strong>Answer</strong></p>
@@ -3127,7 +3354,7 @@ outer measure is</p>
 \]</div>
 <p>where <span class="arithmatex">\(\{Q_{i}\}\)</span> is the family of maximal dyadic cubes contained in
 <span class="arithmatex">\(E\)</span>.</p>
-<h2 id="mue-mu_je"><span class="arithmatex">\(\mu^*(E) = \mu_{*,(J)}(E)\)</span><a class="headerlink" href="#mue-mu_je" title="Permanent link">&para;</a></h2>
+<h2 id="mue-mu_j"><span class="arithmatex">\(\mu^*(E) = \mu_{*,(J)}\)</span><a class="headerlink" href="#mue-mu_j" title="Permanent link">&para;</a></h2>
 <p>In this case of an open set <span class="arithmatex">\(E \in \mathbb{R}^d\)</span>, is <span class="arithmatex">\(\mu^*(E) = \mu_{*,(J)}(E)\)</span>? Since we have just shown that <span class="arithmatex">\(E\)</span> can be written as the countable union of closed dyadic cubes with disjoint interiors, we should be able to use this property. Provide the details.</p>
 <p><strong>Answer</strong></p>
 <p>Let  </p>
@@ -3185,11 +3412,11 @@ boxes).<br />
 \tag{3}
 \]</div>
 <p>The reverse inequality is immediate:</p>
-<div class="arithmatex">\[
-\mu_{*,(J)}(E)\le \mu^{*,(J)}(E)\le\mu^{*}(E),
+<p>[
+\mu_{<em>,(J)}(E)\le \mu^{</em>,(J)}(E)\le\mu^{*}(E),
 \tag{4}
-\]</div>
-<p>because inner ≤ outer and Jordan outer ≤ Lebesgue outer.  </p>
+]
+because inner ≤ outer and Jordan outer ≤ Lebesgue outer.  </p>
 <p>Combining (3) and (4) we get</p>
 <div class="arithmatex">\[
 \boxed{\;\mu_{*,(J)}(E)=\mu^{*}(E)\;} .
