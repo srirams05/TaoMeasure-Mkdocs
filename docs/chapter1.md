@@ -3718,6 +3718,7 @@ The reverse inequality is immediate:
 \mu_{*,(J)}(E)\le \mu^{*,(J)}(E)\le\mu^{*}(E),
 \tag{4}
 \]
+
 because inner ≤ outer and Jordan outer ≤ Lebesgue outer.  
 
 Combining (3) and (4) we get
