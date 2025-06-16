@@ -3779,3 +3779,336 @@ The equality relied crucially on two facts:
     allowing the Jordan inner measure (which uses only *finite*
     unions) to reach the same value as the Lebesgue outer measure (which
     allows *countable* unions).
+
+
+## Lebesgue outer measure of any set (Outer Regularity)
+
+    
+Let $E \in \mathbb{R}^d$ be any set.  Let $U$ be an open set such that $E \subset U$. We want to show that:
+
+\[
+\mu^*(E) = \text{inf}_{U, E \subset U} \mu^*(U)
+\]
+
+My idea is this: From monotonicity, $\mu^*(E) \leq \text{inf}_{U, E \subset U} \mu^*(U)$ is immediate.
+
+We have previously shown that any open $U$ can be written as a union of dyadic cubes and that $\mu^*(U)$ is equal to the sum of the volumes of these dyadic cubes. It seems to me that we could use this to prove what we want. We start with a $U$ and associated dyadic cube tiling and refine the tiling by removing cubes and approaching $E$ from the outside. This always assures that we have an open set.
+
+Does this make sense?
+
+**Answer**
+
+Let  
+
+\[
+\mu^{*}(A)=\inf\Bigl\{\,\sum_{j=1}^{\infty}|Q_{j}|\; :\;
+                A\subset\bigcup_{j=1}^{\infty}Q_{j},
+                \;Q_{j}\text{ boxes}\Bigr\}
+\]
+
+be the Lebesgue outer measure in \(\mathbb R^{d}\).
+We prove the *outer regularity* formula  
+
+\[
+\boxed{\;
+   \mu^{*}(E)=\inf\bigl\{\mu^{*}(U):U\text{ open},\;E\subset U\bigr\}.
+\;}
+\tag{1}
+\]
+
+(The “ inf ” on the right is often denoted \(\mu^{*o}(E)\).)
+
+The inequality \(\mu^{*}(E)\le\inf_{U\supset E}\mu^{*}(U)\) is immediate
+from monotonicity.  Thus it suffices to show:
+
+\[
+\forall\varepsilon>0\;\; \exists\text{ open }U\supset E
+\quad\text{such that}\quad
+\mu^{*}(U)\le\mu^{*}(E)+\varepsilon.
+\tag{2}
+\]
+
+Below is a construction that uses the dyadic–cube decomposition of open
+sets that was proved earlier.
+
+**Step 1.  A near–optimal dyadic covering of \(E\)**
+
+Fix \(\varepsilon>0\).
+Because dyadic cubes form a countable family of boxes, the infimum in
+the definition of \(\mu^{*}(E)\) can be restricted to them.  Hence there
+is a countable collection of *closed* dyadic cubes
+\(\{Q_{k}\}_{k\ge1}\) with  
+
+\[
+E\subset\bigcup_{k=1}^{\infty}Q_{k},
+\qquad
+\sum_{k=1}^{\infty}|Q_{k}|<\mu^{*}(E)+\frac{\varepsilon}{2}.
+\tag{3}
+\]
+
+**Step 2.  Enlarge each cube slightly to make an open cover**
+
+For every \(k\) choose a number \(\delta_{k}>0\) so small that the cube  
+
+\[
+Q_{k}^{\delta_{k}}
+   =\{x\in\mathbb R^{d}:\operatorname{dist}(x,Q_{k})<\delta_{k}\}
+\]
+
+satisfies  
+
+\[
+|Q_{k}^{\delta_{k}}|\le |Q_{k}|+\frac{\varepsilon}{2^{k+1}}.
+\tag{4}
+\]
+
+Each \(Q_{k}^{\delta_{k}}\) is an *open* box (still dyadic–shaped,
+just slightly larger).  Define  
+
+\[
+U:=\bigcup_{k=1}^{\infty}Q_{k}^{\delta_{k}} .
+\]
+
+Then \(U\) is open and \(E\subset U\) because \(E\subset\cup Q_{k}\subset\cup Q_{k}^{\delta_{k}}\).
+
+**Step 3.  Estimate \(\mu^{*}(U)\)**
+
+Using the very cover \(\{Q_{k}^{\delta_{k}}\}\) in the definition of
+outer measure,
+
+\[
+\mu^{*}(U)\le\sum_{k=1}^{\infty}|Q_{k}^{\delta_{k}}|
+          \le\sum_{k=1}^{\infty}\Bigl(|Q_{k}|+\frac{\varepsilon}{2^{k+1}}\Bigr)
+          =\sum_{k=1}^{\infty}|Q_{k}|+\frac{\varepsilon}{2}
+          <\Bigl(\mu^{*}(E)+\frac{\varepsilon}{2}\Bigr)+\frac{\varepsilon}{2}
+          =\mu^{*}(E)+\varepsilon.
+\]
+
+This is exactly the requirement (2).
+
+**Conclusion**
+
+For every \(\varepsilon>0\) we produced an open set \(U\supset E\) with
+\(\mu^{*}(U)\le\mu^{*}(E)+\varepsilon\);
+hence
+
+\[
+\inf_{U\supset E}\mu^{*}(U)\le\mu^{*}(E).
+\]
+
+Combined with the opposite inequality from monotonicity, we have proven
+(1).  The dyadic–cube argument shows explicitly how one “refines’’ a
+dyadic tiling to approach the given set \(E\) from outside while keeping
+the measure arbitrarily close to \(\mu^{*}(E)\).
+
+## Equivalence: $\mu^{*}(U)\le\mu^{*}(E)+\varepsilon$ equivalent to $\mu^*(U \backslash E) \leq \varepsilon$
+
+$\forall\varepsilon>0\;\; \exists\text{ open }U\supset E$, is the expression
+$\mu^{*}(U)\le\mu^{*}(E)+\varepsilon$ equivalent to $\mu^*(U \backslash E) \leq \varepsilon$?
+
+**Answer**
+
+Yes – for every set \(E\subset\mathbb R^{d}\) and every open
+\(U\supset E\) the two inequalities  
+
+\[
+\text{(a)}\qquad 
+\mu^{*}(U)\le \mu^{*}(E)+\varepsilon ,
+\qquad\qquad
+\text{(b)}\qquad 
+\mu^{*}(U\setminus E)\le\varepsilon
+\]
+
+are equivalent.  The implication in each direction uses only
+monotonicity and sub-additivity of the outer measure.
+
+Forward direction  
+Assume (a).  Because \(E\subset U\) we have monotonicity
+
+\[
+\mu^{*}(E)\le \mu^{*}(U).
+\]
+
+Hence
+
+\[
+0\le \mu^{*}(U)-\mu^{*}(E)\le\varepsilon .
+\tag{1}
+\]
+
+Now write \(U = E\cup(U\setminus E)\).
+By sub-additivity,
+
+\[
+\mu^{*}(U)\le \mu^{*}(E)+\mu^{*}(U\setminus E),
+\]
+
+so that
+
+\[
+\mu^{*}(U)-\mu^{*}(E)\le\mu^{*}(U\setminus E).
+\]
+
+Combine this with (1) to get \(\mu^{*}(U\setminus E)\le\varepsilon\),
+i.e. (b).
+
+Reverse direction  
+Assume (b).  Using the same sub-additivity,
+
+\[
+\mu^{*}(U)=\mu^{*}\bigl(E\cup(U\setminus E)\bigr)
+           \le\mu^{*}(E)+\mu^{*}(U\setminus E)
+           \le\mu^{*}(E)+\varepsilon,
+\]
+
+which is (a).
+
+Consequently
+
+\[
+\boxed{\;
+   \forall\,\varepsilon>0,\;
+   U\supset E\text{ open}:\;
+   \mu^{*}(U)\le\mu^{*}(E)+\varepsilon
+   \;\Longleftrightarrow\;
+   \mu^{*}(U\setminus E)\le\varepsilon
+ }.
+\]
+
+Thus the two formulations of outer regularity are interchangeable.
+
+
+## Inner Regularity of Lebesgue measure
+
+Let $E \in \mathbb{R}^d$ be Lebesgue measurable. Let $K \in \mathbb{R}^d$ be compact (closed and bounded) such that $K \subset E$. Then, 
+
+\[
+\mu(E) = \underset{K \subset E}{\text{sup}} \mu(K)
+\]
+
+This would be the inner regularity property. Prove it.
+
+**Answer**
+
+Let \(E\subset\mathbb{R}^{d}\) be a Lebesgue–measurable set and let  
+\(\mu\) denote Lebesgue measure.  
+We prove the inner (or compact) regularity of \(\mu\):
+
+\[
+\boxed{\;
+   \mu(E)=\sup\bigl\{\mu(K):K\subset E,\;K\text{ compact}\bigr\}.
+   \;}
+\tag{1}
+\]
+
+(The right–hand side is understood to be \(+\infty\) if \(\mu(E)=+\infty\).)
+
+**1  Reduction to the case \(\mu(E)<\infty\)**
+
+If \(\mu(E)=\infty\) the equality (1) is immediate, because for
+\(K_{n}=E\cap[-n,n]^{d}\) one has \(K_{n}\subset K_{n+1}\subset E\) and
+\(\mu(K_{n})\to\infty\).
+Hence we assume \(\mu(E)<\infty\) for the rest of the proof.
+
+**2  From outer regularity to a bounded closed subset**
+
+Fix \(\varepsilon>0\).
+By outer regularity of Lebesgue measure
+there exists an open set \(U\supset E\) with  
+
+\[
+\mu(U\setminus E)<\frac{\varepsilon}{3}.
+\tag{2.1}
+\]
+
+Because \(E^{c}\) is also measurable,
+apply outer regularity to \(E^{c}\) to obtain an open set  
+\(V\supset E^{c}\) such that  
+
+\[
+\mu(V\cap E)=\mu(V\setminus E^{c})<\frac{\varepsilon}{3}.
+\tag{2.2}
+\]
+
+Define  
+
+\[
+F:=\mathbb{R}^{d}\setminus V .
+\]
+
+Then \(F\) is \emph{closed} and \(F\subset E\) by construction, while  
+
+\[
+\mu(E\setminus F)=\mu(E\cap V)<\frac{\varepsilon}{3}.
+\tag{2.3}
+\]
+
+So far, nothing guarantees that \(F\) is bounded.  To fix this, set  
+
+\[
+F_{R}:=F\cap [-R,R]^{d}\quad(R>0).
+\]
+
+Because \(F\subset E\) and \(\mu(E)<\infty\), we can choose
+\(R=R(\varepsilon)\) so large that  
+
+\[
+\mu\bigl(F\setminus F_{R}\bigr)<\frac{\varepsilon}{3}.
+\tag{2.4}
+\]
+
+Now \(F_{R}\) is \emph{closed and bounded}, hence compact, and
+\(F_{R}\subset E\).
+Put \(K:=F_{R}\).
+
+**3  Measure estimate**
+
+Combine (2.3) and (2.4):
+
+\[
+\mu(E\setminus K)
+   \le\mu(E\setminus F)+\mu(F\setminus K)
+   <\frac{\varepsilon}{3}+\frac{\varepsilon}{3}
+   <\varepsilon.
+\]
+
+Equivalently,
+
+\[
+\mu(K)>\mu(E)-\varepsilon.
+\tag{3.1}
+\]
+
+**4  Supremum equals \(\mu(E)\)**
+
+Because \(\varepsilon>0\) was arbitrary, for every such \(\varepsilon\)
+we have produced a compact \(K\subset E\) with
+\(\mu(K)>\mu(E)-\varepsilon\).
+Therefore  
+
+\[
+\sup_{K\subset E,\;K\text{ compact}}\mu(K)\;\ge\;\mu(E)-\varepsilon,
+\]
+
+and letting \(\varepsilon\downarrow 0\) gives
+
+\[
+\sup_{K\subset E,\;K\text{ compact}}\mu(K)\;\ge\;\mu(E).
+\]
+
+The opposite inequality is immediate since every \(K\subset E\)
+satisfies \(\mu(K)\le\mu(E)\).
+Thus equality holds, completing the proof of (1).
+
+**5  Conclusion**
+
+Lebesgue measure on \(\mathbb{R}^{d}\) is \emph{inner regular}:
+
+\[
+\mu(E)=\sup\{\mu(K):K\subset E,\;K\text{ compact}\}
+\quad\text{for every measurable }E\subset\mathbb{R}^{d}.
+\]
+
+This inner approximation by compact sets, together with outer
+approximation by open sets, constitutes the full regularity of Lebesgue
+measure.
