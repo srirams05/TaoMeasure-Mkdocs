@@ -576,6 +576,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lebesgue-outer-measure-of-any-set-outer-regularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lebesgue outer measure of any set (Outer Regularity)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equivalence-muulemuevarepsilon-equivalent-to-muu-backslash-e-leq-varepsilon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equivalence: \(\mu^{*}(U)\le\mu^{*}(E)+\varepsilon\) equivalent to \(\mu^*(U \backslash E) \leq \varepsilon\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inner-regularity-of-lebesgue-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inner Regularity of Lebesgue measure
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3469,6 +3496,242 @@ below; hence</p>
     allows <em>countable</em> unions).</p>
 </li>
 </ol>
+<h2 id="lebesgue-outer-measure-of-any-set-outer-regularity">Lebesgue outer measure of any set (Outer Regularity)<a class="headerlink" href="#lebesgue-outer-measure-of-any-set-outer-regularity" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(E \in \mathbb{R}^d\)</span> be any set.  Let <span class="arithmatex">\(U\)</span> be an open set such that <span class="arithmatex">\(E \subset U\)</span>. We want to show that:</p>
+<div class="arithmatex">\[
+\mu^*(E) = \text{inf}_{U, E \subset U} \mu^*(U)
+\]</div>
+<p>My idea is this: From monotonicity, <span class="arithmatex">\(\mu^*(E) \leq \text{inf}_{U, E \subset U} \mu^*(U)\)</span> is immediate.</p>
+<p>We have previously shown that any open <span class="arithmatex">\(U\)</span> can be written as a union of dyadic cubes and that <span class="arithmatex">\(\mu^*(U)\)</span> is equal to the sum of the volumes of these dyadic cubes. It seems to me that we could use this to prove what we want. We start with a <span class="arithmatex">\(U\)</span> and associated dyadic cube tiling and refine the tiling by removing cubes and approaching <span class="arithmatex">\(E\)</span> from the outside. This always assures that we have an open set.</p>
+<p>Does this make sense?</p>
+<p><strong>Answer</strong></p>
+<p>Let  </p>
+<div class="arithmatex">\[
+\mu^{*}(A)=\inf\Bigl\{\,\sum_{j=1}^{\infty}|Q_{j}|\; :\;
+                A\subset\bigcup_{j=1}^{\infty}Q_{j},
+                \;Q_{j}\text{ boxes}\Bigr\}
+\]</div>
+<p>be the Lebesgue outer measure in <span class="arithmatex">\(\mathbb R^{d}\)</span>.
+We prove the <em>outer regularity</em> formula  </p>
+<div class="arithmatex">\[
+\boxed{\;
+   \mu^{*}(E)=\inf\bigl\{\mu^{*}(U):U\text{ open},\;E\subset U\bigr\}.
+\;}
+\tag{1}
+\]</div>
+<p>(The “ inf ” on the right is often denoted <span class="arithmatex">\(\mu^{*o}(E)\)</span>.)</p>
+<p>The inequality <span class="arithmatex">\(\mu^{*}(E)\le\inf_{U\supset E}\mu^{*}(U)\)</span> is immediate
+from monotonicity.  Thus it suffices to show:</p>
+<div class="arithmatex">\[
+\forall\varepsilon&gt;0\;\; \exists\text{ open }U\supset E
+\quad\text{such that}\quad
+\mu^{*}(U)\le\mu^{*}(E)+\varepsilon.
+\tag{2}
+\]</div>
+<p>Below is a construction that uses the dyadic–cube decomposition of open
+sets that was proved earlier.</p>
+<p><strong>Step 1.  A near–optimal dyadic covering of <span class="arithmatex">\(E\)</span></strong></p>
+<p>Fix <span class="arithmatex">\(\varepsilon&gt;0\)</span>.
+Because dyadic cubes form a countable family of boxes, the infimum in
+the definition of <span class="arithmatex">\(\mu^{*}(E)\)</span> can be restricted to them.  Hence there
+is a countable collection of <em>closed</em> dyadic cubes
+<span class="arithmatex">\(\{Q_{k}\}_{k\ge1}\)</span> with  </p>
+<div class="arithmatex">\[
+E\subset\bigcup_{k=1}^{\infty}Q_{k},
+\qquad
+\sum_{k=1}^{\infty}|Q_{k}|&lt;\mu^{*}(E)+\frac{\varepsilon}{2}.
+\tag{3}
+\]</div>
+<p><strong>Step 2.  Enlarge each cube slightly to make an open cover</strong></p>
+<p>For every <span class="arithmatex">\(k\)</span> choose a number <span class="arithmatex">\(\delta_{k}&gt;0\)</span> so small that the cube  </p>
+<div class="arithmatex">\[
+Q_{k}^{\delta_{k}}
+   =\{x\in\mathbb R^{d}:\operatorname{dist}(x,Q_{k})&lt;\delta_{k}\}
+\]</div>
+<p>satisfies  </p>
+<div class="arithmatex">\[
+|Q_{k}^{\delta_{k}}|\le |Q_{k}|+\frac{\varepsilon}{2^{k+1}}.
+\tag{4}
+\]</div>
+<p>Each <span class="arithmatex">\(Q_{k}^{\delta_{k}}\)</span> is an <em>open</em> box (still dyadic–shaped,
+just slightly larger).  Define  </p>
+<div class="arithmatex">\[
+U:=\bigcup_{k=1}^{\infty}Q_{k}^{\delta_{k}} .
+\]</div>
+<p>Then <span class="arithmatex">\(U\)</span> is open and <span class="arithmatex">\(E\subset U\)</span> because <span class="arithmatex">\(E\subset\cup Q_{k}\subset\cup Q_{k}^{\delta_{k}}\)</span>.</p>
+<p><strong>Step 3.  Estimate <span class="arithmatex">\(\mu^{*}(U)\)</span></strong></p>
+<p>Using the very cover <span class="arithmatex">\(\{Q_{k}^{\delta_{k}}\}\)</span> in the definition of
+outer measure,</p>
+<div class="arithmatex">\[
+\mu^{*}(U)\le\sum_{k=1}^{\infty}|Q_{k}^{\delta_{k}}|
+          \le\sum_{k=1}^{\infty}\Bigl(|Q_{k}|+\frac{\varepsilon}{2^{k+1}}\Bigr)
+          =\sum_{k=1}^{\infty}|Q_{k}|+\frac{\varepsilon}{2}
+          &lt;\Bigl(\mu^{*}(E)+\frac{\varepsilon}{2}\Bigr)+\frac{\varepsilon}{2}
+          =\mu^{*}(E)+\varepsilon.
+\]</div>
+<p>This is exactly the requirement (2).</p>
+<p><strong>Conclusion</strong></p>
+<p>For every <span class="arithmatex">\(\varepsilon&gt;0\)</span> we produced an open set <span class="arithmatex">\(U\supset E\)</span> with
+<span class="arithmatex">\(\mu^{*}(U)\le\mu^{*}(E)+\varepsilon\)</span>;
+hence</p>
+<div class="arithmatex">\[
+\inf_{U\supset E}\mu^{*}(U)\le\mu^{*}(E).
+\]</div>
+<p>Combined with the opposite inequality from monotonicity, we have proven
+(1).  The dyadic–cube argument shows explicitly how one “refines’’ a
+dyadic tiling to approach the given set <span class="arithmatex">\(E\)</span> from outside while keeping
+the measure arbitrarily close to <span class="arithmatex">\(\mu^{*}(E)\)</span>.</p>
+<h2 id="equivalence-muulemuevarepsilon-equivalent-to-muu-backslash-e-leq-varepsilon">Equivalence: <span class="arithmatex">\(\mu^{*}(U)\le\mu^{*}(E)+\varepsilon\)</span> equivalent to <span class="arithmatex">\(\mu^*(U \backslash E) \leq \varepsilon\)</span><a class="headerlink" href="#equivalence-muulemuevarepsilon-equivalent-to-muu-backslash-e-leq-varepsilon" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(\forall\varepsilon&gt;0\;\; \exists\text{ open }U\supset E\)</span>, is the expression
+<span class="arithmatex">\(\mu^{*}(U)\le\mu^{*}(E)+\varepsilon\)</span> equivalent to <span class="arithmatex">\(\mu^*(U \backslash E) \leq \varepsilon\)</span>?</p>
+<p><strong>Answer</strong></p>
+<p>Yes – for every set <span class="arithmatex">\(E\subset\mathbb R^{d}\)</span> and every open
+<span class="arithmatex">\(U\supset E\)</span> the two inequalities  </p>
+<div class="arithmatex">\[
+\text{(a)}\qquad 
+\mu^{*}(U)\le \mu^{*}(E)+\varepsilon ,
+\qquad\qquad
+\text{(b)}\qquad 
+\mu^{*}(U\setminus E)\le\varepsilon
+\]</div>
+<p>are equivalent.  The implication in each direction uses only
+monotonicity and sub-additivity of the outer measure.</p>
+<p>Forward direction<br />
+Assume (a).  Because <span class="arithmatex">\(E\subset U\)</span> we have monotonicity</p>
+<div class="arithmatex">\[
+\mu^{*}(E)\le \mu^{*}(U).
+\]</div>
+<p>Hence</p>
+<div class="arithmatex">\[
+0\le \mu^{*}(U)-\mu^{*}(E)\le\varepsilon .
+\tag{1}
+\]</div>
+<p>Now write <span class="arithmatex">\(U = E\cup(U\setminus E)\)</span>.
+By sub-additivity,</p>
+<div class="arithmatex">\[
+\mu^{*}(U)\le \mu^{*}(E)+\mu^{*}(U\setminus E),
+\]</div>
+<p>so that</p>
+<div class="arithmatex">\[
+\mu^{*}(U)-\mu^{*}(E)\le\mu^{*}(U\setminus E).
+\]</div>
+<p>Combine this with (1) to get <span class="arithmatex">\(\mu^{*}(U\setminus E)\le\varepsilon\)</span>,
+i.e. (b).</p>
+<p>Reverse direction<br />
+Assume (b).  Using the same sub-additivity,</p>
+<div class="arithmatex">\[
+\mu^{*}(U)=\mu^{*}\bigl(E\cup(U\setminus E)\bigr)
+           \le\mu^{*}(E)+\mu^{*}(U\setminus E)
+           \le\mu^{*}(E)+\varepsilon,
+\]</div>
+<p>which is (a).</p>
+<p>Consequently</p>
+<div class="arithmatex">\[
+\boxed{\;
+   \forall\,\varepsilon&gt;0,\;
+   U\supset E\text{ open}:\;
+   \mu^{*}(U)\le\mu^{*}(E)+\varepsilon
+   \;\Longleftrightarrow\;
+   \mu^{*}(U\setminus E)\le\varepsilon
+ }.
+\]</div>
+<p>Thus the two formulations of outer regularity are interchangeable.</p>
+<h2 id="inner-regularity-of-lebesgue-measure">Inner Regularity of Lebesgue measure<a class="headerlink" href="#inner-regularity-of-lebesgue-measure" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(E \in \mathbb{R}^d\)</span> be Lebesgue measurable. Let <span class="arithmatex">\(K \in \mathbb{R}^d\)</span> be compact (closed and bounded) such that <span class="arithmatex">\(K \subset E\)</span>. Then, </p>
+<div class="arithmatex">\[
+\mu(E) = \underset{K \subset E}{\text{sup}} \mu(K)
+\]</div>
+<p>This would be the inner regularity property. Prove it.</p>
+<p><strong>Answer</strong></p>
+<p>Let <span class="arithmatex">\(E\subset\mathbb{R}^{d}\)</span> be a Lebesgue–measurable set and let<br />
+<span class="arithmatex">\(\mu\)</span> denote Lebesgue measure.<br />
+We prove the inner (or compact) regularity of <span class="arithmatex">\(\mu\)</span>:</p>
+<div class="arithmatex">\[
+\boxed{\;
+   \mu(E)=\sup\bigl\{\mu(K):K\subset E,\;K\text{ compact}\bigr\}.
+   \;}
+\tag{1}
+\]</div>
+<p>(The right–hand side is understood to be <span class="arithmatex">\(+\infty\)</span> if <span class="arithmatex">\(\mu(E)=+\infty\)</span>.)</p>
+<p><strong>1  Reduction to the case <span class="arithmatex">\(\mu(E)&lt;\infty\)</span></strong></p>
+<p>If <span class="arithmatex">\(\mu(E)=\infty\)</span> the equality (1) is immediate, because for
+<span class="arithmatex">\(K_{n}=E\cap[-n,n]^{d}\)</span> one has <span class="arithmatex">\(K_{n}\subset K_{n+1}\subset E\)</span> and
+<span class="arithmatex">\(\mu(K_{n})\to\infty\)</span>.
+Hence we assume <span class="arithmatex">\(\mu(E)&lt;\infty\)</span> for the rest of the proof.</p>
+<p><strong>2  From outer regularity to a bounded closed subset</strong></p>
+<p>Fix <span class="arithmatex">\(\varepsilon&gt;0\)</span>.
+By outer regularity of Lebesgue measure
+there exists an open set <span class="arithmatex">\(U\supset E\)</span> with  </p>
+<div class="arithmatex">\[
+\mu(U\setminus E)&lt;\frac{\varepsilon}{3}.
+\tag{2.1}
+\]</div>
+<p>Because <span class="arithmatex">\(E^{c}\)</span> is also measurable,
+apply outer regularity to <span class="arithmatex">\(E^{c}\)</span> to obtain an open set<br />
+<span class="arithmatex">\(V\supset E^{c}\)</span> such that  </p>
+<div class="arithmatex">\[
+\mu(V\cap E)=\mu(V\setminus E^{c})&lt;\frac{\varepsilon}{3}.
+\tag{2.2}
+\]</div>
+<p>Define  </p>
+<div class="arithmatex">\[
+F:=\mathbb{R}^{d}\setminus V .
+\]</div>
+<p>Then <span class="arithmatex">\(F\)</span> is \emph{closed} and <span class="arithmatex">\(F\subset E\)</span> by construction, while  </p>
+<div class="arithmatex">\[
+\mu(E\setminus F)=\mu(E\cap V)&lt;\frac{\varepsilon}{3}.
+\tag{2.3}
+\]</div>
+<p>So far, nothing guarantees that <span class="arithmatex">\(F\)</span> is bounded.  To fix this, set  </p>
+<div class="arithmatex">\[
+F_{R}:=F\cap [-R,R]^{d}\quad(R&gt;0).
+\]</div>
+<p>Because <span class="arithmatex">\(F\subset E\)</span> and <span class="arithmatex">\(\mu(E)&lt;\infty\)</span>, we can choose
+<span class="arithmatex">\(R=R(\varepsilon)\)</span> so large that  </p>
+<div class="arithmatex">\[
+\mu\bigl(F\setminus F_{R}\bigr)&lt;\frac{\varepsilon}{3}.
+\tag{2.4}
+\]</div>
+<p>Now <span class="arithmatex">\(F_{R}\)</span> is \emph{closed and bounded}, hence compact, and
+<span class="arithmatex">\(F_{R}\subset E\)</span>.
+Put <span class="arithmatex">\(K:=F_{R}\)</span>.</p>
+<p><strong>3  Measure estimate</strong></p>
+<p>Combine (2.3) and (2.4):</p>
+<div class="arithmatex">\[
+\mu(E\setminus K)
+   \le\mu(E\setminus F)+\mu(F\setminus K)
+   &lt;\frac{\varepsilon}{3}+\frac{\varepsilon}{3}
+   &lt;\varepsilon.
+\]</div>
+<p>Equivalently,</p>
+<div class="arithmatex">\[
+\mu(K)&gt;\mu(E)-\varepsilon.
+\tag{3.1}
+\]</div>
+<p><strong>4  Supremum equals <span class="arithmatex">\(\mu(E)\)</span></strong></p>
+<p>Because <span class="arithmatex">\(\varepsilon&gt;0\)</span> was arbitrary, for every such <span class="arithmatex">\(\varepsilon\)</span>
+we have produced a compact <span class="arithmatex">\(K\subset E\)</span> with
+<span class="arithmatex">\(\mu(K)&gt;\mu(E)-\varepsilon\)</span>.
+Therefore  </p>
+<div class="arithmatex">\[
+\sup_{K\subset E,\;K\text{ compact}}\mu(K)\;\ge\;\mu(E)-\varepsilon,
+\]</div>
+<p>and letting <span class="arithmatex">\(\varepsilon\downarrow 0\)</span> gives</p>
+<div class="arithmatex">\[
+\sup_{K\subset E,\;K\text{ compact}}\mu(K)\;\ge\;\mu(E).
+\]</div>
+<p>The opposite inequality is immediate since every <span class="arithmatex">\(K\subset E\)</span>
+satisfies <span class="arithmatex">\(\mu(K)\le\mu(E)\)</span>.
+Thus equality holds, completing the proof of (1).</p>
+<p><strong>5  Conclusion</strong></p>
+<p>Lebesgue measure on <span class="arithmatex">\(\mathbb{R}^{d}\)</span> is \emph{inner regular}:</p>
+<div class="arithmatex">\[
+\mu(E)=\sup\{\mu(K):K\subset E,\;K\text{ compact}\}
+\quad\text{for every measurable }E\subset\mathbb{R}^{d}.
+\]</div>
+<p>This inner approximation by compact sets, together with outer
+approximation by open sets, constitutes the full regularity of Lebesgue
+measure.</p>
 
 
 
