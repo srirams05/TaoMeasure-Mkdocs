@@ -4112,3 +4112,81 @@ Lebesgue measure on \(\mathbb{R}^{d}\) is \emph{inner regular}:
 This inner approximation by compact sets, together with outer
 approximation by open sets, constitutes the full regularity of Lebesgue
 measure.
+
+## Lebesgue measure is Radon
+
+The Lebesgue measure has inner and outer regularity. This makes it a Radon measure. Is this correct? What is the concept of a Radon measure?
+
+**Answer**
+
+Yes.  When it is restricted to the Borel sets of \(\mathbb R^{d}\) the Lebesgue measure is a Radon measure, precisely because it enjoys the two regularity properties you have already proved (and is locally finite).  Below is the precise definition and a short verification.
+
+1 Locally-compact Hausdorff space  
+Throughout let \(X\) be a locally compact Hausdorff space and let \(\mathscr B(X)\) denote its Borel \(\sigma\)-algebra.
+
+2 Definition (Radon measure)  
+A positive measure \(\mu\) on \(\mathscr B(X)\) is called a Radon measure if it satisfies
+
+(a) (local finiteness) every compact set has finite measure:
+
+\[
+\forall K\subset X \text{ compact}\quad \mu(K)<\infty;
+\]
+
+(b) (inner regularity) each Borel set can be approximated from inside by compact sets:
+
+\[
+\forall E\in\mathscr B(X)\qquad
+\mu(E)=\sup\bigl\{\mu(K):K\subset E,\;K\text{ compact}\bigr\}.
+\]
+
+Many authors include
+
+(c) (outer regularity)  
+
+\[
+\forall E\in\mathscr B(X)\qquad
+ \mu(E)=\inf\bigl\{\mu(U):E\subset U,\;U\text{ open}\bigr\},
+\]
+
+although for metrizable locally-compact spaces (in particular \(X=\mathbb R^{d}\)) property (c) follows automatically from (a) and (b).  Equivalently one can phrase (b)–(c) with the \(\varepsilon\)-version:
+
+\[
+\forall\varepsilon>0\;\exists\;K\subset E\subset U,\; 
+K\ \text{compact},\ U\ \text{open},\ 
+\mu(U\setminus K)<\varepsilon .
+\]
+
+3 Lebesgue measure is Radon  
+
+Let \(\lambda\) denote Lebesgue measure on \(\mathbb R^{d}\).  
+(The formal Radon object is \(\lambda\!\restriction_{\mathscr B(\mathbb R^{d})}\), i.e. its restriction to Borel sets; the later completion adds the usual null subsets but does not change the regularity statement.)
+
+•  Local finiteness A compact set in \(\mathbb R^{d}\) is bounded, hence contained in a cube \([-M,M]^d\); \(\lambda([-M,M]^d)=(2M)^d<\infty\).
+
+•  Outer regularity  
+was proved earlier: for every measurable \(E\subset\mathbb R^{d}\)
+
+\[
+\forall\varepsilon>0\;\;\exists\ U\text{ open},\ E\subset U,\;
+\lambda(U)\le\lambda(E)+\varepsilon .
+\]
+
+•  Inner regularity  
+was also proved: for every measurable \(E\) and every \(\varepsilon>0\)
+there exists a compact \(K\subset E\) with
+\(\lambda(E)\le\lambda(K)+\varepsilon\).
+Equivalently  
+
+\[
+\lambda(E)=\sup_{K\subset E,\;K\text{ compact}}\lambda(K).
+\]
+
+Because \(\lambda\) satisfies (a)+ (b) (+ (c)), it is a Radon measure.
+
+4 Other examples  
+Dirac measures \(\delta_x\), finite (or \(\sigma\)-finite) sums of such, counting measure on a discrete subset, and any finite Borel measure with a continuous (or merely locally integrable) density with respect to Lebesgue measure are all Radon on \(\mathbb R^{d}\).
+
+5 Summary  
+A Radon measure on a locally compact Hausdorff space is a locally finite Borel measure that is inner regular (and, in many presentations, also outer regular).  
+Because Lebesgue measure on \(\mathbb R^{d}\) has those properties, it is indeed a Radon measure.
