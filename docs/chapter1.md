@@ -4036,7 +4036,7 @@ Define
 F:=\mathbb{R}^{d}\setminus V .
 \]
 
-Then \(F\) is \emph{closed} and \(F\subset E\) by construction, while  
+Then \(F\) is *closed* and \(F\subset E\) by construction, while  
 
 \[
 \mu(E\setminus F)=\mu(E\cap V)<\frac{\varepsilon}{3}.
@@ -4057,7 +4057,7 @@ Because \(F\subset E\) and \(\mu(E)<\infty\), we can choose
 \tag{2.4}
 \]
 
-Now \(F_{R}\) is \emph{closed and bounded}, hence compact, and
+Now \(F_{R}\) is *closed and bounded*, hence compact, and
 \(F_{R}\subset E\).
 Put \(K:=F_{R}\).
 
@@ -4102,7 +4102,7 @@ Thus equality holds, completing the proof of (1).
 
 **5  Conclusion**
 
-Lebesgue measure on \(\mathbb{R}^{d}\) is \emph{inner regular}:
+Lebesgue measure on \(\mathbb{R}^{d}\) is *inner regular*:
 
 \[
 \mu(E)=\sup\{\mu(K):K\subset E,\;K\text{ compact}\}
