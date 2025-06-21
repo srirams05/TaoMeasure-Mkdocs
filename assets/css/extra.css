@@ -27,7 +27,7 @@
 .md-sidebar .md-nav--secondary,
 .md-sidebar .md-nav__list,
 .md-sidebar .md-nav__item {
-  width: 16rem !important;
+  width: 14rem !important;
   min-width: 0 !important;
   max-width: 100% !important;
   box-sizing: border-box !important;
