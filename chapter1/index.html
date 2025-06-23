@@ -586,6 +586,51 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#countable-sub-additivity-of-lebesgue-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Countable sub additivity of Lebesgue measure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countable-additivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Countable additivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countable-union-of-measurable-sets-is-measurable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Countable union of measurable sets is measurable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complement-of-measurable-set-is-measurable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complement of measurable set is measurable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countable-intersection-of-measurable-sets-is-measurable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Countable intersection of measurable sets is measurable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#equivalence-muulemuevarepsilon-equivalent-to-muu-backslash-e-leq-varepsilon" class="md-nav__link">
     <span class="md-ellipsis">
       Equivalence: \(\mu^{*}(U)\le\mu^{*}(E)+\varepsilon\) equivalent to \(\mu^*(U \backslash E) \leq \varepsilon\)
@@ -607,6 +652,60 @@
   <a href="#lebesgue-measure-is-radon" class="md-nav__link">
     <span class="md-ellipsis">
       Lebesgue measure is Radon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upward-monotone-convergence-continuity-from-below" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upward monotone convergence (Continuity from below)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downard-monotone-convergence-continuity-from-above" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downard monotone convergence (Continuity from above)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointwise-convergence-of-lebesgue-measurable-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointwise convergence of Lebesgue measurable sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limsup-and-liminf-of-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      limsup and liminf of sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intuition-of-limsup-and-liminf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intuition of limsup and liminf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointwise-convergence-of-lebesgue-sets-is-lebesgue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointwise convergence of Lebesgue sets is Lebesgue
     </span>
   </a>
   
@@ -3590,6 +3689,315 @@ hence</p>
 (1).  The dyadic–cube argument shows explicitly how one “refines’’ a
 dyadic tiling to approach the given set <span class="arithmatex">\(E\)</span> from outside while keeping
 the measure arbitrarily close to <span class="arithmatex">\(\mu^{*}(E)\)</span>.</p>
+<h2 id="countable-sub-additivity-of-lebesgue-measure">Countable sub additivity of Lebesgue measure<a class="headerlink" href="#countable-sub-additivity-of-lebesgue-measure" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(\{A_{n}\}_{n\ge 1}\)</span> be any sequence of Lebesgue–measurable subsets of <span class="arithmatex">\(\mathbb{R}^{d}\)</span>.
+The desired inequality is  </p>
+<div class="arithmatex">\[
+\mu\!\Bigl(\,\bigcup_{n=1}^{\infty}A_{n}\Bigr)
+\;\le\;
+\sum_{n=1}^{\infty}\mu(A_{n}),
+\tag{1}
+\]</div>
+<p>i.e. countable sub-additivity of the Lebesgue measure <span class="arithmatex">\(\mu\)</span>.
+There are several ways to prove it; we give two standard arguments.</p>
+<p>A.  Direct argument via outer measure</p>
+<p>1  Lebesgue measure is defined from the Lebesgue <em>outer</em> measure </p>
+<div class="arithmatex">\[
+     \mu^{*}(E)=\inf\Bigl\{
+        \sum_{k=1}^{\infty}\operatorname{vol}(Q_{k}) :
+        E\subset\bigcup_{k=1}^{\infty}Q_{k},\;Q_{k}\text{ boxes}\Bigr\},
+\]</div>
+<p>and a set <span class="arithmatex">\(E\)</span> is <em>measurable</em> iff <span class="arithmatex">\(\mu(E)=\mu^{*}(E)\)</span>.</p>
+<p>2  The outer measure <span class="arithmatex">\(\mu^{*}\)</span> is sub-additive on <em>all</em> sets.
+   Indeed, if each <span class="arithmatex">\(A_{n}\)</span> is covered by boxes
+   <span class="arithmatex">\(\{Q_{n,k}\}_{k\ge 1}\)</span> with  </p>
+<div class="arithmatex">\[
+       \sum_{k=1}^{\infty}\operatorname{vol}(Q_{n,k})
+       &lt;\mu^{*}(A_{n})+\frac{\varepsilon}{2^{n}},
+\]</div>
+<p>then <span class="arithmatex">\(\bigcup_{n,k}Q_{n,k}\)</span> covers <span class="arithmatex">\(\bigcup_{n}A_{n}\)</span> and</p>
+<div class="arithmatex">\[
+       \mu^{*}\!\Bigl(\bigcup_{n}A_{n}\Bigr)
+       \le
+       \sum_{n=1}^{\infty}\mu^{*}(A_{n})+\varepsilon.
+\]</div>
+<p>Letting <span class="arithmatex">\(\varepsilon\to 0\)</span> gives sub-additivity for <span class="arithmatex">\(\mu^{*}\)</span>.</p>
+<p>3  Because every <span class="arithmatex">\(A_{n}\)</span> and the union <span class="arithmatex">\(\bigcup_{n}A_{n}\)</span> are
+   measurable,</p>
+<div class="arithmatex">\[
+       \mu\!\Bigl(\bigcup_{n}A_{n}\Bigr)
+       \;=\;
+       \mu^{*}\!\Bigl(\bigcup_{n}A_{n}\Bigr)
+       \;\le\;
+       \sum_{n=1}^{\infty}\mu^{*}(A_{n})
+       \;=\;
+       \sum_{n=1}^{\infty}\mu(A_{n}),
+\]</div>
+<p>which is (1).</p>
+<p>Conclusion</p>
+<p>This establishes the countable sub-additivity of Lebesgue
+measure:</p>
+<div class="arithmatex">\[
+\boxed{\;
+  \mu\Bigl(\bigcup_{n=1}^{\infty}A_{n}\Bigr)
+  \,\le\,
+  \sum_{n=1}^{\infty}\mu(A_{n})
+  \quad\text{for all measurable }A_{n}\subset\mathbb R^{d}.
+  \;}
+\]</div>
+<p>This property is an essential ingredient of measure theory and holds for
+any measure, not just the Lebesgue measure.</p>
+<h2 id="countable-additivity">Countable additivity<a class="headerlink" href="#countable-additivity" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(\{E_{n}\}_{n\ge 1}\)</span> be a \textit{pairwise disjoint} sequence of
+Lebesgue–measurable subsets of <span class="arithmatex">\(\mathbb R^{d}\)</span>.
+(The equality we want is false without the disjointness assumption;
+without it one only has the already–proved sub-additivity
+<span class="arithmatex">\(\mu(\bigcup_{n}E_{n})\le\sum_{n}\mu(E_{n})\)</span>.)</p>
+<p>We have to show</p>
+<div class="arithmatex">\[
+\mu\!\Bigl(\,\bigcup_{n=1}^{\infty}E_{n}\Bigr)
+\;\ge\;
+\sum_{n=1}^{\infty}\mu(E_{n}).
+\tag{1}
+\]</div>
+<p>Step 1.  Finite additivity for disjoint sets<br />
+For any finite index set <span class="arithmatex">\(\{1,\dots,N\}\)</span> the disjointness gives</p>
+<div class="arithmatex">\[
+\mu\!\Bigl(\bigcup_{n=1}^{N}E_{n}\Bigr)=\sum_{n=1}^{N}\mu(E_{n}).
+\tag{2}
+\]</div>
+<p>Step 2.  Monotonicity yields the desired inequality<br />
+Set</p>
+<p><span class="arithmatex">\(F_{N}:=\bigcup_{n=1}^{N}E_{n}\;(N=1,2,\dots)\)</span>.
+Then</p>
+<div class="arithmatex">\[
+F_{1}\subset F_{2}\subset\cdots\subset
+\bigcup_{n=1}^{\infty}E_{n}\;,
+\qquad
+\mu(F_{N})=\sum_{n=1}^{N}\mu(E_{n})  \quad\text{by (2)}.
+\]</div>
+<p>Because <span class="arithmatex">\(\mu\)</span> is monotone,</p>
+<div class="arithmatex">\[
+\sum_{n=1}^{N}\mu(E_{n})=\mu(F_{N})
+\;\le\;
+\mu\!\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr),
+\qquad\forall N\in\mathbb N.
+\]</div>
+<p>Let <span class="arithmatex">\(N\to\infty\)</span>.
+The sequence <span class="arithmatex">\(\sum_{n=1}^{N}\mu(E_{n})\)</span> is increasing, so its limit is
+the infinite series <span class="arithmatex">\(\sum_{n=1}^{\infty}\mu(E_{n})\)</span>.
+Thus</p>
+<div class="arithmatex">\[
+\sum_{n=1}^{\infty}\mu(E_{n})
+\;\le\;
+\mu\!\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr),
+\]</div>
+<p>which is the inequality (1) we wanted.</p>
+<p>Step 3.  Combine with sub-additivity<br />
+We already know sub-additivity gives
+<span class="arithmatex">\(\mu(\bigcup_{n}E_{n})\le\sum_{n}\mu(E_{n})\)</span>;
+together with (1) this yields equality:</p>
+<div class="arithmatex">\[
+\boxed{\;
+\mu\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr)=\sum_{n=1}^{\infty}\mu(E_{n})
+\;} \qquad(\text{for disjoint measurable }E_{n}).
+\]</div>
+<p>Hence the Lebesgue measure is <em>countably additive</em> on disjoint
+families of measurable sets.</p>
+<h2 id="countable-union-of-measurable-sets-is-measurable">Countable union of measurable sets is measurable<a class="headerlink" href="#countable-union-of-measurable-sets-is-measurable" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(E_1 \subset E_2 \subset \ldots \subset E_n \subset \mathbb{R}^d\)</span> be a countable 
+sequence of Lebesgue measurable sets.
+Let <span class="arithmatex">\(E = \bigcup_{n=1}^{\infty}  E_n\)</span>. </p>
+<p>Show that <span class="arithmatex">\(E\)</span> is Lebesgue measurable without explicitly using the concept of a <span class="arithmatex">\(\sigma\)</span>-algebra.</p>
+<p>Sketch of proof: for any set <span class="arithmatex">\(E_n\)</span>, there is a covering open set <span class="arithmatex">\(U_n\)</span> such that <span class="arithmatex">\(\mu(U_n \setminus E_n) &lt; \varepsilon/2^n\)</span>.</p>
+<p>Complete this.</p>
+<p>Recall the outer–regularity characterisation of Lebesgue–measurable sets:</p>
+<p>A set <span class="arithmatex">\(A\subset\mathbb R^{d}\)</span> is Lebesgue–measurable<br />
+iff  </p>
+<div class="arithmatex">\[
+\forall\varepsilon&gt;0\;\; \exists\text{ open }O\supset A
+\quad\text{such that}\quad
+\mu(O\setminus A)&lt;\varepsilon .
+\tag{★}
+\]</div>
+<p>We will verify (★) directly for  </p>
+<div class="arithmatex">\[
+E=\bigcup_{n=1}^{\infty}E_{n},
+\qquad
+E_{1}\subset E_{2}\subset\cdots,
+\]</div>
+<p>thereby proving that <span class="arithmatex">\(E\)</span> is measurable—​without appealing to the fact
+that the measurable sets form a <span class="arithmatex">\(\sigma\)</span>-algebra.</p>
+<p>Step 1.  Choose open sets for the individual <span class="arithmatex">\(E_{n}\)</span>.</p>
+<p>Fix <span class="arithmatex">\(\varepsilon&gt;0\)</span>.<br />
+By outer regularity of each <span class="arithmatex">\(E_{n}\)</span> we can pick an open set
+<span class="arithmatex">\(U_{n}\supset E_{n}\)</span> such that  </p>
+<div class="arithmatex">\[
+\mu(U_{n}\setminus E_{n})&lt;\frac{\varepsilon}{2^{n}}
+\qquad(n=1,2,\dots).
+\tag{1}
+\]</div>
+<p>Step 2.  Form a single open cover of <span class="arithmatex">\(E\)</span>.</p>
+<p>Put  </p>
+<div class="arithmatex">\[
+U:=\bigcup_{n=1}^{\infty}U_{n}.
+\]</div>
+<p>Then <span class="arithmatex">\(U\)</span> is open and <span class="arithmatex">\(E\subset U\)</span> because <span class="arithmatex">\(E_{n}\subset U_{n}\)</span>
+for every <span class="arithmatex">\(n\)</span>.</p>
+<p>Step 3.  Estimate the excess measure <span class="arithmatex">\(U\setminus E\)</span>.</p>
+<p>Observe</p>
+<div class="arithmatex">\[
+U\setminus E
+\;=\;
+\Bigl(\bigcup_{n=1}^{\infty}U_{n}\Bigr)
+      \setminus
+\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr)
+\;=\;
+\bigcup_{n=1}^{\infty}\bigl(U_{n}\setminus E_{n}\bigr).
+\]</div>
+<p>By countable sub-additivity of <span class="arithmatex">\(\mu\)</span> and the choice (1) of the <span class="arithmatex">\(U_{n}\)</span>,</p>
+<div class="arithmatex">\[
+\mu(U\setminus E)
+\;\le\;
+\sum_{n=1}^{\infty}\mu(U_{n}\setminus E_{n})
+\;&lt;\;
+\sum_{n=1}^{\infty}\frac{\varepsilon}{2^{n}}
+\;=\;
+\varepsilon .
+\]</div>
+<p>Step 4.  Apply criterion (★).</p>
+<p>We have produced, for the given <span class="arithmatex">\(\varepsilon&gt;0\)</span>, an open set
+<span class="arithmatex">\(U\supset E\)</span> with <span class="arithmatex">\(\mu(U\setminus E)&lt;\varepsilon\)</span>.
+Hence <span class="arithmatex">\(E\)</span> satisfies (★) and is therefore Lebesgue–measurable.</p>
+<p>∎</p>
+<h2 id="complement-of-measurable-set-is-measurable">Complement of measurable set is measurable<a class="headerlink" href="#complement-of-measurable-set-is-measurable" title="Permanent link">&para;</a></h2>
+<p>Take as definition of “Lebesgue–measurable’’ the
+(open/closed) regularity criterion proved earlier:</p>
+<p>A set <span class="arithmatex">\(A\subset\mathbb R^{d}\)</span> is called Lebesgue measurable iff  </p>
+<div class="arithmatex">\[
+\forall\varepsilon&gt;0\;\;\exists\;
+\text{ a closed set }K\;\text{and an open set }U
+\quad\text{s.t.}\quad
+K\subset A\subset U,\qquad
+\mu(U\setminus K)&lt;\varepsilon.
+\tag{R}
+\]</div>
+<p>(No σ–algebra language is used; we only quantify over open and closed
+sets and speak about the Lebesgue measure <span class="arithmatex">\(\mu\)</span>.)</p>
+<p>We show that if <span class="arithmatex">\(E\)</span> satisfies (R) then its complement
+<span class="arithmatex">\(E^{c}=\mathbb R^{d}\setminus E\)</span> also satisfies (R).</p>
+<p><strong>Construction for the complement</strong></p>
+<p>Fix <span class="arithmatex">\(\varepsilon&gt;0\)</span>.
+Because <span class="arithmatex">\(E\)</span> is measurable, property (R) provides closed
+<span class="arithmatex">\(K\)</span> and open <span class="arithmatex">\(U\)</span> such that</p>
+<div class="arithmatex">\[
+K\subset E\subset U,
+\qquad
+\mu(U\setminus K)&lt;\varepsilon.
+\tag{1}
+\]</div>
+<p>Take complements:</p>
+<div class="arithmatex">\[
+U^{c}\subset E^{c}\subset K^{c}.
+\]</div>
+<p>•  <span class="arithmatex">\(U^{c}\)</span> is closed (complement of the open set <span class="arithmatex">\(U\)</span>).<br />
+•  <span class="arithmatex">\(K^{c}\)</span> is open (complement of the closed set <span class="arithmatex">\(K\)</span>).</p>
+<p>Compute the “gap’’ between these two sets:</p>
+<div class="arithmatex">\[
+K^{c}\setminus U^{c}= (\mathbb R^{d}\setminus K)\setminus (\mathbb R^{d}\setminus U)
+                     = U\setminus K.
+\]</div>
+<p>Hence, by (1),</p>
+<div class="arithmatex">\[
+\mu(K^{c}\setminus U^{c})=\mu(U\setminus K)&lt;\varepsilon.
+\]</div>
+<p><strong>Verification of (R) for <span class="arithmatex">\(E^{c}\)</span></strong></p>
+<p>We have produced for the same <span class="arithmatex">\(\varepsilon\)</span></p>
+<div class="arithmatex">\[
+\underbrace{U^{c}}_{\text{closed}}
+\subset E^{c}
+\subset
+\underbrace{K^{c}}_{\text{open}},
+\qquad
+\mu\bigl(K^{c}\setminus U^{c}\bigr)&lt;\varepsilon,
+\]</div>
+<p>exactly the requirement (R) with the rôles of <span class="arithmatex">\(K\)</span> and <span class="arithmatex">\(U\)</span> exchanged.
+Therefore <span class="arithmatex">\(E^{c}\)</span> is Lebesgue measurable.</p>
+<p><strong>Conclusion</strong></p>
+<p>Every measurable set has a measurable complement; the result follows
+solely from the regularity characterisation and the elementary facts
+that complements transform open sets into closed ones, and vice-versa,
+while preserving the measure of the set difference.</p>
+<h2 id="countable-intersection-of-measurable-sets-is-measurable">Countable intersection of measurable sets is measurable<a class="headerlink" href="#countable-intersection-of-measurable-sets-is-measurable" title="Permanent link">&para;</a></h2>
+<p><strong>Let $E_1 ,E_2 , E_3, \cdots $ be a countable sequence of Lebesgue measurable sets in <span class="arithmatex">\(\mathbb{R}^d\)</span>.</strong>
+<strong>Show that <span class="arithmatex">\(\bigcap_{n=1}^{\infty} E_n\)</span> is Lebesgue measurable.</strong></p>
+<p>Throughout we use the regularity criterion already established for
+Lebesgue–measurability:</p>
+<p>A set <span class="arithmatex">\(A\subset\mathbb R^{d}\)</span> is Lebesgue measurable  iff  </p>
+<div class="arithmatex">\[
+\forall\varepsilon&gt;0\;\;\exists
+\quad
+\text{open }U\supset A
+\quad\text{such that}\quad
+\mu(U\setminus A)&lt;\varepsilon .
+\tag{R}
+\]</div>
+<p>(No <span class="arithmatex">\(\sigma\)</span>–algebra language is needed.)</p>
+<p>We are given a countable family of measurable sets  </p>
+<div class="arithmatex">\[
+E_{1},E_{2},E_{3},\dots\subset\mathbb R^{d},
+\]</div>
+<p>and must show that  </p>
+<div class="arithmatex">\[
+E:=\bigcap_{n=1}^{\infty}E_{n}
+\]</div>
+<p>is measurable.<br />
+We argue in two steps.</p>
+<p><strong>1  Countable unions of measurable sets are measurable</strong></p>
+<p>Let  </p>
+<div class="arithmatex">\[
+F:=\bigcup_{n=1}^{\infty}E_{n}.
+\]</div>
+<p>Fix <span class="arithmatex">\(\varepsilon&gt;0\)</span>.<br />
+Because each <span class="arithmatex">\(E_{n}\)</span> satisfies (R), choose an open set
+<span class="arithmatex">\(U_{n}\supset E_{n}\)</span> with  </p>
+<div class="arithmatex">\[
+\mu(U_{n}\setminus E_{n})&lt;\frac{\varepsilon}{2^{n}}.
+\tag{1}
+\]</div>
+<p>Put  </p>
+<div class="arithmatex">\[
+U:=\bigcup_{n=1}^{\infty}U_{n}.
+\]</div>
+<p>Then <span class="arithmatex">\(U\)</span> is open and <span class="arithmatex">\(F\subset U\)</span>.<br />
+Moreover, by sub–additivity and (1),</p>
+<div class="arithmatex">\[
+\mu(U\setminus F)
+\le\sum_{n=1}^{\infty}\mu(U_{n}\setminus E_{n})
+&lt;\sum_{n=1}^{\infty}\frac{\varepsilon}{2^{n}}
+=\varepsilon .
+\]</div>
+<p>Hence <span class="arithmatex">\(F\)</span> satisfies (R) and is Lebesgue measurable.</p>
+<p><strong>2  Complements are measurable  ⇒  intersections are measurable</strong></p>
+<p>From a previous exercise we know that the complement of every measurable
+set is measurable (again using only property (R): complements turn open
+into closed and vice-versa, preserving the measure of the set-difference).</p>
+<p>Apply this to each <span class="arithmatex">\(E_{n}\)</span>; all the complements <span class="arithmatex">\(E_{n}^{c}\)</span> are
+measurable, so by Step 1 their union is measurable:</p>
+<div class="arithmatex">\[
+\bigcup_{n=1}^{\infty}E_{n}^{c}\quad\text{is measurable.}
+\]</div>
+<p>Finally,</p>
+<div class="arithmatex">\[
+E=\bigcap_{n=1}^{\infty}E_{n}
+  =\Bigl(\bigcup_{n=1}^{\infty}E_{n}^{c}\Bigr)^{c},
+\]</div>
+<p>the complement of a measurable set, and therefore itself measurable.</p>
+<p><strong>Conclusion</strong></p>
+<p>Without appealing to the abstract notion of a <span class="arithmatex">\(\sigma\)</span>-algebra we have
+shown—using only the open-set approximation property (R)—that the
+intersection of countably many Lebesgue measurable sets is again
+Lebesgue measurable.</p>
 <h2 id="equivalence-muulemuevarepsilon-equivalent-to-muu-backslash-e-leq-varepsilon">Equivalence: <span class="arithmatex">\(\mu^{*}(U)\le\mu^{*}(E)+\varepsilon\)</span> equivalent to <span class="arithmatex">\(\mu^*(U \backslash E) \leq \varepsilon\)</span><a class="headerlink" href="#equivalence-muulemuevarepsilon-equivalent-to-muu-backslash-e-leq-varepsilon" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(\forall\varepsilon&gt;0\;\; \exists\text{ open }U\supset E\)</span>, is the expression
 <span class="arithmatex">\(\mu^{*}(U)\le\mu^{*}(E)+\varepsilon\)</span> equivalent to <span class="arithmatex">\(\mu^*(U \backslash E) \leq \varepsilon\)</span>?</p>
@@ -3794,6 +4202,441 @@ Dirac measures <span class="arithmatex">\(\delta_x\)</span>, finite (or <span cl
 <p>5 Summary<br />
 A Radon measure on a locally compact Hausdorff space is a locally finite Borel measure that is inner regular (and, in many presentations, also outer regular).<br />
 Because Lebesgue measure on <span class="arithmatex">\(\mathbb R^{d}\)</span> has those properties, it is indeed a Radon measure.</p>
+<h2 id="upward-monotone-convergence-continuity-from-below">Upward monotone convergence (Continuity from below)<a class="headerlink" href="#upward-monotone-convergence-continuity-from-below" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(\{E_{n}\}_{n\ge 1}\)</span> be an increasing sequence of Lebesgue–measurable 
+subsets of <span class="arithmatex">\(\mathbb{R}^{d}\)</span>; i.e.  </p>
+<div class="arithmatex">\[
+E_{1}\subset E_{2}\subset \cdots\subset E_{n}\subset\cdots .
+\]</div>
+<p>Put  </p>
+<div class="arithmatex">\[
+E:=\bigcup_{n=1}^{\infty}E_{n}.
+\]</div>
+<p>We prove the “continuity from below’’ property of Lebesgue measure <span class="arithmatex">\(\mu\)</span>:</p>
+<div class="arithmatex">\[
+\boxed{\;
+\mu(E)=\lim_{n\to\infty}\mu(E_{n})
+\;} .
+\]</div>
+<p><strong>1  The limit <span class="arithmatex">\(\displaystyle\lim_{n}\mu(E_{n})\)</span> exists</strong></p>
+<p>Because the sequence <span class="arithmatex">\(\{E_{n}\}\)</span> is increasing, the corresponding
+measures are non–decreasing:</p>
+<div class="arithmatex">\[
+\mu(E_{1})\le\mu(E_{2})\le\cdots\le\mu(E_{n})\le\cdots\le \mu(E).
+\]</div>
+<p>Hence <span class="arithmatex">\(\{\mu(E_{n})\}\)</span> is monotone and bounded above by
+<span class="arithmatex">\(\mu(E)\)</span>; the limit
+<span class="arithmatex">\(\displaystyle L:=\lim_{n\to\infty}\mu(E_{n})\)</span> exists (possibly
+<span class="arithmatex">\(+\infty\)</span>) and satisfies <span class="arithmatex">\(L\le\mu(E)\)</span>.</p>
+<p><strong>2  Decompose the union</strong></p>
+<p>Define the “increments’’</p>
+<div class="arithmatex">\[
+A_{1}:=E_{1},\qquad 
+A_{n}:=E_{n}\setminus E_{n-1}\quad(n\ge 2).
+\]</div>
+<p>Then  </p>
+<div class="arithmatex">\[
+A_{m}\cap A_{n}=\varnothing\quad(m\neq n),
+\qquad
+\bigcup_{n=1}^{\infty}A_{n}=E,
+\qquad
+E_{N}=\bigcup_{n=1}^{N}A_{n}.
+\]</div>
+<p><strong>3  Countable additivity of the measure</strong></p>
+<p>Because the <span class="arithmatex">\(A_{n}\)</span>’s are pairwise disjoint and measurable,</p>
+<div class="arithmatex">\[
+\mu(E)=\sum_{n=1}^{\infty}\mu(A_{n}).
+\tag{3.1}
+\]</div>
+<p>For every <span class="arithmatex">\(N\)</span>,</p>
+<div class="arithmatex">\[
+\mu(E_{N})=\sum_{n=1}^{N}\mu(A_{n}).
+\tag{3.2}
+\]</div>
+<p><strong>4  Passage to the limit</strong></p>
+<p>Take the limit <span class="arithmatex">\(N\to\infty\)</span> in (3.2) and invoke monotone convergence
+for the series of non–negative terms <span class="arithmatex">\(\{\mu(A_{n})\}\)</span>:</p>
+<div class="arithmatex">\[
+\lim_{N\to\infty}\mu(E_{N})
+      =\sum_{n=1}^{\infty}\mu(A_{n})
+      =\mu(E)
+      \quad\text{(by (3.1))}.
+\]</div>
+<p><strong>5  Conclusion</strong></p>
+<p>Therefore</p>
+<div class="arithmatex">\[
+\mu\!\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr)
+      =\mu(E)
+      =\lim_{n\to\infty}\mu(E_{n}),
+\]</div>
+<p>which is exactly the desired equality.  This property is often called
+<em>continuity from below</em> and holds for every (finite or σ–finite)
+measure, the Lebesgue measure in particular.</p>
+<h2 id="downard-monotone-convergence-continuity-from-above">Downard monotone convergence (Continuity from above)<a class="headerlink" href="#downard-monotone-convergence-continuity-from-above" title="Permanent link">&para;</a></h2>
+<p>Let  </p>
+<div class="arithmatex">\[
+E_{1}\supset E_{2}\supset\cdots\supset E_{n}\supset\cdots\qquad
+(E_{n}\subset\mathbb R^{d}\text{ measurable})
+\]</div>
+<p>and assume that for one index <span class="arithmatex">\(N\)</span> the measure is finite:</p>
+<div class="arithmatex">\[
+\mu(E_{N})&lt;\infty .
+\tag{1}
+\]</div>
+<p>(The index <span class="arithmatex">\(N\)</span> can be taken to be <span class="arithmatex">\(1\)</span>; otherwise just start the
+argument at <span class="arithmatex">\(E_{N}\)</span> and relabel.)</p>
+<p>Define  </p>
+<div class="arithmatex">\[
+E:=\bigcap_{n=1}^{\infty}E_{n}
+\qquad\text{and}\qquad
+A_{n}:=E_{N}\setminus E_{n}\quad(n\ge N).
+\]</div>
+<p><strong>1 The sets <span class="arithmatex">\(A_{n}\)</span> form an increasing sequence</strong></p>
+<p>Because the <span class="arithmatex">\(E_{n}\)</span> decrease, <span class="arithmatex">\(E_{n+1}\subset E_{n}\)</span>; hence<br />
+<span class="arithmatex">\(A_{n}=E_{N}\setminus E_{n}\subset E_{N}\setminus E_{n+1}=A_{n+1}\)</span>.
+Thus</p>
+<div class="arithmatex">\[
+A_{N}\subset A_{N+1}\subset\cdots\subset A_{n}\subset\cdots ,
+\]</div>
+<p>and</p>
+<div class="arithmatex">\[
+\bigcup_{n=N}^{\infty}A_{n}=E_{N}\setminus E .
+\tag{2}
+\]</div>
+<p><strong>2. Continuity from below applied to <span class="arithmatex">\(A_{n}\)</span></strong></p>
+<p>The sequence <span class="arithmatex">\(\{A_{n}\}_{n\ge N}\)</span> is increasing and the union on the
+right of (2) is contained in <span class="arithmatex">\(E_{N}\)</span>, which has finite measure by (1).
+Therefore we can use the “continuity from below’’ property (proved
+earlier):</p>
+<div class="arithmatex">\[
+\mu(E_{N}\setminus E)=\lim_{n\to\infty}\mu(A_{n}).
+\tag{3}
+\]</div>
+<p><strong>3  Express <span class="arithmatex">\(\mu(A_{n})\)</span> in terms of <span class="arithmatex">\(\mu(E_{n})\)</span></strong></p>
+<p>For every <span class="arithmatex">\(n\ge N\)</span> the sets <span class="arithmatex">\(E_{n}\)</span> and <span class="arithmatex">\(A_{n}=E_{N}\setminus E_{n}\)</span>
+are disjoint and their union is <span class="arithmatex">\(E_{N}\)</span>; hence</p>
+<div class="arithmatex">\[
+\mu(E_{N})=\mu(E_{n})+\mu(A_{n})
+\quad\Longrightarrow\quad
+\mu(A_{n})=\mu(E_{N})-\mu(E_{n}).
+\tag{4}
+\]</div>
+<p><strong>4 Passage to the limit</strong></p>
+<p>Insert (4) into (3):</p>
+<div class="arithmatex">\[
+\mu(E_{N})-\mu(E)=\lim_{n\to\infty}\bigl[\mu(E_{N})-\mu(E_{n})\bigr]
+                 =\mu(E_{N})-\lim_{n\to\infty}\mu(E_{n}),
+\]</div>
+<p>so</p>
+<div class="arithmatex">\[
+\mu(E)=\lim_{n\to\infty}\mu(E_{n}).
+\]</div>
+<p><strong>5  Conclusion</strong></p>
+<p>If a decreasing sequence of measurable sets <span class="arithmatex">\(\{E_{n}\}\)</span> contains at
+least one member with finite measure, then</p>
+<div class="arithmatex">\[
+\boxed{\;
+   \mu\!\Bigl(\bigcap_{n=1}^{\infty}E_{n}\Bigr)
+   \;=\;
+   \lim_{n\to\infty}\mu(E_{n})
+ }.
+\]</div>
+<p>This is the “continuity from above’’ property for the Lebesgue measure.</p>
+<h2 id="pointwise-convergence-of-lebesgue-measurable-sets">Pointwise convergence of Lebesgue measurable sets<a class="headerlink" href="#pointwise-convergence-of-lebesgue-measurable-sets" title="Permanent link">&para;</a></h2>
+<p><strong>Let <span class="arithmatex">\(E_n\)</span> be a sequence of Lebesgue measurable sets in <span class="arithmatex">\(\mathbb{R}^d\)</span>. Let <span class="arithmatex">\(E\)</span> be another Lebesgue measurable set in <span class="arithmatex">\(\mathbb{R}^d\)</span>. What is the concept of pointwise convergence of <span class="arithmatex">\(E_n\)</span> to <span class="arithmatex">\(E\)</span>?</strong></p>
+<p>“Pointwise’’ convergence of a sequence of sets means that we look at each individual point <span class="arithmatex">\(x\in\mathbb R^{d}\)</span> and ask whether, as <span class="arithmatex">\(n\)</span> grows, the point eventually belongs to the same sets that <span class="arithmatex">\(x\)</span> belongs to in the ‘limit’ set <span class="arithmatex">\(E\)</span>.  Formally one works with the indicator (characteristic) functions</p>
+<div class="arithmatex">\[
+\chi_{E_{n}}(x)=
+\begin{cases}
+1 &amp; \text{if }x\in E_{n},\\[4pt]
+0 &amp; \text{if }x\notin E_{n},
+\end{cases}
+\qquad
+\chi_{E}(x)=
+\begin{cases}
+1 &amp; \text{if }x\in E,\\[4pt]
+0 &amp; \text{if }x\notin E .
+\end{cases}
+\]</div>
+<p>Definition (pointwise convergence of sets)<br />
+We say that the measurable sets <span class="arithmatex">\(E_{n}\)</span> <em>converge pointwise</em> to the measurable set <span class="arithmatex">\(E\)</span> and write <span class="arithmatex">\(E_{n}\to E\)</span> pointwise if</p>
+<div class="arithmatex">\[
+\forall x\in\mathbb R^{d}\quad
+\lim_{n\to\infty}\chi_{E_{n}}(x)=\chi_{E}(x).
+\]</div>
+<p>Unpacking the definition, this means</p>
+<p>•  If <span class="arithmatex">\(x\in E\)</span> then there exists <span class="arithmatex">\(N=N(x)\)</span> such that<br />
+<span class="arithmatex">\(x\in E_{n}\)</span> for every <span class="arithmatex">\(n\ge N\)</span> (eventually always inside).  </p>
+<p>•  If <span class="arithmatex">\(x\notin E\)</span> then there exists <span class="arithmatex">\(N=N(x)\)</span> such that<br />
+<span class="arithmatex">\(x\notin E_{n}\)</span> for every <span class="arithmatex">\(n\ge N\)</span> (eventually always outside).</p>
+<p>Equivalent formulation with <span class="arithmatex">\(\limsup\)</span> and <span class="arithmatex">\(\liminf\)</span>.<br />
+For any sequence of sets one defines</p>
+<div class="arithmatex">\[
+\limsup_{n\to\infty}E_{n}
+   :=\bigcap_{m=1}^{\infty}\;\bigcup_{n\ge m}E_{n},
+\qquad
+\liminf_{n\to\infty}E_{n}
+   :=\bigcup_{m=1}^{\infty}\;\bigcap_{n\ge m}E_{n}.
+\]</div>
+<p>The condition <span class="arithmatex">\(\chi_{E_{n}}(x)\to\chi_{E}(x)\)</span> for every <span class="arithmatex">\(x\)</span> is
+equivalent to</p>
+<div class="arithmatex">\[
+\limsup_{n\to\infty}E_{n}
+\;=\;
+\liminf_{n\to\infty}E_{n}
+\;=\;
+E.
+\]</div>
+<p>So, “<span class="arithmatex">\(E_{n}\)</span> converges pointwise to <span class="arithmatex">\(E\)</span>” simply means that each point of <span class="arithmatex">\(\mathbb R^{d}\)</span> is eventually either always in—or always out of—<span class="arithmatex">\(E_{n}\)</span> in exactly the same way it is in or out of <span class="arithmatex">\(E\)</span>.</p>
+<h2 id="limsup-and-liminf-of-sets">limsup and liminf of sets<a class="headerlink" href="#limsup-and-liminf-of-sets" title="Permanent link">&para;</a></h2>
+<p>Unpack the definition of the limsup and liminf of sets.</p>
+<div class="arithmatex">\[
+\limsup_{n\to\infty}E_{n}
+   :=\bigcap_{m=1}^{\infty}\;\bigcup_{n\ge m}E_{n},
+\qquad
+\liminf_{n\to\infty}E_{n}
+   :=\bigcup_{m=1}^{\infty}\;\bigcap_{n\ge m}E_{n}.
+\]</div>
+<p><strong>Answer</strong></p>
+<p>Take an arbitrary sequence of sets <span class="arithmatex">\(\{E_{n}\}_{n\ge 1}\subset\mathbb R^{d}\)</span>.</p>
+<p><strong>1  Tail unions and tail intersections</strong>  </p>
+<p>Fix an integer <span class="arithmatex">\(m\ge 1\)</span>.<br />
+•  The <em>tail union</em></p>
+<div class="arithmatex">\[
+        U_{m}:=\bigcup_{n\ge m}E_{n}
+\]</div>
+<p>consists of all points that belong to <em>at least one</em> set
+   <span class="arithmatex">\(E_{n}\)</span> with index <span class="arithmatex">\(n\ge m\)</span>.</p>
+<p>•  The <em>tail intersection</em></p>
+<div class="arithmatex">\[
+        I_{m}:=\bigcap_{n\ge m}E_{n}
+\]</div>
+<p>consists of all points that belong to <em>every</em> set <span class="arithmatex">\(E_{n}\)</span> with
+   index <span class="arithmatex">\(n\ge m\)</span>.</p>
+<p>The families <span class="arithmatex">\(\{U_{m}\}\)</span> and <span class="arithmatex">\(\{I_{m}\}\)</span> behave monotonically in
+<span class="arithmatex">\(m\)</span>:</p>
+<div class="arithmatex">\[
+U_{1}\supset U_{2}\supset U_{3}\supset\cdots,
+\qquad
+I_{1}\subset I_{2}\subset I_{3}\subset\cdots.
+\]</div>
+<p><strong>2  Limsup = points that occur infinitely often</strong></p>
+<div class="arithmatex">\[
+\limsup_{n\to\infty}E_{n}
+   =\bigcap_{m=1}^{\infty}U_{m}.
+\]</div>
+<p>A point <span class="arithmatex">\(x\)</span> lies in the intersection of all <span class="arithmatex">\(U_{m}\)</span> iff  </p>
+<div class="arithmatex">\[
+\forall m\;\;\exists n\ge m\ \text{such that }x\in E_{n}.
+\]</div>
+<p>Equivalently,</p>
+<div class="arithmatex">\[
+x\in\limsup_{n\to\infty}E_{n}
+\quad\Longleftrightarrow\quad
+x\text{ belongs to }E_{n}\text{ for infinitely many }n.
+\]</div>
+<p>In probability terminology:  “<span class="arithmatex">\(x\)</span> occurs i.o.’’ (infinitely often).</p>
+<p><strong>3  Liminf = points that eventually always occur</strong></p>
+<div class="arithmatex">\[
+\liminf_{n\to\infty}E_{n}
+   =\bigcup_{m=1}^{\infty}I_{m}.
+\]</div>
+<p>A point <span class="arithmatex">\(x\)</span> lies in the union of the <span class="arithmatex">\(I_{m}\)</span>’s iff  </p>
+<div class="arithmatex">\[
+\exists m\;\;\forall n\ge m\ \text{we have }x\in E_{n}.
+\]</div>
+<p>Equivalently,</p>
+<div class="arithmatex">\[
+x\in\liminf_{n\to\infty}E_{n}
+\quad\Longleftrightarrow\quad
+x\text{ belongs to }E_{n}\text{ for all but finitely many }n.
+\]</div>
+<p>In probability terminology:  “<span class="arithmatex">\(x\)</span> occurs a.a.’’ (almost always).</p>
+<p><strong>4  Relation between limsup, liminf and pointwise limits</strong></p>
+<p>For every <span class="arithmatex">\(x\)</span></p>
+<div class="arithmatex">\[
+\liminf_{n\to\infty}\chi_{E_{n}}(x)
+   \;=\;\chi_{\;\liminf E_{n}}(x),\qquad
+\limsup_{n\to\infty}\chi_{E_{n}}(x)
+   \;=\;\chi_{\;\limsup E_{n}}(x).
+\]</div>
+<p>Therefore </p>
+<div class="arithmatex">\[
+\chi_{E_{n}}(x)\xrightarrow[n\to\infty]{}\chi_{E}(x)
+\;\;\text{for all }x
+\quad\Longleftrightarrow\quad
+\limsup_{n\to\infty}E_{n}
+  =\liminf_{n\to\infty}E_{n}
+  =E.
+\]</div>
+<p><strong>5  Measurability</strong></p>
+<p>If each <span class="arithmatex">\(E_{n}\)</span> is Lebesgue measurable, so are all <span class="arithmatex">\(U_{m}\)</span> and
+<span class="arithmatex">\(I_{m}\)</span> (finite or countable unions and intersections of measurable
+sets), and hence <span class="arithmatex">\(\limsup E_{n}\)</span> and <span class="arithmatex">\(\liminf E_{n}\)</span> are measurable
+as well.</p>
+<h2 id="intuition-of-limsup-and-liminf">Intuition of limsup and liminf<a class="headerlink" href="#intuition-of-limsup-and-liminf" title="Permanent link">&para;</a></h2>
+<p>Think of the sequence of sets  </p>
+<div class="arithmatex">\[
+E_{1},E_{2},E_{3},\dots
+\]</div>
+<p>as a time–sequence: at “time’’ <span class="arithmatex">\(n\)</span> the set <span class="arithmatex">\(E_{n}\)</span> is “on’’ and its
+indicator <span class="arithmatex">\(\chi_{E_{n}}(x)=1\)</span> tells us that the point <span class="arithmatex">\(x\)</span> is
+present at that time.  The two operations</p>
+<p>•  “infinitely often’’ (i.o.) = keeps reappearing with no last time;</p>
+<p>•  “eventually always’’ (e.a.) = after a certain time never disappears,</p>
+<p>are captured exactly by the two limit sets.</p>
+<p><strong>1.  What does <span class="arithmatex">\(\displaystyle U_{m}:=\bigcup_{n\ge m}E_{n}\)</span> mean?</strong></p>
+<p>Fix <span class="arithmatex">\(m\)</span>.  The union runs over the tail indices <span class="arithmatex">\(n\ge m\)</span>.
+Hence  </p>
+<div class="arithmatex">\[
+x\in U_{m}
+\;\Longleftrightarrow\;
+x\text{ is in *at least one* }E_{n}\text{ with }n\ge m.
+\]</div>
+<p>So <span class="arithmatex">\(U_{m}\)</span> is the set of points that <em>show up at some time after
+moment <span class="arithmatex">\(m\)</span></em>.</p>
+<p><strong>2.  Intersect the <span class="arithmatex">\(U_{m}\)</span>’s: <span class="arithmatex">\(\displaystyle\bigcap_{m=1}^{\infty}U_{m}\)</span></strong></p>
+<p>To be in the intersection, a point <span class="arithmatex">\(x\)</span> must belong to <em>every</em>
+<span class="arithmatex">\(U_{m}\)</span>.<br />
+That is,</p>
+<div class="arithmatex">\[
+(\forall m)\; x\in U_{m}
+\;\Longleftrightarrow\;
+(\forall m)\; (\exists n\ge m)\; x\in E_{n}.
+\]</div>
+<p>In words: no matter how far in time you move (pick any <span class="arithmatex">\(m\)</span>), there is
+still a later time <span class="arithmatex">\(n\)</span> when <span class="arithmatex">\(x\)</span> reappears in <span class="arithmatex">\(E_{n}\)</span>.<br />
+There can be no “last appearance’’ — <span class="arithmatex">\(x\)</span> appears <em>infinitely
+often</em>.  This set is called the limsup:</p>
+<div class="arithmatex">\[
+\limsup_{n\to\infty}E_{n}
+     =\bigcap_{m=1}^{\infty}\;\bigcup_{n\ge m}E_{n}
+     =\{x: x\text{ belongs to infinitely many }E_{n}\}.
+\]</div>
+<p><strong>3.  What does <span class="arithmatex">\(\displaystyle I_{m}:=\bigcap_{n\ge m}E_{n}\)</span> mean?</strong></p>
+<p>For a fixed <span class="arithmatex">\(m\)</span> the intersection over <span class="arithmatex">\(n\ge m\)</span> consists of points
+that are in <em>every</em> set from that moment on:</p>
+<div class="arithmatex">\[
+x\in I_{m}
+\;\Longleftrightarrow\;
+(\forall n\ge m)\; x\in E_{n}.
+\]</div>
+<p>So <span class="arithmatex">\(I_{m}\)</span> is the set of points that, once time <span class="arithmatex">\(m\)</span> is reached,
+<em>never disappear again</em>.</p>
+<p><strong>4.  Take the union of the <span class="arithmatex">\(I_{m}\)</span>’s: <span class="arithmatex">\(\displaystyle\bigcup_{m=1}^{\infty}I_{m}\)</span></strong></p>
+<p>Now only one <span class="arithmatex">\(m\)</span> has to work:</p>
+<div class="arithmatex">\[
+(\exists m)\; x\in I_{m}
+\;\Longleftrightarrow\;
+(\exists m)\; (\forall n\ge m)\; x\in E_{n}.
+\]</div>
+<p>Meaning: there is some moment <span class="arithmatex">\(m\)</span> after which <span class="arithmatex">\(x\)</span> is contained in
+<em>all</em> subsequent <span class="arithmatex">\(E_{n}\)</span>’s: <span class="arithmatex">\(x\)</span> is present <em>eventually
+always</em>.  This is the liminf:</p>
+<div class="arithmatex">\[
+\liminf_{n\to\infty}E_{n}
+    =\bigcup_{m=1}^{\infty}\;\bigcap_{n\ge m}E_{n}
+    =\{x: x\text{ belongs to all but finitely many }E_{n}\}.
+\]</div>
+<p><strong>5.  Connection with pointwise limits</strong></p>
+<p>•  If <span class="arithmatex">\(x\)</span> belongs to only finitely many <span class="arithmatex">\(E_{n}\)</span>’s, then
+<span class="arithmatex">\(\chi_{E_{n}}(x)\)</span> is eventually <span class="arithmatex">\(0\)</span>,
+so <span class="arithmatex">\(\displaystyle\limsup_{n}\chi_{E_{n}}(x)=0\)</span>.</p>
+<p>•  If <span class="arithmatex">\(x\)</span> belongs to infinitely many but not all but finitely many
+<span class="arithmatex">\(E_{n}\)</span>’s, <span class="arithmatex">\(\chi_{E_{n}}(x)\)</span> oscillates; the limsup is <span class="arithmatex">\(1\)</span>, the
+liminf is <span class="arithmatex">\(0\)</span>; there is <em>no</em> ordinary limit of the indicators.</p>
+<p>•  If <span class="arithmatex">\(x\)</span> belongs to all but finitely many <span class="arithmatex">\(E_{n}\)</span>’s, then
+<span class="arithmatex">\(\chi_{E_{n}}(x)\)</span> is eventually <span class="arithmatex">\(1\)</span>,
+so <span class="arithmatex">\(\displaystyle\liminf_{n}\chi_{E_{n}}(x)=1\)</span>.</p>
+<p>Thus for every point <span class="arithmatex">\(x\)</span>,</p>
+<div class="arithmatex">\[
+\boxed{\;
+\liminf_{n}\chi_{E_{n}}(x)
+      =\chi_{\liminf E_{n}}(x),\qquad
+\limsup_{n}\chi_{E_{n}}(x)
+      =\chi_{\limsup E_{n}}(x).
+}
+\]</div>
+<p>And the ordinary limit <span class="arithmatex">\(\displaystyle\lim_{n}\chi_{E_{n}}(x)\)</span> exists
+iff <span class="arithmatex">\(x\)</span> is either eventually always in, or eventually always out, of
+the <span class="arithmatex">\(E_{n}\)</span>’s—exactly when <span class="arithmatex">\(\liminf E_{n}=\limsup E_{n}\)</span>.</p>
+<p>That is why, when <span class="arithmatex">\(E_{n}\to E\)</span> pointwise, we have  </p>
+<div class="arithmatex">\[
+E=\limsup_{n}E_{n}=\liminf_{n}E_{n},
+\]</div>
+<p>a set built from countable unions and intersections of the measurable
+<span class="arithmatex">\(E_{n}\)</span>’s, hence itself measurable.</p>
+<h2 id="pointwise-convergence-of-lebesgue-sets-is-lebesgue">Pointwise convergence of Lebesgue sets is Lebesgue<a class="headerlink" href="#pointwise-convergence-of-lebesgue-sets-is-lebesgue" title="Permanent link">&para;</a></h2>
+<p>Let <span class="arithmatex">\(E_n \in \mathbb{R}^d\)</span> be a sequence of Lebesgue measurable sets which converge pointwise to <span class="arithmatex">\(E \in \mathbb{R}^d\)</span>. Show that <span class="arithmatex">\(E\)</span> is also Lebesgue measurable.</p>
+<p>Hint: Use the identities <span class="arithmatex">\(\chi_E(x) = \limsup_{n \to \infty} \chi_{E_n}(x)\)</span> or <span class="arithmatex">\(\chi_E(x) = \liminf_{ n \to \infty} \chi_{E_n}(x)\)</span> for the proof.</p>
+<p><strong>Answer</strong></p>
+<p>Let  </p>
+<div class="arithmatex">\[
+E_{1},E_{2},\dots\subset \mathbb R^{d}
+\qquad(\text{all Lebesgue–measurable})
+\]</div>
+<p>and suppose the sequence converges pointwise to a set <span class="arithmatex">\(E\)</span>; i.e.  </p>
+<div class="arithmatex">\[
+\chi_{E_{n}}(x)\;\xrightarrow[n\to\infty]{}\;\chi_{E}(x)
+\qquad\text{for every }x\in\mathbb R^{d}.
+\tag{1}
+\]</div>
+<p>To show that <span class="arithmatex">\(E\)</span> is Lebesgue measurable we will express <span class="arithmatex">\(E\)</span> by
+countable unions / intersections of the <span class="arithmatex">\(E_{n}\)</span>’s, which are already
+known to be measurable.</p>
+<p><strong>1.  The limsup and liminf of sets</strong></p>
+<p>For any sequence of sets <span class="arithmatex">\(\{A_{n}\}\)</span> define</p>
+<div class="arithmatex">\[
+\limsup_{n\to\infty}A_{n}
+   :=\bigcap_{k=1}^{\infty}\;\bigcup_{n\ge k}A_{n},
+\qquad
+\liminf_{n\to\infty}A_{n}
+   :=\bigcup_{k=1}^{\infty}\;\bigcap_{n\ge k}A_{n}.
+\]</div>
+<p>Each of these is built from the <span class="arithmatex">\(A_{n}\)</span>’s using only countable unions
+and intersections; hence if every <span class="arithmatex">\(A_{n}\)</span> is measurable, then so are
+<span class="arithmatex">\(\limsup A_{n}\)</span> and <span class="arithmatex">\(\liminf A_{n}\)</span>.</p>
+<p><strong>2.  Limsup / liminf for characteristic functions</strong></p>
+<p>For the indicator functions we have the pointwise identities</p>
+<div class="arithmatex">\[
+\chi_{\limsup E_{n}}(x)=\limsup_{n\to\infty}\chi_{E_{n}}(x),\qquad
+\chi_{\liminf E_{n}}(x)=\liminf_{n\to\infty}\chi_{E_{n}}(x).
+\]</div>
+<p>Because each <span class="arithmatex">\(\chi_{E_{n}}(x)\)</span> takes only the values <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(1\)</span>,
+<span class="arithmatex">\(\limsup\)</span> and <span class="arithmatex">\(\liminf\)</span> can take only <span class="arithmatex">\(0\)</span> or <span class="arithmatex">\(1\)</span> as well, and
+they coincide precisely when the ordinary limit exists:</p>
+<div class="arithmatex">\[
+\limsup_{n\to\infty}\chi_{E_{n}}(x)=\liminf_{n\to\infty}\chi_{E_{n}}(x)
+\Longleftrightarrow
+\lim_{n\to\infty}\chi_{E_{n}}(x)\text{ exists}.
+\]</div>
+<p><strong>3.  Apply the convergence assumption</strong></p>
+<p>By the assumption (1) the limit exists for every <span class="arithmatex">\(x\)</span> and equals
+<span class="arithmatex">\(\chi_{E}(x)\)</span>.  Therefore</p>
+<div class="arithmatex">\[
+\chi_{E}(x)
+   =\limsup_{n\to\infty}\chi_{E_{n}}(x)
+   =\liminf_{n\to\infty}\chi_{E_{n}}(x)
+\quad\text{for all }x,
+\]</div>
+<p>hence, in terms of sets,</p>
+<div class="arithmatex">\[
+E=\limsup_{n\to\infty}E_{n}
+  =\liminf_{n\to\infty}E_{n}.
+\tag{2}
+\]</div>
+<p><strong>4.  Measurability of <span class="arithmatex">\(E\)</span></strong></p>
+<p>Because each <span class="arithmatex">\(E_{n}\)</span> is measurable, the two sets on the right-hand
+side of (2) are measurable (they are built out of the <span class="arithmatex">\(E_{n}\)</span>’s by
+countable unions and intersections).  Equality (2) then shows that
+<span class="arithmatex">\(E\)</span> itself is measurable.</p>
+<div class="arithmatex">\[
+\boxed{\;E\text{ is Lebesgue measurable}\; }.
+\]</div>
+<p>Thus pointwise convergence of measurable sets preserves Lebesgue
+measurability of the limit set, and no direct use of the fact that the
+Lebesgue measurable sets form a <span class="arithmatex">\(\sigma\)</span>-algebra was required—only the
+countable–operation formulas for <span class="arithmatex">\(\limsup\)</span> and <span class="arithmatex">\(\liminf\)</span>.</p>
 
 
 
