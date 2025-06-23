@@ -3901,6 +3901,434 @@ Combined with the opposite inequality from monotonicity, we have proven
 dyadic tiling to approach the given set \(E\) from outside while keeping
 the measure arbitrarily close to \(\mu^{*}(E)\).
 
+
+## Countable sub additivity of Lebesgue measure
+
+Let \(\{A_{n}\}_{n\ge 1}\) be any sequence of Lebesgue–measurable subsets of \(\mathbb{R}^{d}\).
+The desired inequality is  
+
+\[
+\mu\!\Bigl(\,\bigcup_{n=1}^{\infty}A_{n}\Bigr)
+\;\le\;
+\sum_{n=1}^{\infty}\mu(A_{n}),
+\tag{1}
+\]
+
+i.e. countable sub-additivity of the Lebesgue measure \(\mu\).
+There are several ways to prove it; we give two standard arguments.
+
+A.  Direct argument via outer measure
+
+1  Lebesgue measure is defined from the Lebesgue *outer* measure 
+
+\[
+     \mu^{*}(E)=\inf\Bigl\{
+        \sum_{k=1}^{\infty}\operatorname{vol}(Q_{k}) :
+        E\subset\bigcup_{k=1}^{\infty}Q_{k},\;Q_{k}\text{ boxes}\Bigr\},
+\]
+
+   and a set \(E\) is *measurable* iff \(\mu(E)=\mu^{*}(E)\).
+
+2  The outer measure \(\mu^{*}\) is sub-additive on *all* sets.
+   Indeed, if each \(A_{n}\) is covered by boxes
+   \(\{Q_{n,k}\}_{k\ge 1}\) with  
+
+\[
+       \sum_{k=1}^{\infty}\operatorname{vol}(Q_{n,k})
+       <\mu^{*}(A_{n})+\frac{\varepsilon}{2^{n}},
+\]
+   
+   then \(\bigcup_{n,k}Q_{n,k}\) covers \(\bigcup_{n}A_{n}\) and
+   
+\[
+       \mu^{*}\!\Bigl(\bigcup_{n}A_{n}\Bigr)
+       \le
+       \sum_{n=1}^{\infty}\mu^{*}(A_{n})+\varepsilon.
+\]
+   
+   Letting \(\varepsilon\to 0\) gives sub-additivity for \(\mu^{*}\).
+
+3  Because every \(A_{n}\) and the union \(\bigcup_{n}A_{n}\) are
+   measurable,
+   
+\[
+       \mu\!\Bigl(\bigcup_{n}A_{n}\Bigr)
+       \;=\;
+       \mu^{*}\!\Bigl(\bigcup_{n}A_{n}\Bigr)
+       \;\le\;
+       \sum_{n=1}^{\infty}\mu^{*}(A_{n})
+       \;=\;
+       \sum_{n=1}^{\infty}\mu(A_{n}),
+\]
+   
+   which is (1).
+
+
+
+Conclusion
+
+This establishes the countable sub-additivity of Lebesgue
+measure:
+
+\[
+\boxed{\;
+  \mu\Bigl(\bigcup_{n=1}^{\infty}A_{n}\Bigr)
+  \,\le\,
+  \sum_{n=1}^{\infty}\mu(A_{n})
+  \quad\text{for all measurable }A_{n}\subset\mathbb R^{d}.
+  \;}
+\]
+
+This property is an essential ingredient of measure theory and holds for
+any measure, not just the Lebesgue measure.
+
+## Countable additivity 
+
+Let \(\{E_{n}\}_{n\ge 1}\) be a \textit{pairwise disjoint} sequence of
+Lebesgue–measurable subsets of \(\mathbb R^{d}\).
+(The equality we want is false without the disjointness assumption;
+without it one only has the already–proved sub-additivity
+\(\mu(\bigcup_{n}E_{n})\le\sum_{n}\mu(E_{n})\).)
+
+We have to show
+
+\[
+\mu\!\Bigl(\,\bigcup_{n=1}^{\infty}E_{n}\Bigr)
+\;\ge\;
+\sum_{n=1}^{\infty}\mu(E_{n}).
+\tag{1}
+\]
+
+Step 1.  Finite additivity for disjoint sets  
+For any finite index set \(\{1,\dots,N\}\) the disjointness gives
+
+\[
+\mu\!\Bigl(\bigcup_{n=1}^{N}E_{n}\Bigr)=\sum_{n=1}^{N}\mu(E_{n}).
+\tag{2}
+\]
+
+Step 2.  Monotonicity yields the desired inequality  
+Set
+
+\(F_{N}:=\bigcup_{n=1}^{N}E_{n}\;(N=1,2,\dots)\).
+Then
+
+\[
+F_{1}\subset F_{2}\subset\cdots\subset
+\bigcup_{n=1}^{\infty}E_{n}\;,
+\qquad
+\mu(F_{N})=\sum_{n=1}^{N}\mu(E_{n})  \quad\text{by (2)}.
+\]
+
+Because \(\mu\) is monotone,
+
+\[
+\sum_{n=1}^{N}\mu(E_{n})=\mu(F_{N})
+\;\le\;
+\mu\!\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr),
+\qquad\forall N\in\mathbb N.
+\]
+
+Let \(N\to\infty\).
+The sequence \(\sum_{n=1}^{N}\mu(E_{n})\) is increasing, so its limit is
+the infinite series \(\sum_{n=1}^{\infty}\mu(E_{n})\).
+Thus
+
+\[
+\sum_{n=1}^{\infty}\mu(E_{n})
+\;\le\;
+\mu\!\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr),
+\]
+
+which is the inequality (1) we wanted.
+
+Step 3.  Combine with sub-additivity  
+We already know sub-additivity gives
+\(\mu(\bigcup_{n}E_{n})\le\sum_{n}\mu(E_{n})\);
+together with (1) this yields equality:
+
+\[
+\boxed{\;
+\mu\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr)=\sum_{n=1}^{\infty}\mu(E_{n})
+\;} \qquad(\text{for disjoint measurable }E_{n}).
+\]
+
+Hence the Lebesgue measure is *countably additive* on disjoint
+families of measurable sets.
+
+## Countable union of measurable sets is measurable
+
+Let $E_1 \subset E_2 \subset \ldots \subset E_n \subset \mathbb{R}^d$ be a countable 
+sequence of Lebesgue measurable sets.
+Let $E = \bigcup_{n=1}^{\infty}  E_n$. 
+
+Show that $E$ is Lebesgue measurable without explicitly using the concept of a $\sigma$-algebra.
+
+Sketch of proof: for any set $E_n$, there is a covering open set $U_n$ such that $\mu(U_n \setminus E_n) < \varepsilon/2^n$.
+
+Complete this.
+
+
+Recall the outer–regularity characterisation of Lebesgue–measurable sets:
+
+A set \(A\subset\mathbb R^{d}\) is Lebesgue–measurable  
+iff  
+
+\[
+\forall\varepsilon>0\;\; \exists\text{ open }O\supset A
+\quad\text{such that}\quad
+\mu(O\setminus A)<\varepsilon .
+\tag{★}
+\]
+
+We will verify (★) directly for  
+
+\[
+E=\bigcup_{n=1}^{\infty}E_{n},
+\qquad
+E_{1}\subset E_{2}\subset\cdots,
+\]
+
+thereby proving that \(E\) is measurable—​without appealing to the fact
+that the measurable sets form a \(\sigma\)-algebra.
+
+Step 1.  Choose open sets for the individual \(E_{n}\).
+
+Fix \(\varepsilon>0\).  
+By outer regularity of each \(E_{n}\) we can pick an open set
+\(U_{n}\supset E_{n}\) such that  
+
+\[
+\mu(U_{n}\setminus E_{n})<\frac{\varepsilon}{2^{n}}
+\qquad(n=1,2,\dots).
+\tag{1}
+\]
+
+Step 2.  Form a single open cover of \(E\).
+
+Put  
+
+\[
+U:=\bigcup_{n=1}^{\infty}U_{n}.
+\]
+
+Then \(U\) is open and \(E\subset U\) because \(E_{n}\subset U_{n}\)
+for every \(n\).
+
+Step 3.  Estimate the excess measure \(U\setminus E\).
+
+Observe
+
+\[
+U\setminus E
+\;=\;
+\Bigl(\bigcup_{n=1}^{\infty}U_{n}\Bigr)
+      \setminus
+\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr)
+\;=\;
+\bigcup_{n=1}^{\infty}\bigl(U_{n}\setminus E_{n}\bigr).
+\]
+
+By countable sub-additivity of \(\mu\) and the choice (1) of the \(U_{n}\),
+
+\[
+\mu(U\setminus E)
+\;\le\;
+\sum_{n=1}^{\infty}\mu(U_{n}\setminus E_{n})
+\;<\;
+\sum_{n=1}^{\infty}\frac{\varepsilon}{2^{n}}
+\;=\;
+\varepsilon .
+\]
+
+Step 4.  Apply criterion (★).
+
+We have produced, for the given \(\varepsilon>0\), an open set
+\(U\supset E\) with \(\mu(U\setminus E)<\varepsilon\).
+Hence \(E\) satisfies (★) and is therefore Lebesgue–measurable.
+
+∎
+
+## Complement of measurable set is measurable
+
+Take as definition of “Lebesgue–measurable’’ the
+(open/closed) regularity criterion proved earlier:
+
+A set \(A\subset\mathbb R^{d}\) is called Lebesgue measurable iff  
+
+\[
+\forall\varepsilon>0\;\;\exists\;
+\text{ a closed set }K\;\text{and an open set }U
+\quad\text{s.t.}\quad
+K\subset A\subset U,\qquad
+\mu(U\setminus K)<\varepsilon.
+\tag{R}
+\]
+
+(No σ–algebra language is used; we only quantify over open and closed
+sets and speak about the Lebesgue measure \(\mu\).)
+
+We show that if \(E\) satisfies (R) then its complement
+\(E^{c}=\mathbb R^{d}\setminus E\) also satisfies (R).
+
+**Construction for the complement**
+
+Fix \(\varepsilon>0\).
+Because \(E\) is measurable, property (R) provides closed
+\(K\) and open \(U\) such that
+
+\[
+K\subset E\subset U,
+\qquad
+\mu(U\setminus K)<\varepsilon.
+\tag{1}
+\]
+
+Take complements:
+
+\[
+U^{c}\subset E^{c}\subset K^{c}.
+\]
+
+•  \(U^{c}\) is closed (complement of the open set \(U\)).  
+•  \(K^{c}\) is open (complement of the closed set \(K\)).
+
+Compute the “gap’’ between these two sets:
+
+\[
+K^{c}\setminus U^{c}= (\mathbb R^{d}\setminus K)\setminus (\mathbb R^{d}\setminus U)
+                     = U\setminus K.
+\]
+
+Hence, by (1),
+
+\[
+\mu(K^{c}\setminus U^{c})=\mu(U\setminus K)<\varepsilon.
+\]
+
+**Verification of (R) for \(E^{c}\)**
+
+We have produced for the same \(\varepsilon\)
+
+\[
+\underbrace{U^{c}}_{\text{closed}}
+\subset E^{c}
+\subset
+\underbrace{K^{c}}_{\text{open}},
+\qquad
+\mu\bigl(K^{c}\setminus U^{c}\bigr)<\varepsilon,
+\]
+
+exactly the requirement (R) with the rôles of \(K\) and \(U\) exchanged.
+Therefore \(E^{c}\) is Lebesgue measurable.
+
+**Conclusion**
+
+Every measurable set has a measurable complement; the result follows
+solely from the regularity characterisation and the elementary facts
+that complements transform open sets into closed ones, and vice-versa,
+while preserving the measure of the set difference.
+
+## Countable intersection of measurable sets is measurable
+
+**Let $E_1 ,E_2 , E_3, \cdots $ be a countable sequence of Lebesgue measurable sets in $\mathbb{R}^d$.**
+**Show that $\bigcap_{n=1}^{\infty} E_n$ is Lebesgue measurable.**
+
+Throughout we use the regularity criterion already established for
+Lebesgue–measurability:
+
+A set \(A\subset\mathbb R^{d}\) is Lebesgue measurable  iff  
+
+\[
+\forall\varepsilon>0\;\;\exists
+\quad
+\text{open }U\supset A
+\quad\text{such that}\quad
+\mu(U\setminus A)<\varepsilon .
+\tag{R}
+\]
+
+(No $\sigma$–algebra language is needed.)
+
+We are given a countable family of measurable sets  
+
+\[
+E_{1},E_{2},E_{3},\dots\subset\mathbb R^{d},
+\]
+
+and must show that  
+
+\[
+E:=\bigcap_{n=1}^{\infty}E_{n}
+\]
+
+is measurable.  
+We argue in two steps.
+
+**1  Countable unions of measurable sets are measurable**
+
+Let  
+
+\[
+F:=\bigcup_{n=1}^{\infty}E_{n}.
+\]
+
+Fix \(\varepsilon>0\).  
+Because each \(E_{n}\) satisfies (R), choose an open set
+\(U_{n}\supset E_{n}\) with  
+
+\[
+\mu(U_{n}\setminus E_{n})<\frac{\varepsilon}{2^{n}}.
+\tag{1}
+\]
+
+Put  
+
+\[
+U:=\bigcup_{n=1}^{\infty}U_{n}.
+\]
+
+Then \(U\) is open and \(F\subset U\).  
+Moreover, by sub–additivity and (1),
+
+\[
+\mu(U\setminus F)
+\le\sum_{n=1}^{\infty}\mu(U_{n}\setminus E_{n})
+<\sum_{n=1}^{\infty}\frac{\varepsilon}{2^{n}}
+=\varepsilon .
+\]
+
+Hence \(F\) satisfies (R) and is Lebesgue measurable.
+
+**2  Complements are measurable  ⇒  intersections are measurable**
+
+From a previous exercise we know that the complement of every measurable
+set is measurable (again using only property (R): complements turn open
+into closed and vice-versa, preserving the measure of the set-difference).
+
+Apply this to each \(E_{n}\); all the complements \(E_{n}^{c}\) are
+measurable, so by Step 1 their union is measurable:
+
+\[
+\bigcup_{n=1}^{\infty}E_{n}^{c}\quad\text{is measurable.}
+\]
+
+Finally,
+
+\[
+E=\bigcap_{n=1}^{\infty}E_{n}
+  =\Bigl(\bigcup_{n=1}^{\infty}E_{n}^{c}\Bigr)^{c},
+\]
+
+the complement of a measurable set, and therefore itself measurable.
+
+**Conclusion**
+
+Without appealing to the abstract notion of a \(\sigma\)-algebra we have
+shown—using only the open-set approximation property (R)—that the
+intersection of countably many Lebesgue measurable sets is again
+Lebesgue measurable.
+
 ## Equivalence: $\mu^{*}(U)\le\mu^{*}(E)+\varepsilon$ equivalent to $\mu^*(U \backslash E) \leq \varepsilon$
 
 $\forall\varepsilon>0\;\; \exists\text{ open }U\supset E$, is the expression
@@ -4190,3 +4618,609 @@ Dirac measures \(\delta_x\), finite (or \(\sigma\)-finite) sums of such, countin
 5 Summary  
 A Radon measure on a locally compact Hausdorff space is a locally finite Borel measure that is inner regular (and, in many presentations, also outer regular).  
 Because Lebesgue measure on \(\mathbb R^{d}\) has those properties, it is indeed a Radon measure.
+
+## Upward monotone convergence (Continuity from below)
+
+Let \(\{E_{n}\}_{n\ge 1}\) be an increasing sequence of Lebesgue–measurable 
+subsets of \(\mathbb{R}^{d}\); i.e.  
+
+\[
+E_{1}\subset E_{2}\subset \cdots\subset E_{n}\subset\cdots .
+\]
+
+Put  
+
+\[
+E:=\bigcup_{n=1}^{\infty}E_{n}.
+\]
+
+We prove the “continuity from below’’ property of Lebesgue measure \(\mu\):
+
+\[
+\boxed{\;
+\mu(E)=\lim_{n\to\infty}\mu(E_{n})
+\;} .
+\]
+
+**1  The limit \(\displaystyle\lim_{n}\mu(E_{n})\) exists**
+
+Because the sequence \(\{E_{n}\}\) is increasing, the corresponding
+measures are non–decreasing:
+
+\[
+\mu(E_{1})\le\mu(E_{2})\le\cdots\le\mu(E_{n})\le\cdots\le \mu(E).
+\]
+
+Hence \(\{\mu(E_{n})\}\) is monotone and bounded above by
+\(\mu(E)\); the limit
+\(\displaystyle L:=\lim_{n\to\infty}\mu(E_{n})\) exists (possibly
+\(+\infty\)) and satisfies \(L\le\mu(E)\).
+
+**2  Decompose the union**
+
+Define the “increments’’
+
+\[
+A_{1}:=E_{1},\qquad 
+A_{n}:=E_{n}\setminus E_{n-1}\quad(n\ge 2).
+\]
+
+Then  
+
+\[
+A_{m}\cap A_{n}=\varnothing\quad(m\neq n),
+\qquad
+\bigcup_{n=1}^{\infty}A_{n}=E,
+\qquad
+E_{N}=\bigcup_{n=1}^{N}A_{n}.
+\]
+
+**3  Countable additivity of the measure**
+
+Because the \(A_{n}\)’s are pairwise disjoint and measurable,
+
+\[
+\mu(E)=\sum_{n=1}^{\infty}\mu(A_{n}).
+\tag{3.1}
+\]
+
+For every \(N\),
+
+\[
+\mu(E_{N})=\sum_{n=1}^{N}\mu(A_{n}).
+\tag{3.2}
+\]
+
+**4  Passage to the limit**
+
+Take the limit \(N\to\infty\) in (3.2) and invoke monotone convergence
+for the series of non–negative terms \(\{\mu(A_{n})\}\):
+
+\[
+\lim_{N\to\infty}\mu(E_{N})
+      =\sum_{n=1}^{\infty}\mu(A_{n})
+      =\mu(E)
+      \quad\text{(by (3.1))}.
+\]
+
+**5  Conclusion**
+
+Therefore
+
+\[
+\mu\!\Bigl(\bigcup_{n=1}^{\infty}E_{n}\Bigr)
+      =\mu(E)
+      =\lim_{n\to\infty}\mu(E_{n}),
+\]
+
+which is exactly the desired equality.  This property is often called
+*continuity from below* and holds for every (finite or σ–finite)
+measure, the Lebesgue measure in particular.
+
+## Downard monotone convergence (Continuity from above)
+
+Let  
+
+\[
+E_{1}\supset E_{2}\supset\cdots\supset E_{n}\supset\cdots\qquad
+(E_{n}\subset\mathbb R^{d}\text{ measurable})
+\]
+
+and assume that for one index \(N\) the measure is finite:
+
+\[
+\mu(E_{N})<\infty .
+\tag{1}
+\]
+
+(The index \(N\) can be taken to be \(1\); otherwise just start the
+argument at \(E_{N}\) and relabel.)
+
+Define  
+
+\[
+E:=\bigcap_{n=1}^{\infty}E_{n}
+\qquad\text{and}\qquad
+A_{n}:=E_{N}\setminus E_{n}\quad(n\ge N).
+\]
+
+**1 The sets \(A_{n}\) form an increasing sequence**
+
+Because the \(E_{n}\) decrease, \(E_{n+1}\subset E_{n}\); hence  
+\(A_{n}=E_{N}\setminus E_{n}\subset E_{N}\setminus E_{n+1}=A_{n+1}\).
+Thus
+
+\[
+A_{N}\subset A_{N+1}\subset\cdots\subset A_{n}\subset\cdots ,
+\]
+
+and
+
+\[
+\bigcup_{n=N}^{\infty}A_{n}=E_{N}\setminus E .
+\tag{2}
+\]
+
+
+**2. Continuity from below applied to \(A_{n}\)**
+
+The sequence \(\{A_{n}\}_{n\ge N}\) is increasing and the union on the
+right of (2) is contained in \(E_{N}\), which has finite measure by (1).
+Therefore we can use the “continuity from below’’ property (proved
+earlier):
+
+\[
+\mu(E_{N}\setminus E)=\lim_{n\to\infty}\mu(A_{n}).
+\tag{3}
+\]
+
+**3  Express \(\mu(A_{n})\) in terms of \(\mu(E_{n})\)**
+
+For every \(n\ge N\) the sets \(E_{n}\) and \(A_{n}=E_{N}\setminus E_{n}\)
+are disjoint and their union is \(E_{N}\); hence
+
+\[
+\mu(E_{N})=\mu(E_{n})+\mu(A_{n})
+\quad\Longrightarrow\quad
+\mu(A_{n})=\mu(E_{N})-\mu(E_{n}).
+\tag{4}
+\]
+
+
+**4 Passage to the limit**
+
+Insert (4) into (3):
+
+\[
+\mu(E_{N})-\mu(E)=\lim_{n\to\infty}\bigl[\mu(E_{N})-\mu(E_{n})\bigr]
+                 =\mu(E_{N})-\lim_{n\to\infty}\mu(E_{n}),
+\]
+
+so
+
+\[
+\mu(E)=\lim_{n\to\infty}\mu(E_{n}).
+\]
+
+**5  Conclusion**
+
+If a decreasing sequence of measurable sets \(\{E_{n}\}\) contains at
+least one member with finite measure, then
+
+\[
+\boxed{\;
+   \mu\!\Bigl(\bigcap_{n=1}^{\infty}E_{n}\Bigr)
+   \;=\;
+   \lim_{n\to\infty}\mu(E_{n})
+ }.
+\]
+
+This is the “continuity from above’’ property for the Lebesgue measure.
+
+## Pointwise convergence of Lebesgue measurable sets
+
+**Let $E_n$ be a sequence of Lebesgue measurable sets in $\mathbb{R}^d$. Let $E$ be another Lebesgue measurable set in $\mathbb{R}^d$. What is the concept of pointwise convergence of $E_n$ to $E$?**
+
+“Pointwise’’ convergence of a sequence of sets means that we look at each individual point \(x\in\mathbb R^{d}\) and ask whether, as \(n\) grows, the point eventually belongs to the same sets that \(x\) belongs to in the ‘limit’ set \(E\).  Formally one works with the indicator (characteristic) functions
+
+\[
+\chi_{E_{n}}(x)=
+\begin{cases}
+1 & \text{if }x\in E_{n},\\[4pt]
+0 & \text{if }x\notin E_{n},
+\end{cases}
+\qquad
+\chi_{E}(x)=
+\begin{cases}
+1 & \text{if }x\in E,\\[4pt]
+0 & \text{if }x\notin E .
+\end{cases}
+\]
+
+Definition (pointwise convergence of sets)  
+We say that the measurable sets \(E_{n}\) *converge pointwise* to the measurable set \(E\) and write \(E_{n}\to E\) pointwise if
+
+\[
+\forall x\in\mathbb R^{d}\quad
+\lim_{n\to\infty}\chi_{E_{n}}(x)=\chi_{E}(x).
+\]
+
+Unpacking the definition, this means
+
+•  If \(x\in E\) then there exists \(N=N(x)\) such that  
+   \(x\in E_{n}\) for every \(n\ge N\) (eventually always inside).  
+
+•  If \(x\notin E\) then there exists \(N=N(x)\) such that  
+   \(x\notin E_{n}\) for every \(n\ge N\) (eventually always outside).
+
+Equivalent formulation with \(\limsup\) and \(\liminf\).  
+For any sequence of sets one defines
+
+\[
+\limsup_{n\to\infty}E_{n}
+   :=\bigcap_{m=1}^{\infty}\;\bigcup_{n\ge m}E_{n},
+\qquad
+\liminf_{n\to\infty}E_{n}
+   :=\bigcup_{m=1}^{\infty}\;\bigcap_{n\ge m}E_{n}.
+\]
+
+The condition \(\chi_{E_{n}}(x)\to\chi_{E}(x)\) for every \(x\) is
+equivalent to
+
+\[
+\limsup_{n\to\infty}E_{n}
+\;=\;
+\liminf_{n\to\infty}E_{n}
+\;=\;
+E.
+\]
+
+So, “\(E_{n}\) converges pointwise to \(E\)” simply means that each point of \(\mathbb R^{d}\) is eventually either always in—or always out of—\(E_{n}\) in exactly the same way it is in or out of \(E\).
+
+## limsup and liminf of sets
+
+Unpack the definition of the limsup and liminf of sets.
+
+\[
+\limsup_{n\to\infty}E_{n}
+   :=\bigcap_{m=1}^{\infty}\;\bigcup_{n\ge m}E_{n},
+\qquad
+\liminf_{n\to\infty}E_{n}
+   :=\bigcup_{m=1}^{\infty}\;\bigcap_{n\ge m}E_{n}.
+\]
+
+**Answer**
+
+Take an arbitrary sequence of sets \(\{E_{n}\}_{n\ge 1}\subset\mathbb R^{d}\).
+
+**1  Tail unions and tail intersections**  
+
+Fix an integer \(m\ge 1\).  
+•  The *tail union*
+
+\[
+        U_{m}:=\bigcup_{n\ge m}E_{n}
+\]
+
+   consists of all points that belong to *at least one* set
+   \(E_{n}\) with index \(n\ge m\).
+
+•  The *tail intersection*
+
+\[
+        I_{m}:=\bigcap_{n\ge m}E_{n}
+\]
+
+   consists of all points that belong to *every* set \(E_{n}\) with
+   index \(n\ge m\).
+
+The families \(\{U_{m}\}\) and \(\{I_{m}\}\) behave monotonically in
+\(m\):
+
+\[
+U_{1}\supset U_{2}\supset U_{3}\supset\cdots,
+\qquad
+I_{1}\subset I_{2}\subset I_{3}\subset\cdots.
+\]
+
+**2  Limsup = points that occur infinitely often**
+
+\[
+\limsup_{n\to\infty}E_{n}
+   =\bigcap_{m=1}^{\infty}U_{m}.
+\]
+
+A point \(x\) lies in the intersection of all \(U_{m}\) iff  
+
+\[
+\forall m\;\;\exists n\ge m\ \text{such that }x\in E_{n}.
+\]
+
+Equivalently,
+
+\[
+x\in\limsup_{n\to\infty}E_{n}
+\quad\Longleftrightarrow\quad
+x\text{ belongs to }E_{n}\text{ for infinitely many }n.
+\]
+
+In probability terminology:  “\(x\) occurs i.o.’’ (infinitely often).
+
+**3  Liminf = points that eventually always occur**
+
+\[
+\liminf_{n\to\infty}E_{n}
+   =\bigcup_{m=1}^{\infty}I_{m}.
+\]
+
+A point \(x\) lies in the union of the \(I_{m}\)’s iff  
+
+\[
+\exists m\;\;\forall n\ge m\ \text{we have }x\in E_{n}.
+\]
+
+Equivalently,
+
+\[
+x\in\liminf_{n\to\infty}E_{n}
+\quad\Longleftrightarrow\quad
+x\text{ belongs to }E_{n}\text{ for all but finitely many }n.
+\]
+
+In probability terminology:  “\(x\) occurs a.a.’’ (almost always).
+
+**4  Relation between limsup, liminf and pointwise limits**
+
+For every \(x\)
+
+\[
+\liminf_{n\to\infty}\chi_{E_{n}}(x)
+   \;=\;\chi_{\;\liminf E_{n}}(x),\qquad
+\limsup_{n\to\infty}\chi_{E_{n}}(x)
+   \;=\;\chi_{\;\limsup E_{n}}(x).
+\]
+
+Therefore 
+
+\[
+\chi_{E_{n}}(x)\xrightarrow[n\to\infty]{}\chi_{E}(x)
+\;\;\text{for all }x
+\quad\Longleftrightarrow\quad
+\limsup_{n\to\infty}E_{n}
+  =\liminf_{n\to\infty}E_{n}
+  =E.
+\]
+
+**5  Measurability**
+
+If each \(E_{n}\) is Lebesgue measurable, so are all \(U_{m}\) and
+\(I_{m}\) (finite or countable unions and intersections of measurable
+sets), and hence \(\limsup E_{n}\) and \(\liminf E_{n}\) are measurable
+as well.
+
+
+## Intuition of limsup and liminf
+
+Think of the sequence of sets  
+
+\[
+E_{1},E_{2},E_{3},\dots
+\]
+
+as a time–sequence: at “time’’ \(n\) the set \(E_{n}\) is “on’’ and its
+indicator \(\chi_{E_{n}}(x)=1\) tells us that the point \(x\) is
+present at that time.  The two operations
+
+•  “infinitely often’’ (i.o.) = keeps reappearing with no last time;
+
+•  “eventually always’’ (e.a.) = after a certain time never disappears,
+
+are captured exactly by the two limit sets.
+
+**1.  What does \(\displaystyle U_{m}:=\bigcup_{n\ge m}E_{n}\) mean?**
+
+Fix \(m\).  The union runs over the tail indices \(n\ge m\).
+Hence  
+
+\[
+x\in U_{m}
+\;\Longleftrightarrow\;
+x\text{ is in *at least one* }E_{n}\text{ with }n\ge m.
+\]
+
+So \(U_{m}\) is the set of points that *show up at some time after
+moment \(m\)*.
+
+**2.  Intersect the \(U_{m}\)’s: \(\displaystyle\bigcap_{m=1}^{\infty}U_{m}\)**
+
+To be in the intersection, a point \(x\) must belong to *every*
+\(U_{m}\).  
+That is,
+
+\[
+(\forall m)\; x\in U_{m}
+\;\Longleftrightarrow\;
+(\forall m)\; (\exists n\ge m)\; x\in E_{n}.
+\]
+
+In words: no matter how far in time you move (pick any \(m\)), there is
+still a later time \(n\) when \(x\) reappears in \(E_{n}\).  
+There can be no “last appearance’’ — \(x\) appears *infinitely
+often*.  This set is called the limsup:
+
+\[
+\limsup_{n\to\infty}E_{n}
+     =\bigcap_{m=1}^{\infty}\;\bigcup_{n\ge m}E_{n}
+     =\{x: x\text{ belongs to infinitely many }E_{n}\}.
+\]
+
+**3.  What does \(\displaystyle I_{m}:=\bigcap_{n\ge m}E_{n}\) mean?**
+
+For a fixed \(m\) the intersection over \(n\ge m\) consists of points
+that are in *every* set from that moment on:
+
+\[
+x\in I_{m}
+\;\Longleftrightarrow\;
+(\forall n\ge m)\; x\in E_{n}.
+\]
+
+So \(I_{m}\) is the set of points that, once time \(m\) is reached,
+*never disappear again*.
+
+**4.  Take the union of the \(I_{m}\)’s: \(\displaystyle\bigcup_{m=1}^{\infty}I_{m}\)**
+
+Now only one \(m\) has to work:
+
+\[
+(\exists m)\; x\in I_{m}
+\;\Longleftrightarrow\;
+(\exists m)\; (\forall n\ge m)\; x\in E_{n}.
+\]
+
+Meaning: there is some moment \(m\) after which \(x\) is contained in
+*all* subsequent \(E_{n}\)’s: \(x\) is present *eventually
+always*.  This is the liminf:
+
+\[
+\liminf_{n\to\infty}E_{n}
+    =\bigcup_{m=1}^{\infty}\;\bigcap_{n\ge m}E_{n}
+    =\{x: x\text{ belongs to all but finitely many }E_{n}\}.
+\]
+
+**5.  Connection with pointwise limits**
+
+•  If \(x\) belongs to only finitely many \(E_{n}\)’s, then
+\(\chi_{E_{n}}(x)\) is eventually \(0\),
+so \(\displaystyle\limsup_{n}\chi_{E_{n}}(x)=0\).
+
+•  If \(x\) belongs to infinitely many but not all but finitely many
+\(E_{n}\)’s, \(\chi_{E_{n}}(x)\) oscillates; the limsup is \(1\), the
+liminf is \(0\); there is *no* ordinary limit of the indicators.
+
+•  If \(x\) belongs to all but finitely many \(E_{n}\)’s, then
+\(\chi_{E_{n}}(x)\) is eventually \(1\),
+so \(\displaystyle\liminf_{n}\chi_{E_{n}}(x)=1\).
+
+Thus for every point \(x\),
+
+\[
+\boxed{\;
+\liminf_{n}\chi_{E_{n}}(x)
+      =\chi_{\liminf E_{n}}(x),\qquad
+\limsup_{n}\chi_{E_{n}}(x)
+      =\chi_{\limsup E_{n}}(x).
+}
+\]
+
+And the ordinary limit \(\displaystyle\lim_{n}\chi_{E_{n}}(x)\) exists
+iff \(x\) is either eventually always in, or eventually always out, of
+the \(E_{n}\)’s—exactly when \(\liminf E_{n}=\limsup E_{n}\).
+
+That is why, when \(E_{n}\to E\) pointwise, we have  
+
+\[
+E=\limsup_{n}E_{n}=\liminf_{n}E_{n},
+\]
+
+a set built from countable unions and intersections of the measurable
+\(E_{n}\)’s, hence itself measurable.
+
+
+## Pointwise convergence of Lebesgue sets is Lebesgue
+
+Let $E_n \in \mathbb{R}^d$ be a sequence of Lebesgue measurable sets which converge pointwise to $E \in \mathbb{R}^d$. Show that $E$ is also Lebesgue measurable.
+
+Hint: Use the identities $\chi_E(x) = \limsup_{n \to \infty} \chi_{E_n}(x)$ or $\chi_E(x) = \liminf_{ n \to \infty} \chi_{E_n}(x)$ for the proof.
+
+**Answer**
+
+Let  
+
+\[
+E_{1},E_{2},\dots\subset \mathbb R^{d}
+\qquad(\text{all Lebesgue–measurable})
+\]
+
+and suppose the sequence converges pointwise to a set \(E\); i.e.  
+
+\[
+\chi_{E_{n}}(x)\;\xrightarrow[n\to\infty]{}\;\chi_{E}(x)
+\qquad\text{for every }x\in\mathbb R^{d}.
+\tag{1}
+\]
+
+To show that \(E\) is Lebesgue measurable we will express \(E\) by
+countable unions / intersections of the \(E_{n}\)’s, which are already
+known to be measurable.
+
+**1.  The limsup and liminf of sets**
+
+For any sequence of sets \(\{A_{n}\}\) define
+
+\[
+\limsup_{n\to\infty}A_{n}
+   :=\bigcap_{k=1}^{\infty}\;\bigcup_{n\ge k}A_{n},
+\qquad
+\liminf_{n\to\infty}A_{n}
+   :=\bigcup_{k=1}^{\infty}\;\bigcap_{n\ge k}A_{n}.
+\]
+
+Each of these is built from the \(A_{n}\)’s using only countable unions
+and intersections; hence if every \(A_{n}\) is measurable, then so are
+\(\limsup A_{n}\) and \(\liminf A_{n}\).
+
+**2.  Limsup / liminf for characteristic functions**
+
+For the indicator functions we have the pointwise identities
+
+\[
+\chi_{\limsup E_{n}}(x)=\limsup_{n\to\infty}\chi_{E_{n}}(x),\qquad
+\chi_{\liminf E_{n}}(x)=\liminf_{n\to\infty}\chi_{E_{n}}(x).
+\]
+
+Because each \(\chi_{E_{n}}(x)\) takes only the values \(0\) and \(1\),
+\(\limsup\) and \(\liminf\) can take only \(0\) or \(1\) as well, and
+they coincide precisely when the ordinary limit exists:
+
+\[
+\limsup_{n\to\infty}\chi_{E_{n}}(x)=\liminf_{n\to\infty}\chi_{E_{n}}(x)
+\Longleftrightarrow
+\lim_{n\to\infty}\chi_{E_{n}}(x)\text{ exists}.
+\]
+
+**3.  Apply the convergence assumption**
+
+By the assumption (1) the limit exists for every \(x\) and equals
+\(\chi_{E}(x)\).  Therefore
+
+\[
+\chi_{E}(x)
+   =\limsup_{n\to\infty}\chi_{E_{n}}(x)
+   =\liminf_{n\to\infty}\chi_{E_{n}}(x)
+\quad\text{for all }x,
+\]
+
+hence, in terms of sets,
+
+\[
+E=\limsup_{n\to\infty}E_{n}
+  =\liminf_{n\to\infty}E_{n}.
+\tag{2}
+\]
+
+**4.  Measurability of \(E\)**
+
+Because each \(E_{n}\) is measurable, the two sets on the right-hand
+side of (2) are measurable (they are built out of the \(E_{n}\)’s by
+countable unions and intersections).  Equality (2) then shows that
+\(E\) itself is measurable.
+
+\[
+\boxed{\;E\text{ is Lebesgue measurable}\; }.
+\]
+
+Thus pointwise convergence of measurable sets preserves Lebesgue
+measurability of the limit set, and no direct use of the fact that the
+Lebesgue measurable sets form a \(\sigma\)-algebra was required—only the
+countable–operation formulas for \(\limsup\) and \(\liminf\).
